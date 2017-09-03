@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const MONGO_URL = 'mongodb://localhost/pollerbears';
-const connection = mongoose.connect(MONGO_URL);
+const CONFIG = require('./config.json');
+const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
 
 mongoose.connection.once('open', function() {
