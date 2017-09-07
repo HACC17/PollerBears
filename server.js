@@ -5,6 +5,8 @@ const CONFIG = require('./config.json');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
 
+app.use('/', express.static(path.join(__dirname, 'public')));
+
 mongoose.connection.once('open', function() {
   console.log('connected');
 
@@ -14,4 +16,3 @@ mongoose.connection.once('open', function() {
     console.log('listening on',host, port);
   });
 });
-
