@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 const CONFIG = require('./config.json');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
