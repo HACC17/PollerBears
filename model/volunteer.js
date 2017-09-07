@@ -6,52 +6,80 @@ const volunteer = mongoose.model(
       type: String,
       required: true
     },
-    firstName: {
+    name: {
       type: String,
       required: true
     },
-    lastName: {
-      type: String,
-      required: true
-    },
-    MI:{
+    phone:{
       type: String,
     },
-    AKA:{
+    position:{
       type: String,
-    },
-    SSN:{
-      type: String,
-    },
-    birthDate:{
-      type: String,
-      required: true
-    },
-    homePhone:{
-      type: String,
-    },
-    cellPhone:{
-      type: String,
-    },
-    workPhone:{
-      type: String,
-    },
-    bestTime:{
-      type: String,
-    },
-    about:{
-      type: String,
-      required: true
     },
     email:{
       type: String,
       required: true
     },
-    electionAvailable: {
+    electionWorking: {
       type: String,
-      required: true
     },
-
+    positionId: {
+      type: String,
+    },
+    positionLocation: {
+      type: String,
+    },
+    positionName: {
+      type: String,
+    },
+    positionDescription: {
+      type: String,
+    },
+    positionShift: {
+      type: String,
+    },
+    positionMax: {
+      type: String,
+    },
+    positionCurrent: {
+      type: String,
+    },
+    trainingId: {
+      type: String,
+    },
+    trainingDate: {
+      type: String,
+    },
+    trainingTime: {
+      type: String,
+    },
+    trainingLocation: {
+      type: String,
+    },
+    trainingAddress: {
+      type: String,
+    },
+    trainingPoint: {
+      type: String,
+    },
+    trainingDescription: {
+      type: String,
+    },
+    workId: {
+      type: String,
+    },
+    workName: {
+      type: String,
+    },
+    workAddress: {
+      type: String,
+    },
+    workPoint: {
+      type: String,
+    }
+    didTraining:{
+      type:String,
+    }
   }
 );
 
