@@ -21,21 +21,44 @@ app.get('/volunteer/', (req, res) =>{
 
 app.post('/volunteer', (req, res) =>{
   const person =  new volunteer({
+    name: req.body.name,
+    phone: req.body.phone,
+    position: req.body.position,
+    electionWorking: req.body.electionWorking
+    positionId: req.body.positionId
+    positionLocation: req.body.positionLocation
+    positionName: req.body.positionName
+    positionDescription: req.body.positionDescription
+    positionShift: req.body.positionShift
+    positionMax: req.body.positionMax
+    positionCurrent: req.body.positionCurrent
+    trainingId: req.body.trainingId
+    trainingDate: req.body.trainingDate
+    trainingTime: req.body.trainingTime
+    trainingLocation: req.body.trainingLocation
+    trainingAddress: req.body.trainingAddress
+    trainingPoint: req.body.trainingPoint
+    trainingDescription: req.body.trainingDescription
+    workId: req.body.workId
+    workName: req.body.workName
+    workAddress: req.body.workAddress
+    workPoint: req.body.workPoint
+    didTraining: req.body.didTraining
     volunteerId: req.body.volunteerId,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    birthDate: req.body.birthDate,
-    MI:req.body.MI,
-    AKA:req.body.AKA,
-    SSN:req.body.SSN,
-    homePhone:req.body.homePhone,
-    cellPhone:req.body.cellPhone,
-    workPhone:req.body.workPhone,
-    bestTime:req.body.bestTime,
-    about:req.body.about,
-    addressOne: req.body.addressOne,
     email: req.body.email,
     electionAvailable: req.body.electionAvailable
+    // firstName: req.body.firstName,
+    // lastName: req.body.lastName,
+    // birthDate: req.body.birthDate,
+    // MI:req.body.MI,
+    // AKA:req.body.AKA,
+    // SSN:req.body.SSN,
+    // homePhone:req.body.homePhone,
+    // cellPhone:req.body.cellPhone,
+    // workPhone:req.body.workPhone,
+    // bestTime:req.body.bestTime,
+    // about:req.body.about,
+    // addressOne: req.body.addressOne,
   });
   return person.save()
   .then(result => {res.json(req.body);})
@@ -58,7 +81,14 @@ app.post('/election', (req, res) =>{
     electionId: req.body.electionId,
     name: req.body.name,
     date: req.body.date,
+    address: req.body.address,
+    day: req.body.day,
+    county: req.body.county,
     address: req.body.address
+    city: req.body.city,
+    zip: req.body.zip
+    timeTraining: req.body.timeTraining
+    addressbyRegion: req.body.addressbyRegion
   });
 
   return voterElection.save()

@@ -1,51 +1,58 @@
 const mongoose = require('mongoose');
-const election = mongoose.model(
-  "Election",
+const volunteer = mongoose.model(
+  "Volunteer",
   {
-    electionId:{
+    volunteerId:{
       type: String,
       required: true
     },
-    day:{
+    firstName: {
       type: String,
       required: true
     },
-    date:{
+    lastName: {
       type: String,
       required: true
     },
-    county:{
+    MI:{
+      type: String,
+    },
+    AKA:{
+      type: String,
+    },
+    SSN:{
+      type: String,
+    },
+    birthDate:{
       type: String,
       required: true
     },
-    trainingPosition: {
+    homePhone:{
+      type: String,
+    },
+    cellPhone:{
+      type: String,
+    },
+    workPhone:{
+      type: String,
+    },
+    bestTime:{
+      type: String,
+    },
+    about:{
       type: String,
       required: true
     },
-    trainingLocation: {
+    email:{
       type: String,
       required: true
     },
-    address:{
+    electionAvailable: {
       type: String,
       required: true
     },
-    city:{
-      type: String,
-      required: true
-    }
-    zip:{
-      type: String,
-      required: true
-    }
-    timeTraining:{
-      type: String,
-      required: true
-    },
-    addressbyRegion:{
-      type: String
-    }
+
   }
 );
 
-module.exports = election;
+module.exports = volunteer;
