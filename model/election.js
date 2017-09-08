@@ -33,11 +33,11 @@ const election = mongoose.model(
     city:{
       type: String,
       required: true
-    }
+    },
     zip:{
       type: String,
       required: true
-    }
+    },
     timeTraining:{
       type: String,
       required: true
