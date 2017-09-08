@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Position from './Position';
+import Routes from '../components/Routes';
 
 class Home extends Component {
   render() {
@@ -10,7 +13,7 @@ class Home extends Component {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sint earum fugit accusantium tempore voluptatum cum neque quae, nemo quos sapiente voluptatem nulla id. Sit praesentium, nemo sint eligendi saepe!
           </p>
         </div>
-        <button>START VOLUNTEERING</button>
+        <Link to="/position">START VOLUNTEERING</Link>
       </div>
     );
   }
