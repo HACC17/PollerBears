@@ -19,6 +19,7 @@
     "react": "^15.6.1",
     "react-big-calendar": "^0.15.0",
     "react-dom": "^15.6.1",
+    "react-router": "^4.2.0",
     "react-scripts": "1.0.13"
   }
 }
