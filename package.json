@@ -21,6 +21,7 @@
     "react-bootstrap": "^0.31.3",
     "react-big-calendar": "^0.15.0",
     "react-dom": "^15.6.1",
+    "react-router": "^4.2.0",
     "react-scripts": "1.0.13"
   }
 }
