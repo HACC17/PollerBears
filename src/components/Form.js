@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
-import './Form.css';
+import '../Form.css';
 
 class Form extends Component {
   constructor (props) {

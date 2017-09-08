@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './containers/Home';
+import Form from './components/Form';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      view: true
-    };
-    this.handleView = this.handleView.bind(this);
-  }
-
-  handleView(){
-    this.setState({view: true});
-  }
-
   render() {
     return (
       <div className="App-container">
@@ -23,6 +12,9 @@ class App extends Component {
             <div>
               <h1><Link to="/">VOTENTEER</Link></h1>
               <ul>
+                <li>
+                  <Link to="/form">Forms</Link>
+                </li>
                 <li>
                   <Link to="/locations">Locations</Link>
                 </li>
@@ -40,6 +32,7 @@ class App extends Component {
             </div>
               <div className="content-container">
                 <Route exact path="/" component={Home}/>
+                <Route path="/form" component={Form}/>
               </div>
           </div>
         </Router>
