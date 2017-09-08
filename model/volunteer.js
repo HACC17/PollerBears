@@ -76,7 +76,7 @@ const volunteer = mongoose.model(
     },
     workPoint: {
       type: String,
-    }
+    },
     didTraining:{
       type:String,
     }
