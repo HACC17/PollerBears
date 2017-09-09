@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class Breadcrumbs extends Component {
 	render() {
 		return (
-			<div>Welcome</div>
-			<div>Position</div>
-			<div>Map</div>
-			<div>Register</div>
+			<div>
+				<ul>
+					<li>
+						Position
+					</li>
+					<li>
+						Map
+					</li>
+					<li>
+						Register
+					</li>
+				</ul>
+			</div>
 		);
 	}
 }

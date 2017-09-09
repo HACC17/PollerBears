@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Home from './containers/Home';
-import Form from './components/Form';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Routes from './components/Routes';
+
 
 class App extends Component {
   render() {
@@ -31,10 +31,9 @@ class App extends Component {
                 </ul>
               </div>
             </nav>
-              <div className="content-container container">
-                <Route exact path="/" component={Home}/>
-                <Route path="/form" component={Form}/>
-              </div>
+            <div className="content-container container">
+              <Routes/>
+            </div>
           </div>
         </Router>
       </div>
