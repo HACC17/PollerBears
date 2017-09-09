@@ -5,7 +5,7 @@ class MapLocations extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			selectedTraining: 'option1',
+			selectedTraining: '',
 			tableRow: 3,
 			tableCol: 3,
 			locations: [{
@@ -38,17 +38,32 @@ class MapLocations extends Component {
 		let info = [];
 		let infoValue;
 		let infoBlocks;
+		let times = [];
 		let locArr = loc.map(function(data){
 			let dataArr = [data];
 			for (var keyValue in dataArr){
 				infoValue = dataArr[keyValue];
 				infoBlocks = [infoValue.name, infoValue.address, infoValue.times].join(' ');
+				times.push(infoValue.times);
 			}
 			return infoBlocks;
 		});
 
 		for (var trainings in locArr){
-			info.push(<div className="loc-info" key={trainings}>{locArr[trainings]}</div>);
+			let signUps = 
+										<div className="loc-info" key={trainings}>
+											{locArr[trainings]}
+											<div className="radio">
+												<label>
+													<input type="radio" value={times[trainings]}
+														checked={this.state.selectedTraining===times[trainings]} 
+														onChange={this.handleOptionChange}
+														/>
+													{times[trainings]}
+												</label>
+											</div>
+										</div>;
+			info.push(signUps);
 		}
 			
 		return(
@@ -64,40 +79,14 @@ class MapLocations extends Component {
 						Place
 					</div>
 					<div className="location-list">
-						{info}
 						Name:
 						Address:
 						Times:
 					</div>
 					<div className="signup-form">
 						<form onSubmit={this.handleFormSubmit}>
-							<div className="radio">
-								<label>
-									<input type="radio" value="option1" 
-										checked={this.state.selectedTraining==='option1'}
-										onChange={this.handleOptionChange}
-										/>
-									Option 1
-								</label>
-							</div>
-							<div className="radio">
-								<label>
-									<input type="radio" value="option2" 
-										checked={this.state.selectedTraining==='option2'}
-										onChange={this.handleOptionChange}
-										/>
-									Option 2
-								</label>
-							</div>
-							<div className="radio">
-								<label>
-									<input type="radio" value="option3" 
-									checked={this.state.selectedTraining==='option3'}
-									onChange={this.handleOptionChange}
-									/>
-									Option 3
-								</label>
-							</div>
+							{info}
+
 							<button type="submit">Sign Up</button>
 						</form>
 					</div>
