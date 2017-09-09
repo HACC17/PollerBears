@@ -30,9 +30,7 @@ class MapLocations extends Component {
 		submit.preventDefault();
 		console.log('You signed up for', this.state.selectedTraining);
 	}
-
-
-
+  
 	render(){
 		let loc = this.state.locations;
 		let info = [];
@@ -86,7 +84,6 @@ class MapLocations extends Component {
 					<div className="signup-form">
 						<form onSubmit={this.handleFormSubmit}>
 							{info}
-
 							<button type="submit">Sign Up</button>
 						</form>
 					</div>
