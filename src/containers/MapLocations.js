@@ -5,7 +5,18 @@ class MapLocations extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			selectedTraining: 'option1'	
+			selectedTraining: 'option1',
+			tableRow: 3,
+			tableCol: 3,
+			locations: [{
+				name: 'Training 1',
+				address: 'Aloha State',
+				times: '9:00am - 12:00pm'
+			}, {
+				name: 'Training 2',
+				address: 'Sunshine State',
+				times: '6:00pm - 8:00pm'
+			}]	
 		};
 		this.handleOptionChange = this.handleOptionChange.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -20,7 +31,26 @@ class MapLocations extends Component {
 		console.log('You signed up for', this.state.selectedTraining);
 	}
 
+
+
 	render(){
+		let loc = this.state.locations;
+		let info = [];
+		let infoValue;
+		let infoBlocks;
+		let locArr = loc.map(function(data){
+			let dataArr = [data];
+			for (var keyValue in dataArr){
+				infoValue = dataArr[keyValue];
+				infoBlocks = [infoValue.name, infoValue.address, infoValue.times].join(' ');
+			}
+			return infoBlocks;
+		});
+
+		for (var trainings in locArr){
+			info.push(<div className="loc-info" key={trainings}>{locArr[trainings]}</div>);
+		}
+			
 		return(
 			<div>
 				<div>
@@ -34,6 +64,7 @@ class MapLocations extends Component {
 						Place
 					</div>
 					<div className="location-list">
+						{info}
 						Name:
 						Address:
 						Times:
