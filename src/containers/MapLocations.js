@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 class MapLocations extends Component {

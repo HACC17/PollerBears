@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Position from './Position';
-import Routes from '../components/Routes';
 
 class Home extends Component {
   render() {

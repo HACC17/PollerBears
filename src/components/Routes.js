@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from '../containers/Home';
 import Form from './Form';
 import Position from '../containers/Position';
