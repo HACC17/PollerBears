@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
+import Map from '../components/Map';
 
 class MapLocations extends Component {
 	constructor(props){
