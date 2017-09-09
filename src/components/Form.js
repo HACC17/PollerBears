@@ -86,7 +86,7 @@ class Form extends Component {
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
           <label htmlFor="email">Email address</label>
-          <input type="email" required className="form-control" name="email"
+          <input type="email" required className="form-control" name="email" id="email"
             placeholder="Email"
             value={this.state.email}
             onChange={this.handleUserInput}  />
@@ -94,28 +94,28 @@ class Form extends Component {
         
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
           <label htmlFor="firstName">First Name</label>
-          <input type="firstName" required className="form-control" name="firstName"
+          <input type="firstName" required className="form-control" name="firstName" id="firstName"
             placeholder="First Name"
             value={this.state.firstName}
             onChange={this.handleUserInput}  />
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
           <label htmlFor="lastNameValid">Last Name</label>
-          <input type="lastName" required className="form-control" name="lastName"
+          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
             placeholder="Last Name"
             value={this.state.lastName}
             onChange={this.handleUserInput}  />
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
           <label htmlFor="phoneNumberValid">Phone Number</label>
-          <input type="phoneNumber" required className="form-control" name="phoneNumber"
+          <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
             placeholder="1-(555)-555-5555"
             value={this.state.phoneNumber}
             onChange={this.handleUserInput}  />
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
           <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password"
+          <input type="password" className="form-control" name="password" id="password"
             placeholder="Password"
             value={this.state.password}
             onChange={this.handleUserInput}  />
