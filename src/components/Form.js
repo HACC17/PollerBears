@@ -120,7 +120,7 @@ class Form extends Component {
             value={this.state.password}
             onChange={this.handleUserInput}  />
         </div>
-        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Sign up</button>
+        <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
     )
   }
