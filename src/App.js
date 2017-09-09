@@ -9,10 +9,10 @@ class App extends Component {
       <div className="App-container">
         <Router>
           <div className="nav-header">
-            <div>
-              <h1><Link to="/">VOTENTEER</Link></h1>
-              <nav>
-                <ul>
+            <nav className="navbar navbar-default">
+              <div className="container-fluid">
+                <h1 className="text-left navbar-text"><Link to="/">VOTENTEER</Link></h1>
+                <ul className="nav navbar-nav navbar-right">
                   <li>
                     <Link to="/form">Forms</Link>
                   </li>
@@ -26,14 +26,14 @@ class App extends Component {
                     <Link to="/faqs">FAQs</Link>
                   </li>
                   <li>
-                    <Link to="/register">register</Link>
+                    <Link to="/register">Register</Link>
                   </li>
                 </ul>
-              </nav>
-            </div>
-              <div className="content-container">
-                <Routes/>
               </div>
+            </nav>
+            <div className="content-container container">
+              <Routes/>
+            </div>
           </div>
         </Router>
       </div>

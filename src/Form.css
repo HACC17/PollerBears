@@ -2,3 +2,9 @@
 	width: 500px;
 	margin: auto;
 }
+.form-group input {
+  border: 0;
+  border-bottom: thin solid;
+  box-shadow: none;
+  border-radius: 0;
+}
