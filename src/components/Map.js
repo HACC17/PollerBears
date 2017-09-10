@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
+const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
+const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+const mapCenter = [39.9528, -75.1638];
+const zoomLevel = 12;
 
-class SimpleExample extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      lat: 21.3939,
-      lng: -158.02391,
-      zoom: 10,
-    };
-  }
-
-  render() {
-    const position = [this.state.lat, this.state.lng];
-    return (
-      <Map center={position} zoom={this.state.zoom}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-        />
-        <Marker position={position}>
-          <Popup>
-            <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
-          </Popup>
-        </Marker>
-      </Map>
-    );
-  }
+class MapLeaf extends Component {
+    render() {
+        return (
+            <div>
+                <Map
+                    center={mapCenter}
+                    zoom={zoomLevel}
+                >
+                    <TileLayer
+                        attribution={stamenTonerAttr}
+                        url={stamenTonerTiles}
+                    />
+                </Map>
+            </div>
+        );
+    }
 }
-render(<SimpleExample />, document.getElementById('MapLocations-container'));
+
+export default MapLeaf;
