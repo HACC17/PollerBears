@@ -84,7 +84,6 @@ class MapLocations extends Component {
 					<div className="signup-form">
 						<form onSubmit={this.handleFormSubmit}>
 							{info}
-
 							<button type="submit">Sign Up</button>
 						</form>
 					</div>
