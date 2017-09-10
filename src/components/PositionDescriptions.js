@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class PositionDescription extends Component {
 	render(){
 		return(
-			<div>
+			<div className="position-description">
 				<div className="row">
 					<div className="control-center-operator col-sm-4">
 						<p><strong>Controler Center Operator</strong><br />
