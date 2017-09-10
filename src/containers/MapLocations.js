@@ -72,20 +72,22 @@ class MapLocations extends Component {
 				<div>
 					<Breadcrumbs/>
 				</div>
-				What part of the island do you want to be trained at?
-				<div className="MapLocations-container">
-					MAP GOES HERE
-					<MapLeaf />
-					<div>
-					</div>
-					<div className="location-list">
-						Name: Address: Date: Times:
-					</div>
-					<div className="signup-form">
-						<form onSubmit={this.handleFormSubmit}>
-							{info}
-							<button type="submit" className="btn btn-lg">Sign Up</button>
-						</form>
+				<div className="col-lg-10">
+					What part of the island do you want to be trained at?
+					<div className="MapLocations-container">
+						MAP GOES HERE
+						<MapLeaf />
+						<div>
+						</div>
+						<div className="location-list">
+							Name: Address: Date: Times:
+						</div>
+						<div className="signup-form">
+							<form onSubmit={this.handleFormSubmit}>
+								{info}
+								<button type="submit" className="btn btn-lg">Sign Up</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
