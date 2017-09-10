@@ -24,13 +24,14 @@ class MapLocations extends Component {
 
 	handleOptionChange (e){
 		this.setState({selectedTraining: e.target.value});
+		console.log(e.target.value);
 	}
 
 	handleFormSubmit(submit){
 		submit.preventDefault();
 		console.log('You signed up for', this.state.selectedTraining);
 	}
-  
+
 	render(){
 		let loc = this.state.locations;
 		let info = [];
@@ -48,8 +49,7 @@ class MapLocations extends Component {
 		});
 
 		for (var trainings in locArr){
-			let signUps = 
-										<div className="loc-info" key={trainings}>
+			let signUps = <div className="loc-info" key={trainings}>
 											{locArr[trainings]}
 											<div className="radio">
 												<label>
