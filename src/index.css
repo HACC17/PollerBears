@@ -24,3 +24,11 @@ body {
   height: 400px;
   width: 100%;
 }
+
+/*.radio-pos{
+  visibility: hidden;
+}*/
+
+.activePos{
+  border: 5px solid red;
+}
