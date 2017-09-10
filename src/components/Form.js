@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
+import axios from 'axios';
 
 class Form extends Component {
   constructor (props) {
@@ -27,7 +28,22 @@ class Form extends Component {
     this.setState({[name]: value},
                   () => { this.validateField(name, value) });
   }
-
+  formSubmit() {
+    console.log()
+    axios.post("http://localhost:3001/volunteer", {
+             email:this.state.email,
+             firstName:this.state.firstName,
+             lastName: this.state.lastName,
+             phoneNumber: this.state.phoneNumber,
+             password: this.state.password
+           })
+    .then(res => {
+      console.log("Hello");
+    })
+    .catch(err => {
+      console.error(err);
+    });
+ }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
@@ -91,7 +107,7 @@ class Form extends Component {
             value={this.state.email}
             onChange={this.handleUserInput}  />
         </div>
-        
+
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
           <label htmlFor="firstName">First Name</label>
           <input type="firstName" required className="form-control" name="firstName" id="firstName"
@@ -120,7 +136,7 @@ class Form extends Component {
             value={this.state.password}
             onChange={this.handleUserInput}  />
         </div>
-        <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
+        <button onClick={this.formSubmit} className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
     )
   }
