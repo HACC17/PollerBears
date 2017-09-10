@@ -12,6 +12,8 @@ class Form extends Component {
       firstName: '',
       lastName: '',
       phoneNumber: '',
+      birthDate:'',
+      electionWorking: '',
       formErrors: {email: '', password: '', firstName: '', lastName: '', phoneNumber: ''},
       emailValid: false,
       firstNameValid: false,
@@ -20,6 +22,7 @@ class Form extends Component {
       passwordValid: false,
       formValid: false
     }
+    this.formSubmit = this.formSubmit.bind(this);
   }
 
   handleUserInput = (e) => {
@@ -29,13 +32,14 @@ class Form extends Component {
                   () => { this.validateField(name, value) });
   }
   formSubmit() {
-    console.log()
-    axios.post("http://localhost:3001/volunteer", {
+      axios.post("http://localhost:3001/volunteer", {
              email:this.state.email,
              firstName:this.state.firstName,
              lastName: this.state.lastName,
              phoneNumber: this.state.phoneNumber,
-             password: this.state.password
+             password: this.state.password,
+             birthDate: this.state.birthDate,
+             electionWorking: document.querySelector('input[name="electionWorking"]:checked').value
            })
     .then(res => {
       console.log("Hello");
@@ -128,6 +132,20 @@ class Form extends Component {
             placeholder="1-(555)-555-5555"
             value={this.state.phoneNumber}
             onChange={this.handleUserInput}  />
+        </div>
+        <div>
+          <label htmlFor="birthDateValid">Birth Date</label>
+          <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
+            placeholder="MM/DD/YYYY"
+            value={this.state.birthDate}
+            onChange={this.handleUserInput}
+          />
+        </div>
+        <div>
+          <label htmlFor="electionWorking">Election></label>
+          <input type="radio" name="electionWorking" value="Primary" checked="checked"/> Primary
+          <input type="radio" name="electionWorking" value="General"/> General
+          <input type="radio" name="electionWorking" value="Primary"/> Both
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
           <label htmlFor="password">Password</label>
