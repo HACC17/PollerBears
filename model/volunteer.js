@@ -4,17 +4,29 @@ const volunteer = mongoose.model(
   {
     volunteerId:{
       type: String,
-      required: true
     },
-    name: {
+    firstName: {
       type: String,
       required: true
     },
-    phone:{
+    lastName: {
       type: String,
+      required: true
+    },
+    phoneNumber:{
+      type: String,
+      required: true
+    },
+    password:{
+      type: String,
+      required: true
     },
     position:{
-      type: String,
+      type: String
+    },
+    birthDate:{
+      type:String,
+      required:true
     },
     email:{
       type: String,
@@ -22,63 +34,64 @@ const volunteer = mongoose.model(
     },
     electionWorking: {
       type: String,
+      required: true
     },
     positionId: {
-      type: String,
+      type: String
     },
     positionLocation: {
-      type: String,
+      type: String
     },
     positionName: {
-      type: String,
+      type: String
     },
     positionDescription: {
-      type: String,
+      type: String
     },
     positionShift: {
-      type: String,
+      type: String
     },
     positionMax: {
-      type: String,
+      type: String
     },
     positionCurrent: {
-      type: String,
+      type: String
     },
     trainingId: {
-      type: String,
+      type: String
     },
     trainingDate: {
-      type: String,
+      type: String
     },
     trainingTime: {
-      type: String,
+      type: String
     },
     trainingLocation: {
-      type: String,
+      type: String
     },
     trainingAddress: {
-      type: String,
+      type: String
     },
     trainingPoint: {
-      type: String,
+      type: String
     },
     trainingDescription: {
-      type: String,
+      type: String
     },
     workId: {
-      type: String,
+      type: String
     },
     workName: {
-      type: String,
+      type: String
     },
     workAddress: {
-      type: String,
+      type: String
     },
     workPoint: {
-      type: String,
+      type: String
     },
     didTraining:{
-      type:String,
+      type:String
     }
   }
 );
