@@ -77,13 +77,9 @@ class MapLocations extends Component {
 					MAP GOES HERE
 					<MapLeaf />
 					<div>
-						District: <br/>
-						Place
 					</div>
 					<div className="location-list">
-						Name:
-						Address:
-						Times:
+						Name: Address: Date: Times:
 					</div>
 					<div className="signup-form">
 						<form onSubmit={this.handleFormSubmit}>
