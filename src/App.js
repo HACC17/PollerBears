@@ -23,7 +23,7 @@ class App extends Component {
                     <Link to="/locations">Locations</Link>
                   </li>
                   <li>
-                    <Link to="/Contact">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                   </li>
                   <li>
                     <Link to="/faqs">FAQs</Link>
