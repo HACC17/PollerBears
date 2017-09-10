@@ -11,10 +11,12 @@ class MapLocations extends Component {
 			locations: [{
 				name: 'Training 1',
 				address: 'Aloha State',
+				date: 'February 21, 2018',
 				times: '9:00am - 12:00pm'
 			}, {
 				name: 'Training 2',
 				address: 'Sunshine State',
+				date: 'March 2, 2018',
 				times: '6:00pm - 8:00pm'
 			}]	
 		};
@@ -42,7 +44,7 @@ class MapLocations extends Component {
 			let dataArr = [data];
 			for (var keyValue in dataArr){
 				infoValue = dataArr[keyValue];
-				infoBlocks = [infoValue.name, infoValue.address, infoValue.times].join(' ');
+				infoBlocks = [infoValue.name, infoValue.address, infoValue.date, infoValue.times].join(' ');
 				times.push(infoValue.times);
 			}
 			return infoBlocks;

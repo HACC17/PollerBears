@@ -4,6 +4,7 @@ import Home from '../containers/Home';
 import Form from './Form';
 import Position from '../containers/Position';
 import MapLocations from '../containers/MapLocations';
+import Contact from '../containers/Contact';
 
 class Routes extends Component {
 	render(){
@@ -14,6 +15,7 @@ class Routes extends Component {
 					<Route path="/form" component={Form}/>
 					<Route path="/position" component={Position}/>
 					<Route path="/locations" component={MapLocations}/>
+					<Route path="/contact" component={Contact}/>
 				</Switch>
 			</main>
 		)
