@@ -20,3 +20,7 @@ body {
 .start-button {
   bottom: 60px;
 }
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}

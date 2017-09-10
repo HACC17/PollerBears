@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
+import MapLeaf from '../components/Map';
 
 class MapLocations extends Component {
 	constructor(props){
@@ -74,6 +75,7 @@ class MapLocations extends Component {
 				What part of the island do you want to be trained at?
 				<div className="MapLocations-container">
 					MAP GOES HERE
+					<MapLeaf />
 					<div>
 						District: <br/>
 						Place
