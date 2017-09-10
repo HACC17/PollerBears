@@ -12,7 +12,7 @@ class Home extends Component {
           </p>
         </div>
         <div className="start-button">
-          <button className="btn btn-lg center-block"><Link to="/position">START VOLUNTEERING</Link></button>
+          <button className="btn btn-lg center-block"><Link to="/form">START VOLUNTEERING</Link></button>
         </div>
       </div>
     );
