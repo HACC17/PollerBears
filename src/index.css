@@ -25,10 +25,18 @@ body {
   width: 100%;
 }
 
-/*.radio-pos{
-  visibility: hidden;
-}*/
-
-.activePos{
-  border: 5px solid red;
+.contact-us h1 {
+  border-bottom: 2px solid;
+}
+.location-list {
+  padding-top: 25px;
+}
+.signup-form {
+  padding-bottom: 25px;
+}
+.factsheet {
+  padding: 30px 0;
+}
+.position-info {
+  padding-top: 25px;
 }
