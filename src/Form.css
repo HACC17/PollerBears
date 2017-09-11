@@ -4,7 +4,7 @@
 }
 .form-group input {
   border: 0;
-  border-bottom: thin solid;
+  border-bottom: thin solid #333;
   box-shadow: none;
   border-radius: 0;
 }
