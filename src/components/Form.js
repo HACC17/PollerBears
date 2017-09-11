@@ -151,12 +151,14 @@ class Form extends Component {
               onChange={this.handleUserInput}  />
           </div>
           <div className="col-md-6">
-            <label htmlFor="birthDateValid">Birth Date</label>
-            <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
-              placeholder="MM/DD/YYYY"
-              value={this.state.birthDate}
-              onChange={this.handleUserInput}
-            />
+            <div className="form-group">
+              <label htmlFor="birthDateValid">Birth Date</label>
+              <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
+                placeholder="MM/DD/YYYY"
+                value={this.state.birthDate}
+                onChange={this.handleUserInput}
+              />
+            </div>
           </div>
         </div>
         <div className="radio">
