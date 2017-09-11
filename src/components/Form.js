@@ -147,20 +147,20 @@ class Form extends Component {
             onChange={this.handleUserInput}
           />
         </div>
-        <div>
+        <div className="radio">
           Election<br/>
-           <label>
-          <input type="radio" value="Primary"
+          <label htmlFor="primary-election">
+          <input type="radio" value="Primary" id="primary-election"
             checked={this.state.electionWorking==='Primary'}
             onChange={this.electionSelection}
           />Primary</label>
-          <label>
-          <input type="radio" value="General"
+          <label htmlFor="general-election">
+          <input type="radio" value="General" id="general-election"
             checked={this.state.electionWorking==="General"}
             onChange={this.electionSelection}
           /> General</label>
-          <label>
-          <input type="radio" value="Both"
+          <label htmlFor="both">
+          <input type="radio" value="Both" id="both"
             checked={this.state.electionWorking==="Both"}
             onChange={this.electionSelection}
           /> Both</label>
