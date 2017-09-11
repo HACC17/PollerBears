@@ -126,19 +126,21 @@ class Form extends Component {
               onChange={this.handleUserInput}  />
           </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-          <label htmlFor="email">Email address</label>
-          <input type="email" required className="form-control" name="email" id="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password" id="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.email)} col-md-6`}>
+            <label htmlFor="email">Email address</label>
+            <input type="email" required className="form-control" name="email" id="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
+            <label htmlFor="password">Password</label>
+            <input type="password" className="form-control" name="password" id="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
           <label htmlFor="phoneNumberValid">Phone Number</label>
