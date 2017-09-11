@@ -7,11 +7,11 @@ body {
   font-family: sans-serif;
   height: 100%;
 }
-/// For the navigation ///
+/* For the navigation */
 .nav li {
   margin-top: 15px;
 }
-/// For the Index page ///
+/*For the Index page */
 .Home {
   height: 100%;
   min-height: 100%;
@@ -22,7 +22,7 @@ body {
 .start-button {
   bottom: 60px;
 }
-/// For the Map Locations page ///
+/*For the Map Locations page */
 .position-info {
   padding-top: 25px;
 }
@@ -30,7 +30,7 @@ body {
   height: 400px;
   width: 100%;
 }
-/// For the contact page ///
+/*For the contact page */
 .contact-us h1 {
   border-bottom: 2px solid #333;
 }
@@ -40,8 +40,8 @@ body {
 .signup-form {
   padding-bottom: 25px;
 }
-/// For the location page ///
-/// This is for the printable Election Day Officials ///
+/*For the location page */
+/*This is for the printable Election Day Officials */
 .factsheet {
   padding: 30px 0;
 }
