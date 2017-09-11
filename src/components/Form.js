@@ -105,72 +105,87 @@ class Form extends Component {
 
   render () {
     return (
-      <form className="demoForm">
+      <form className="demoForm col-lg-12">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-          <label htmlFor="email">Email address</label>
-          <input type="email" required className="form-control" name="email" id="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)} col-md-6`}>
+            <label htmlFor="firstName">First Name</label>
+            <input type="firstName" required className="form-control" name="firstName" id="firstName"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)} col-md-6`}>
+            <label htmlFor="lastNameValid">Last Name</label>
+            <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
-          <label htmlFor="firstName">First Name</label>
-          <input type="firstName" required className="form-control" name="firstName" id="firstName"
-            placeholder="First Name"
-            value={this.state.firstName}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.email)} col-md-6`}>
+            <label htmlFor="email">Email address</label>
+            <input type="email" required className="form-control" name="email" id="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
+            <label htmlFor="password">Password</label>
+            <input type="password" className="form-control" name="password" id="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
-          <label htmlFor="lastNameValid">Last Name</label>
-          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
-            placeholder="Last Name"
-            value={this.state.lastName}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)} col-md-6`}>
+            <label htmlFor="phoneNumberValid">Phone Number</label>
+            <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
+              placeholder="1-(555)-555-5555"
+              value={this.state.phoneNumber}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <label htmlFor="birthDateValid">Birth Date</label>
+              <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
+                placeholder="MM/DD/YYYY"
+                value={this.state.birthDate}
+                onChange={this.handleUserInput}
+              />
+            </div>
+          </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
-          <label htmlFor="phoneNumberValid">Phone Number</label>
-          <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
-            placeholder="1-(555)-555-5555"
-            value={this.state.phoneNumber}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div>
-          <label htmlFor="birthDateValid">Birth Date</label>
-          <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
-            placeholder="MM/DD/YYYY"
-            value={this.state.birthDate}
-            onChange={this.handleUserInput}
-          />
-        </div>
-        <div>
-          Election<br/>
-           <label>
-          <input type="radio" value="Primary"
-            checked={this.state.electionWorking==='Primary'}
-            onChange={this.electionSelection}
-          />Primary</label>
-          <label>
-          <input type="radio" value="General"
-            checked={this.state.electionWorking==="General"}
-            onChange={this.electionSelection}
-          /> General</label>
-          <label>
-          <input type="radio" value="Both"
-            checked={this.state.electionWorking==="Both"}
-            onChange={this.electionSelection}
-          /> Both</label>
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password" id="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserInput}  />
+        <div className="radio election-choices">
+          <h4>Election</h4>
+          <ul className="radios">
+            <li>
+              <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
+                  checked={this.state.electionWorking==='Primary'}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="primary-election">Primary</label>
+            </li>
+            <li>
+              <input type="radio" value="General" id="general-election" className="optionsRadios"
+                  checked={this.state.electionWorking==="General"}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="general-election">General</label>
+            </li>
+            <li>
+              <input type="radio" value="Both" id="both" className="optionsRadios"
+                  checked={this.state.electionWorking==="Both"}
+                  onChange={this.electionSelection}
+                /> 
+              <label htmlFor="both">Both</label>
+            </li>
+          </ul>
         </div>
         <button onClick={this.formSubmit} className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
