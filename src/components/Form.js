@@ -162,7 +162,7 @@ class Form extends Component {
           </div>
         </div>
         <div className="radio election-choices">
-          Election<br/>
+          <h4>Election</h4>
           <ul className="radios">
             <li>
               <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
