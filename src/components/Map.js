@@ -265,7 +265,7 @@ class Livemap extends Component{
       iconRetinaUrl: pic2,
       iconSize: [29, 24],
       iconAnchor: [9, 21],
-      popupAnchor: [0, -14]
+      popupAnchor: [-130, 5]
     });
 
     // let markerClusters = Leaflet.markerClusterGroup();
@@ -287,16 +287,17 @@ class Livemap extends Component{
     let div = Leaflet.DomUtil.create('div', 'mainDiv');
     for (let i = 0; i < markers.length; ++i )
     {
-      let h3 = Leaflet.DomUtil.create('h3', 'name');
-      h3.innerHTML = markers[i].name;
+      let h5 = Leaflet.DomUtil.create('h5', 'name');
+      h5.innerHTML = markers[i].name;
       let span = Leaflet.DomUtil.create('span', 'address');
       span.innerHTML = markers[i].address;
-
+      // h5.appendChild(span);
       if (markers[i].trainings){
-        div.appendChild(h3);
+        // console.log(markers[i]);
+        div.appendChild(h5);
         div.appendChild(span);
         for (let j = 0; j < markers[i].trainings.length; j++){
-          console.log(markers[i].trainings[j]);
+          // console.log(markers[i].trainings[j]);
           let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
           let mainButton = Leaflet.DomUtil.create('button', 'email');
           mainButton.innerHTML = markers[i].trainings[j];
@@ -308,9 +309,7 @@ class Livemap extends Component{
           div.appendChild(emptySpan);
         }
       }
-      let m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-                      .bindPopup( div );
-      
+      let m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}).bindPopup(div);
       this.leafletElement.addLayer( m );
     }
 
@@ -320,24 +319,20 @@ class Livemap extends Component{
   render(){
 
 $(document).ready(function(){
-        let from,to,subject,text;
-        $("#send_email").click(function(){      
-            to=$("#to").val();
-            subject="Thank you for volunteering with Office of Elections";
-            text="You have volunteered at..." + contents;
-            $("#message").text("Sending E-mail...Please wait");
-            $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
-            if(data=="sent")
-            {
-                $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
-            }
-
+  let from,to,subject,text;
+  $("#send_email").click(function(){      
+      to=$("#to").val();
+      subject="Thank you for volunteering with Office of Elections";
+      text="You have volunteered at..." + contents;
+      $("#message").text("Sending E-mail...Please wait");
+      $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+        }
+      });
+  });
     });
-        });
-    });
-
-
-
     return (
         <div className='map'></div>
     );
