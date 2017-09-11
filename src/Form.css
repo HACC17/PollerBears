@@ -2,6 +2,9 @@
 	width: 500px;
 	margin: auto;
 }
+.demoForm > .row  {
+  padding-bottom: 30px;
+}
 .form-group input {
   border: 0;
   border-bottom: thin solid #333;
