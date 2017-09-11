@@ -161,23 +161,31 @@ class Form extends Component {
             </div>
           </div>
         </div>
-        <div className="radio">
+        <div className="radio election-choices">
           Election<br/>
-          <label htmlFor="primary-election">
-          <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
-            checked={this.state.electionWorking==='Primary'}
-            onChange={this.electionSelection}
-          />Primary</label>
-          <label htmlFor="general-election">
-          <input type="radio" value="General" id="general-election" className="optionsRadios"
-            checked={this.state.electionWorking==="General"}
-            onChange={this.electionSelection}
-          /> General</label>
-          <label htmlFor="both">
-          <input type="radio" value="Both" id="both" className="optionsRadios"
-            checked={this.state.electionWorking==="Both"}
-            onChange={this.electionSelection}
-          /> Both</label>
+          <ul className="radios">
+            <li>
+              <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
+                  checked={this.state.electionWorking==='Primary'}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="primary-election">Primary</label>
+            </li>
+            <li>
+              <input type="radio" value="General" id="general-election" className="optionsRadios"
+                  checked={this.state.electionWorking==="General"}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="general-election">General</label>
+            </li>
+            <li>
+              <input type="radio" value="Both" id="both" className="optionsRadios"
+                  checked={this.state.electionWorking==="Both"}
+                  onChange={this.electionSelection}
+                /> 
+              <label htmlFor="both">Both</label>
+            </li>
+          </ul>
         </div>
         <button onClick={this.formSubmit} className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
