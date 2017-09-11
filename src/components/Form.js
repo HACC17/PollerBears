@@ -105,7 +105,7 @@ class Form extends Component {
 
   render () {
     return (
-      <form className="demoForm col-lg-10">
+      <form className="demoForm col-lg-12">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
