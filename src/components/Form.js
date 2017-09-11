@@ -105,10 +105,26 @@ class Form extends Component {
 
   render () {
     return (
-      <form className="demoForm">
+      <form className="demoForm col-lg-10">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
+        </div>
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)} col-md-6`}>
+            <label htmlFor="firstName">First Name</label>
+            <input type="firstName" required className="form-control" name="firstName" id="firstName"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)} col-md-6`}>
+            <label htmlFor="lastNameValid">Last Name</label>
+            <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
           <label htmlFor="email">Email address</label>
@@ -117,19 +133,11 @@ class Form extends Component {
             value={this.state.email}
             onChange={this.handleUserInput}  />
         </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
-          <label htmlFor="firstName">First Name</label>
-          <input type="firstName" required className="form-control" name="firstName" id="firstName"
-            placeholder="First Name"
-            value={this.state.firstName}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
-          <label htmlFor="lastNameValid">Last Name</label>
-          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
-            placeholder="Last Name"
-            value={this.state.lastName}
+        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+          <label htmlFor="password">Password</label>
+          <input type="password" className="form-control" name="password" id="password"
+            placeholder="Password"
+            value={this.state.password}
             onChange={this.handleUserInput}  />
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
@@ -150,27 +158,20 @@ class Form extends Component {
         <div className="radio">
           Election<br/>
           <label htmlFor="primary-election">
-          <input type="radio" value="Primary" id="primary-election"
+          <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
             checked={this.state.electionWorking==='Primary'}
             onChange={this.electionSelection}
           />Primary</label>
           <label htmlFor="general-election">
-          <input type="radio" value="General" id="general-election"
+          <input type="radio" value="General" id="general-election" className="optionsRadios"
             checked={this.state.electionWorking==="General"}
             onChange={this.electionSelection}
           /> General</label>
           <label htmlFor="both">
-          <input type="radio" value="Both" id="both"
+          <input type="radio" value="Both" id="both" className="optionsRadios"
             checked={this.state.electionWorking==="Both"}
             onChange={this.electionSelection}
           /> Both</label>
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password" id="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserInput}  />
         </div>
         <button onClick={this.formSubmit} className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
