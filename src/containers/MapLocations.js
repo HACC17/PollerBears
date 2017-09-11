@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
+// import ExampleCalendar from '../components/Calendar';
 
 class MapLocations extends Component {
 	constructor(props){
@@ -77,17 +78,6 @@ class MapLocations extends Component {
 					<div className="MapLocations-container">
 						MAP GOES HERE
 						<MapLeaf />
-						  <div id="myModal" className="modal">
-						  <div className="modal-content">
-						    <span className="close">&times;</span>
-						    <div id="container">
-						    <h1>Info to send to user</h1>
-						   <input id="to" type="text" placeholder="person@gmail.com" />
-						   <button id="send_email">Send Email</button>
-						   <span id="message"></span>
-						   </div>
-						  </div>
-						</div>
 						<div>
 						</div>
 						<div className="location-list">

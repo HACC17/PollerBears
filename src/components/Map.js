@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import $ from 'jquery'; 
+import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
+import $ from 'jquery'; 
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
@@ -16,13 +17,29 @@ const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design<
 const mapCenter = [39.9528, -75.1638];
 const zoomLevel = 12;
 let contents;
+let timeActivated = false;
+let icon = { 'calendar-plus-o': 'left' };
 const markers = [
   {
     "name":"Mililani Mauka Elementary School",
     "address":"95-1111 Makaikai St, Mililani, HI 96789",
     "lat":21.471129,
     "lng":-158.000850,
-    "trainings": ["7/14/18 9:00-10:30 a.m.", "7/14/18 11:00-1:00 p.m.", "10/3/2018 6:30-830 p.m."]
+    "trainings": ["7/14/18 9:00-10:30 a.m.", "7/14/18 11:00-1:00 p.m.", "10/3/2018 6:30-830 p.m."],
+    "times": [
+    {
+      "startTime":'2018-07-14T12:00:00-04:00',
+      "endTime":'2018-07-14T13:30:00-04:00'
+    },
+    {
+      "startTime":'2018-07-14T14:00:00-04:00',
+      "endTime":'2018-07-14T16:30:00-04:00'
+    },
+    {
+      "startTime":'2018-10-03T21:30:00-04:00',
+      "endTime":'2018-10-03T23:30:00-04:00'
+    }
+    ]
   },
   {
     "name":"Mililani Middle School Cafeteria",
@@ -242,12 +259,20 @@ const markers = [
   }
 ];
 
+
 class Livemap extends Component{
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
+    this.event = {
+      title: 'Volunteer Training',
+      description: 'Volunteer Training Again!',
+      location: '',
+      startTime: '2016-09-16T20:15:00-04:00',
+      endTime: '2016-09-16T21:45:00-04:00'
+    }
   }
 
-  componentDidMount(){
+  componentDidMount(){ 
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.307195, -157.857398],
       minZoom: 5,
@@ -289,6 +314,9 @@ class Livemap extends Component{
       h5.innerHTML = markers[i].name;
       let span = Leaflet.DomUtil.create('span', 'address');
       span.innerHTML = markers[i].address;
+      
+
+
       let div = Leaflet.DomUtil.create('div', 'mainDiv');
       div.appendChild(h5);
       div.appendChild(span);
@@ -300,6 +328,9 @@ class Livemap extends Component{
           mainButton.onclick = function(){
               modal.style.display = "block";
               contents = this.innerHTML;
+              this.event.location= markers[i].address;
+              this.event.startTime = markers[i].times[j].startTime;
+              this.event.endTime = markers[i].times[j].endTime;
           }
           div.appendChild(mainButton);
           div.appendChild(emptySpan);
@@ -312,24 +343,35 @@ class Livemap extends Component{
 }
 
   render(){
-
-$(document).ready(function(){
-  let from,to,subject,text;
-  $("#send_email").click(function(){      
-      to=$("#to").val();
-      subject="Thank you for volunteering with Office of Elections";
-      text="You have volunteered at..." + contents;
-      $("#message").text("Sending E-mail...Please wait");
-      $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+    $(document).ready(function(){
+      let from,to,subject,text;
+      $("#send_email").click(function(){      
+        to=$("#to").val();
+        subject="Thank you for volunteering with Office of Elections";
+        text="You have volunteered at...";
+        $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
         if(data=="sent")
         {
             $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
         }
+        });
       });
-  });
     });
     return (
+      <div>
         <div className='map'></div>
+        <div id="myModal" className="modal">
+        <div className="modal-content">
+          <span className="close">&times;</span>
+          <div id="container">
+            <h1>Info to send to user</h1>
+            <AddToCalendar event={this.event} buttonTemplate={icon}/>
+            <span id="message"></span>
+          </div>
+          </div>
+        </div>
+      </div>
     );
 }
 }
