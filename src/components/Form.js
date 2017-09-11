@@ -142,20 +142,22 @@ class Form extends Component {
               onChange={this.handleUserInput}  />
           </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
-          <label htmlFor="phoneNumberValid">Phone Number</label>
-          <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
-            placeholder="1-(555)-555-5555"
-            value={this.state.phoneNumber}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div>
-          <label htmlFor="birthDateValid">Birth Date</label>
-          <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
-            placeholder="MM/DD/YYYY"
-            value={this.state.birthDate}
-            onChange={this.handleUserInput}
-          />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)} col-md-6`}>
+            <label htmlFor="phoneNumberValid">Phone Number</label>
+            <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
+              placeholder="1-(555)-555-5555"
+              value={this.state.phoneNumber}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className="col-md-6">
+            <label htmlFor="birthDateValid">Birth Date</label>
+            <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
+              placeholder="MM/DD/YYYY"
+              value={this.state.birthDate}
+              onChange={this.handleUserInput}
+            />
+          </div>
         </div>
         <div className="radio">
           Election<br/>
