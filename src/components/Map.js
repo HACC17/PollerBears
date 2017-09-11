@@ -328,9 +328,9 @@ class Livemap extends Component{
           mainButton.onclick = function(){
               modal.style.display = "block";
               contents = this.innerHTML;
-              this.event.location= markers[i].address;
-              this.event.startTime = markers[i].times[j].startTime;
-              this.event.endTime = markers[i].times[j].endTime;
+              // this.event.location= markers[i].address;
+              // this.event.startTime = markers[i].times[j].startTime;
+              // this.event.endTime = markers[i].times[j].endTime;
           }
           div.appendChild(mainButton);
           div.appendChild(emptySpan);
