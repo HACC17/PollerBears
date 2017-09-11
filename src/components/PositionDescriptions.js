@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 
 class PositionDescription extends Component {
+	constructor(props){
+		super(props);
+		this.state={
+			position: ''
+		};
+		this.handleCapitolPos = this.handleCapitolPos.bind(this);
+	}
+
+	handleCapitolPos(e){
+		e.preventDefault();
+		this.setState({position: e.target.value});
+		console.log('target', e.target.value);
+		// if (document.getElementById(e.target.id).checked='true'){
+		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
+		// }
+	}
+
 	render(){
 		return(
 			<div className="position-description">

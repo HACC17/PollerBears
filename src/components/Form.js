@@ -13,7 +13,7 @@ class Form extends Component {
       lastName: '',
       phoneNumber: '',
       birthDate:'',
-      electionWorking: '',
+      electionWorking: 'Primary',
       formErrors: {email: '', password: '', firstName: '', lastName: '', phoneNumber: ''},
       emailValid: false,
       firstNameValid: false,
@@ -23,6 +23,7 @@ class Form extends Component {
       formValid: false
     }
     this.formSubmit = this.formSubmit.bind(this);
+    this.electionSelection = this.electionSelection.bind(this);
   }
 
   handleUserInput = (e) => {
@@ -39,7 +40,7 @@ class Form extends Component {
              phoneNumber: this.state.phoneNumber,
              password: this.state.password,
              birthDate: this.state.birthDate,
-             electionWorking: document.querySelector('input[name="electionWorking"]:checked').value
+             electionWorking: this.state.electionWorking
            })
     .then(res => {
       console.log("Hello");
@@ -93,6 +94,11 @@ class Form extends Component {
     this.setState({formValid: this.state.emailValid && this.state.firstNameValid && this.state.passwordValid && this.state.lastNameValid && this.state.phoneNumberValid});
   }
 
+  electionSelection(e){
+    this.setState({electionWorking: e.target.value});
+    console.log(e.target.value);
+  }
+
   errorClass(error) {
     return(error.length === 0 ? '' : 'has-error');
   }
@@ -142,10 +148,22 @@ class Form extends Component {
           />
         </div>
         <div>
-          <label htmlFor="electionWorking">Election></label>
-          <input type="radio" name="electionWorking" value="Primary" checked="checked"/> Primary
-          <input type="radio" name="electionWorking" value="General"/> General
-          <input type="radio" name="electionWorking" value="Primary"/> Both
+          Election<br/>
+           <label>
+          <input type="radio" value="Primary"
+            checked={this.state.electionWorking==='Primary'}
+            onChange={this.electionSelection}
+          />Primary</label>
+          <label>
+          <input type="radio" value="General"
+            checked={this.state.electionWorking==="General"}
+            onChange={this.electionSelection}
+          /> General</label>
+          <label>
+          <input type="radio" value="Both"
+            checked={this.state.electionWorking==="Both"}
+            onChange={this.electionSelection}
+          /> Both</label>
         </div>
         <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
           <label htmlFor="password">Password</label>
