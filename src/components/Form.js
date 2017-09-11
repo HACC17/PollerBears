@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Routes from './Routes';
+import {Route, Redirect} from 'react-router';
 
+const from = {}
 class Form extends Component {
   constructor (props) {
     super(props);
@@ -20,9 +24,10 @@ class Form extends Component {
       lastNameValid: false,
       phoneNumberValid: false,
       passwordValid: false,
-      formValid: false
+      formValid: false,
+      redirect: false
     }
-    this.formSubmit = this.formSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.electionSelection = this.electionSelection.bind(this);
   }
 
@@ -32,23 +37,18 @@ class Form extends Component {
     this.setState({[name]: value},
                   () => { this.validateField(name, value) });
   }
-  formSubmit() {
-      axios.post("http://localhost:3001/volunteer", {
-             email:this.state.email,
-             firstName:this.state.firstName,
-             lastName: this.state.lastName,
-             phoneNumber: this.state.phoneNumber,
-             password: this.state.password,
-             birthDate: this.state.birthDate,
-             electionWorking: this.state.electionWorking
-           })
-    .then(res => {
-      console.log("Hello");
-    })
-    .catch(err => {
-      console.error(err);
+  handleFormSubmit() {
+    this.setState({redirect:true});
+    axios.post("http://localhost:3001/volunteer", {
+      email:this.state.email,
+      firstName:this.state.firstName,
+      lastName: this.state.lastName,
+      phoneNumber: this.state.phoneNumber,
+      password: this.state.password,
+      birthDate: this.state.birthDate,
+      electionWorking: document.querySelector('input[name="electionWorking"]:checked').value
     });
- }
+  }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
@@ -104,8 +104,13 @@ class Form extends Component {
   }
 
   render () {
+      if (this.state.redirect) {
+      return (
+        <Redirect to="/position"/>
+      )
+    }
     return (
-      <form className="demoForm col-lg-12">
+      <form onSubmit={this.handleFormSubmit} className="demoForm col-lg-12">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
@@ -182,13 +187,14 @@ class Form extends Component {
               <input type="radio" value="Both" id="both" className="optionsRadios"
                   checked={this.state.electionWorking==="Both"}
                   onChange={this.electionSelection}
-                /> 
+                />
               <label htmlFor="both">Both</label>
             </li>
           </ul>
         </div>
-        <button onClick={this.formSubmit} className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
+        <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
+
     )
   }
 }
