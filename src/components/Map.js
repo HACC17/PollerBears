@@ -272,32 +272,28 @@ class Livemap extends Component{
     let modal = document.getElementById('myModal');
     // console.log(modal);
     // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
+    let otherSpan = document.getElementsByClassName("close")[0];
 
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //     modal.style.display = "none";
-    // }
+    // When the user clicks on <otherSpan> (x), close the modal
+    otherSpan.onclick = function() {
+        modal.style.display = "none";
+    }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
-    let div = Leaflet.DomUtil.create('div', 'mainDiv');
-    for (let i = 0; i < markers.length; ++i )
-    {
+    for (let i = 0; i < markers.length; i++){
       let h5 = Leaflet.DomUtil.create('h5', 'name');
       h5.innerHTML = markers[i].name;
       let span = Leaflet.DomUtil.create('span', 'address');
       span.innerHTML = markers[i].address;
-      // h5.appendChild(span);
+      let div = Leaflet.DomUtil.create('div', 'mainDiv');
+      div.appendChild(h5);
+      div.appendChild(span);
       if (markers[i].trainings){
-        // console.log(markers[i]);
-        div.appendChild(h5);
-        div.appendChild(span);
         for (let j = 0; j < markers[i].trainings.length; j++){
-          // console.log(markers[i].trainings[j]);
           let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
           let mainButton = Leaflet.DomUtil.create('button', 'email');
           mainButton.innerHTML = markers[i].trainings[j];
@@ -312,7 +308,6 @@ class Livemap extends Component{
       let m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}).bindPopup(div);
       this.leafletElement.addLayer( m );
     }
-
     map.addLayer( this.leafletElement );
 }
 
