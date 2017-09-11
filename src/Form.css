@@ -5,6 +5,10 @@
 .demoForm > .row  {
   padding-bottom: 30px;
 }
+.signup-form {
+  padding-bottom: 25px;
+}
+/*For the input for the Form*/
 .form-group input {
   border: 0;
   border-bottom: thin solid #333;
