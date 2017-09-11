@@ -8,10 +8,11 @@
   box-shadow: none;
   border-radius: 0;
 }
+/// For the radio buttons ///
 .election-choices ul {
   text-align: left;
   padding-top: 15px;
-  padding-left: 15px;
+  padding-left: 0;
   list-style-type: none;
   margin-bottom: 0;
 }
