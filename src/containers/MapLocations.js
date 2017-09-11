@@ -72,7 +72,7 @@ class MapLocations extends Component {
 				<div>
 					<Breadcrumbs/>
 				</div>
-				<div className="col-lg-10">
+				<div className="col-lg-12">
 					What part of the island do you want to be trained at?
 					<div className="MapLocations-container">
 						MAP GOES HERE
