@@ -5,17 +5,19 @@ class Breadcrumbs extends Component {
 	render() {
 		return (
 				<div>
-					<ul>
-						<li>
-							<Link to="/position">Position</Link>
-						</li>
-						<li>
-							<Link to="/Locations">Locations</Link>
-						</li>
-						<li>
-							<Link to="/form">Register</Link>
-						</li>
-					</ul>
+					<nav className="navbar centered-nav">
+						<ul className="nav navbar-nav">
+							<li>
+								<Link to="/position">Position</Link>
+							</li>
+							<li>
+								<Link to="/Locations">Locations</Link>
+							</li>
+							<li>
+								<Link to="/form">Register</Link>
+							</li>
+						</ul>
+					</nav>
 				</div>
 		);
 	}

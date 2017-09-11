@@ -14,6 +14,9 @@ class App extends Component {
                 <h1 className="text-left navbar-text"><Link to="/">VOTENTEER</Link></h1>
                 <ul className="nav navbar-nav navbar-right">
                   <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
                     <Link to="/form">Register</Link>
                   </li>
                   <li>

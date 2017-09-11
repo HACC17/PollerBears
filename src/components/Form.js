@@ -17,7 +17,7 @@ class Form extends Component {
       lastName: '',
       phoneNumber: '',
       birthDate:'',
-      electionWorking: '',
+      electionWorking: 'Primary',
       formErrors: {email: '', password: '', firstName: '', lastName: '', phoneNumber: ''},
       emailValid: false,
       firstNameValid: false,
@@ -28,6 +28,7 @@ class Form extends Component {
       redirect: false
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.electionSelection = this.electionSelection.bind(this);
   }
 
   handleUserInput = (e) => {
@@ -46,7 +47,6 @@ class Form extends Component {
       password: this.state.password,
       birthDate: this.state.birthDate,
       electionWorking: document.querySelector('input[name="electionWorking"]:checked').value
-    }).then((res)=>{
     });
   }
   validateField(fieldName, value) {
@@ -94,6 +94,11 @@ class Form extends Component {
     this.setState({formValid: this.state.emailValid && this.state.firstNameValid && this.state.passwordValid && this.state.lastNameValid && this.state.phoneNumberValid});
   }
 
+  electionSelection(e){
+    this.setState({electionWorking: e.target.value});
+    console.log(e.target.value);
+  }
+
   errorClass(error) {
     return(error.length === 0 ? '' : 'has-error');
   }
@@ -105,60 +110,87 @@ class Form extends Component {
       )
     }
     return (
-      <form onSubmit={this.handleFormSubmit} className="demoForm">
+      <form onSubmit={this.handleFormSubmit} className="demoForm col-lg-12">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-          <label htmlFor="email">Email address</label>
-          <input type="email" required className="form-control" name="email" id="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)} col-md-6`}>
+            <label htmlFor="firstName">First Name</label>
+            <input type="firstName" required className="form-control" name="firstName" id="firstName"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)} col-md-6`}>
+            <label htmlFor="lastNameValid">Last Name</label>
+            <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
-          <label htmlFor="firstName">First Name</label>
-          <input type="firstName" required className="form-control" name="firstName" id="firstName"
-            placeholder="First Name"
-            value={this.state.firstName}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.email)} col-md-6`}>
+            <label htmlFor="email">Email address</label>
+            <input type="email" required className="form-control" name="email" id="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
+            <label htmlFor="password">Password</label>
+            <input type="password" className="form-control" name="password" id="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
-          <label htmlFor="lastNameValid">Last Name</label>
-          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
-            placeholder="Last Name"
-            value={this.state.lastName}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)} col-md-6`}>
+            <label htmlFor="phoneNumberValid">Phone Number</label>
+            <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
+              placeholder="1-(555)-555-5555"
+              value={this.state.phoneNumber}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <label htmlFor="birthDateValid">Birth Date</label>
+              <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
+                placeholder="MM/DD/YYYY"
+                value={this.state.birthDate}
+                onChange={this.handleUserInput}
+              />
+            </div>
+          </div>
         </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)}`}>
-          <label htmlFor="phoneNumberValid">Phone Number</label>
-          <input type="phoneNumber" required className="form-control" name="phoneNumber" id="phoneNumberValid"
-            placeholder="1-(555)-555-5555"
-            value={this.state.phoneNumber}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div>
-          <label htmlFor="birthDateValid">Birth Date</label>
-          <input type="birthDate" required className="form-control" name="birthDate" id="birthDateValid"
-            placeholder="MM/DD/YYYY"
-            value={this.state.birthDate}
-            onChange={this.handleUserInput}
-          />
-        </div>
-        <div>
-          <label htmlFor="electionWorking">Election></label>
-          <input type="radio" name="electionWorking" value="Primary" checked="checked"/> Primary
-          <input type="radio" name="electionWorking" value="General"/> General
-          <input type="radio" name="electionWorking" value="Primary"/> Both
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-          <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password" id="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserInput}  />
+        <div className="radio election-choices">
+          <h4>Election</h4>
+          <ul className="radios">
+            <li>
+              <input type="radio" value="Primary" id="primary-election" className="optionsRadios"
+                  checked={this.state.electionWorking==='Primary'}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="primary-election">Primary</label>
+            </li>
+            <li>
+              <input type="radio" value="General" id="general-election" className="optionsRadios"
+                  checked={this.state.electionWorking==="General"}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="general-election">General</label>
+            </li>
+            <li>
+              <input type="radio" value="Both" id="both" className="optionsRadios"
+                  checked={this.state.electionWorking==="Both"}
+                  onChange={this.electionSelection}
+                />
+              <label htmlFor="both">Both</label>
+            </li>
+          </ul>
         </div>
         <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Home extends Component {
   render() {
+  console.log(sessionStorage.getItem({}));
     return (
       <div className="Home container container-table">
         <div className="row intro">
