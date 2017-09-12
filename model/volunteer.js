@@ -92,6 +92,18 @@ const volunteer = mongoose.model(
     },
     didTraining:{
       type:String
+    },
+    zip:{
+      type:String,
+      required: true
+    },
+    city:{
+      type:String,
+      required: true
+    },
+    mailingAddress:{
+      type:String,
+      required: true
     }
   }
 );
