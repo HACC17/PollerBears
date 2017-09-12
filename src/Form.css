@@ -2,7 +2,7 @@
 	width: 500px;
 	margin: auto;
 }
-.demoForm > div.row {
+.demoForm > .row {
   padding-bottom: 45px;
 }
 .signup-form {
