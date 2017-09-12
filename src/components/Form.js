@@ -18,6 +18,9 @@ class Form extends Component {
       phoneNumber: '',
       birthDate:'',
       electionWorking: 'Primary',
+      city:'',
+      zip:'',
+      mailingAddress:'',
       formErrors: {email: '', password: '', firstName: '', lastName: '', phoneNumber: ''},
       emailValid: false,
       firstNameValid: false,
@@ -46,7 +49,10 @@ class Form extends Component {
       phoneNumber: this.state.phoneNumber,
       password: this.state.password,
       birthDate: this.state.birthDate,
-      electionWorking: document.querySelector('input[name="electionWorking"]:checked').value
+      electionWorking: this.state.electionWorking,
+      zip: this.state.zip,
+      city: this.state.ciy,
+      mailingAddress: this.state.mailingAddress
     });
   }
   validateField(fieldName, value) {
@@ -164,17 +170,23 @@ class Form extends Component {
         </div>
         <div className="form-group">
           <label htmlFor="address">Mailing Address</label>
-          <input type="address" className="form-control" name="address" id="address" placeholder="Mailing Address"></input>
+          <input type="address" className="form-control" name="address" id="address" placeholder="Mailing Address"
+            value={this.state.mailingAddress}
+          />
         </div>
         <div className="row">
           <div className="form-group col-md-6">
             <label htmlFor="city">City</label>
-            <input type="city" className="form-control" name="city" id="city" placeholder="City"></input>
+            <input type="city" className="form-control" name="city" id="city" placeholder="City"
+              value={this.state.city}
+            />
           </div>
           <div className="col-md-6">
             <div className="form-group">
               <label htmlFor="zip">Zip Code</label>
-              <input type="zip" className="form-control" name="zip" id="zip" placeholder="Zip Code"></input>
+              <input type="zip" className="form-control" name="zip" id="zip" placeholder="Zip Code"
+                value={this.state.zip}
+              />
             </div>
           </div>
         </div>
