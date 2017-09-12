@@ -162,6 +162,22 @@ class Form extends Component {
             value={this.state.password}
             onChange={this.handleUserInput}  />
         </div>
+        <div className="form-group">
+          <label htmlFor="address">Mailing Address</label>
+          <input type="address" className="form-control" name="address" id="address" placeholder="Mailing Address"></input>
+        </div>
+        <div className="row">
+          <div className="form-group col-md-6">
+            <label htmlFor="city">City</label>
+            <input type="city" className="form-control" name="city" id="city" placeholder="City"></input>
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <label htmlFor="zip">Zip Code</label>
+              <input type="zip" className="form-control" name="zip" id="zip" placeholder="Zip Code"></input>
+            </div>
+          </div>
+        </div>
         <div className="radio election-choices">
           <h4>Election</h4>
           <ul className="radios">
