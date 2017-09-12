@@ -110,42 +110,24 @@ class Form extends Component {
       )
     }
     return (
-      <form onSubmit={this.handleFormSubmit} className="demoForm col-lg-12">
+      <form onSubmit={this.handleFormSubmit} className="demoForm">
         <h2>Sign up</h2>
         <div className="panel panel-default">
           <FormErrors formErrors={this.state.formErrors} />
         </div>
-        <div className="row">
-          <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)} col-md-6`}>
-            <label htmlFor="firstName">First Name</label>
-            <input type="firstName" required className="form-control" name="firstName" id="firstName"
-              placeholder="First Name"
-              value={this.state.firstName}
-              onChange={this.handleUserInput}  />
-          </div>
-          <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)} col-md-6`}>
-            <label htmlFor="lastNameValid">Last Name</label>
-            <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
-              placeholder="Last Name"
-              value={this.state.lastName}
-              onChange={this.handleUserInput}  />
-          </div>
+        <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
+          <label htmlFor="firstName">First Name</label>
+          <input type="firstName" required className="form-control" name="firstName" id="firstName"
+            placeholder="First Name"
+            value={this.state.firstName}
+            onChange={this.handleUserInput}  />
         </div>
-        <div className="row">
-          <div className={`form-group ${this.errorClass(this.state.formErrors.email)} col-md-6`}>
-            <label htmlFor="email">Email address</label>
-            <input type="email" required className="form-control" name="email" id="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.handleUserInput}  />
-          </div>
-          <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
-            <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" name="password" id="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleUserInput}  />
-          </div>
+        <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
+          <label htmlFor="lastNameValid">Last Name</label>
+          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
+            placeholder="Last Name"
+            value={this.state.lastName}
+            onChange={this.handleUserInput}  />
         </div>
         <div className="row">
           <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)} col-md-6`}>
@@ -163,6 +145,36 @@ class Form extends Component {
                 value={this.state.birthDate}
                 onChange={this.handleUserInput}
               />
+            </div>
+          </div>
+        </div>
+        <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
+          <label htmlFor="email">Email address</label>
+          <input type="email" required className="form-control" name="email" id="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleUserInput}  />
+        </div>
+        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+          <label htmlFor="password">Password</label>
+          <input type="password" className="form-control" name="password" id="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.handleUserInput}  />
+        </div>
+        <div className="form-group">
+          <label htmlFor="address">Mailing Address</label>
+          <input type="address" className="form-control" name="address" id="address" placeholder="Mailing Address"></input>
+        </div>
+        <div className="row">
+          <div className="form-group col-md-6">
+            <label htmlFor="city">City</label>
+            <input type="city" className="form-control" name="city" id="city" placeholder="City"></input>
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <label htmlFor="zip">Zip Code</label>
+              <input type="zip" className="form-control" name="zip" id="zip" placeholder="Zip Code"></input>
             </div>
           </div>
         </div>
@@ -191,8 +203,8 @@ class Form extends Component {
               <label htmlFor="both">Both</label>
             </li>
           </ul>
+          <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
         </div>
-        <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
       </form>
 
     )
