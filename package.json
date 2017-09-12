@@ -22,6 +22,7 @@
     "mongoose": "^4.11.9",
     "nodemailer": "^4.1.0",
     "react": "^15.6.1",
+    "react-add-to-calendar": "^0.1.4",
     "react-big-calendar": "^0.15.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.1",
