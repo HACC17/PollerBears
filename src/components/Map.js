@@ -259,17 +259,36 @@ const markers = [
   }
 ];
 
+let event = {
+  title: 'Volunteer Training',
+  description: 'Volunteer Training Again!',
+  location: '',
+  startTime: '2016-09-16T20:15:00-04:00',
+  endTime: '2016-09-16T21:45:00-04:00'
+}
 
 class Livemap extends Component{
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     event: {
+  //       title: 'Volunteer Training',
+  //       description: 'Volunteer Training Again!',
+  //       location: '',
+  //       startTime: '2016-09-16T20:15:00-04:00',
+  //       endTime: '2016-09-16T21:45:00-04:00'
+  //     }
+  //   };
+  //   this.handleClick = this.handleClick.bind(this);
+  // }
+
+  // handleClick(){
+  //   console.log(this.state.event);
+  //   console.log(this);
+  // }
+
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
-    this.event = {
-      title: 'Volunteer Training',
-      description: 'Volunteer Training Again!',
-      location: '',
-      startTime: '2016-09-16T20:15:00-04:00',
-      endTime: '2016-09-16T21:45:00-04:00'
-    }
   }
 
   componentDidMount(){ 
@@ -314,9 +333,6 @@ class Livemap extends Component{
       h5.innerHTML = markers[i].name;
       let span = Leaflet.DomUtil.create('span', 'address');
       span.innerHTML = markers[i].address;
-      
-
-
       let div = Leaflet.DomUtil.create('div', 'mainDiv');
       div.appendChild(h5);
       div.appendChild(span);
@@ -328,9 +344,9 @@ class Livemap extends Component{
           mainButton.onclick = function(){
               modal.style.display = "block";
               contents = this.innerHTML;
-              // this.event.location= markers[i].address;
-              // this.event.startTime = markers[i].times[j].startTime;
-              // this.event.endTime = markers[i].times[j].endTime;
+              event.location= markers[i].address;
+              event.startTime = markers[i].times[j].startTime;
+              event.endTime = markers[i].times[j].endTime;
           }
           div.appendChild(mainButton);
           div.appendChild(emptySpan);
@@ -366,7 +382,7 @@ class Livemap extends Component{
           <span className="close">&times;</span>
           <div id="container">
             <h1>Info to send to user</h1>
-            <AddToCalendar event={this.event} buttonTemplate={icon}/>
+            <AddToCalendar event={event} buttonTemplate={icon}/>
             <span id="message"></span>
           </div>
           </div>
