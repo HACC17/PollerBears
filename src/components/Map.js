@@ -268,25 +268,6 @@ let event = {
 }
 
 class Livemap extends Component{
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     event: {
-  //       title: 'Volunteer Training',
-  //       description: 'Volunteer Training Again!',
-  //       location: '',
-  //       startTime: '2016-09-16T20:15:00-04:00',
-  //       endTime: '2016-09-16T21:45:00-04:00'
-  //     }
-  //   };
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
-
-  // handleClick(){
-  //   console.log(this.state.event);
-  //   console.log(this);
-  // }
-
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
   }
