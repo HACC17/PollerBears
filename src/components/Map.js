@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
+import TimekitBooking from 'timekit-booking';
 import $ from 'jquery'; 
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
@@ -19,6 +20,7 @@ const zoomLevel = 12;
 let contents;
 let timeActivated = false;
 let icon = { 'calendar-plus-o': 'left' };
+const widget = new TimekitBooking();
 const markers = [
   {
     "name":"Mililani Mauka Elementary School",
@@ -273,6 +275,33 @@ class Livemap extends Component{
   }
 
   componentDidMount(){ 
+    widget.init({
+      widgetId: '9c9f7906-99d7-4008-9719-e8bbb2044dd1',
+      callbacks: {
+        findTimeStarted:          function(args)      { console.log('findTimeStarted', args); },
+        findTimeSuccessful:       function(response)  { console.log('findTimeSuccessful', response); },
+        findTimeFailed:           function(response)  { console.log('findTimeFailed', response); },
+        createBookingStarted:     function(args)      { console.log('createBookingStarted', args); },
+        createBookingSuccessful:  function(response)  { console.log('createBookingSuccessful', response); },
+        createBookingFailed:      function(response)  { console.log('createBookingFailed', response); },
+        getUserTimezoneStarted:   function(args)      { console.log('getUserTimezoneStarted', args); },
+        getUserTimezoneSuccesful: function(response)  { console.log('getUserTimezoneSuccesful', response); },
+        getUserTimezoneFailed:    function(response)  { console.log('getUserTimezoneFailed', response); },
+        fullCalendarInitialized:  function()          { console.log('fullCalendarInitialized'); },
+        renderCompleted:          function()          { console.log('renderCompleted'); },
+        showBookingPage:          function(slot)      { console.log('showBookingPage', slot); },
+        closeBookingPage:         function()          { console.log('closeBookingPage'); },
+        submitBookingForm:        function(values)    { console.log('submitBookingForm', values); }
+      }
+    });
+    var divElem = document.createElement('DIV');
+    divElem = widget;
+
+    console.log(widget);
+    console.log(widget.timekitSdk);
+    console.log(widget.timekitSdk.getBookings());
+    // console.log(divElem.fullCalendar());
+
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.307195, -157.857398],
       minZoom: 5,

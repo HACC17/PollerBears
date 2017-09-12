@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
+// import TimekitCalendar from '../components/Timekit-Calendar';
 // import ExampleCalendar from '../components/Calendar';
 
 class MapLocations extends Component {
@@ -78,6 +79,7 @@ class MapLocations extends Component {
 					<div className="MapLocations-container">
 						MAP GOES HERE
 						<MapLeaf />
+						<div id="bookingjs"></div>
 						<div>
 						</div>
 						<div className="location-list">
