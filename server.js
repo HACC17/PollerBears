@@ -1,7 +1,9 @@
+const dotenv = require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json');
+const fs = require('fs');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
 const path = require('path');
@@ -18,35 +20,43 @@ mongoose.connection.once('open', function() {
   });
 });
 
-/*
-    Here we are configuring our SMTP Server details.
-    STMP is mail server which is responsible for sending and recieving email.
-*/
+/*------------------SMTP Start-----------------------------*/
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     auth: {
-        user: "sgcodedummy@gmail.com",
-        pass: "ch0tr1b3"
+        user: process.env.SMTP_LOGIN,
+        pass: process.env.SMTP_PASSW
     }
 });
+/*------------------SMTP Over-----------------------------*/
+
+/*------------------Routing Started ------------------------*/
+
 app.get('/',function(req,res){
-    res.sendfile('index.html');
+  res.sendfile('Map.js');
 });
+
 app.get('/send',function(req,res){
-    var mailOptions={
-        to : req.query.to,
-        subject : req.query.subject,
-        text : req.query.text
-    }
-    console.log(mailOptions);
-    smtpTransport.sendMail(mailOptions, function(error, response){
-     if(error){
-            console.log(error);
-        res.end("error");
-     }else{
-            console.log("Message sent: " + response.message);
-        res.end("sent");
-         }
+  var mailOptions={
+      from: "PollerBears <fsgcodedummy@gmail.com",
+      to : req.query.to,
+      subject : req.query.subject,
+      text : req.query.text,
+      html: '<b> Testing </b>'
+  }
+  console.log(mailOptions);
+  smtpTransport.sendMail(mailOptions, function(error, response){
+   if(error){
+          console.log(error);
+      res.end("error");
+   }else{
+          console.log("Message sent: " + response.message);
+      res.end("sent");
+       }
+  });
 });
+
+app.listen(8000,function(){
+    console.log("Express Started on Port 8000");
 });
