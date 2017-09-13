@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
-import TimekitBooking from 'timekit-booking';
 import $ from 'jquery'; 
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
@@ -20,7 +19,6 @@ const zoomLevel = 12;
 let contents;
 let timeActivated = false;
 let icon = { 'calendar-plus-o': 'left' };
-const widget = new TimekitBooking();
 const markers = [
   {
     "name":"Mililani Mauka Elementary School",
@@ -275,33 +273,6 @@ class Livemap extends Component{
   }
 
   componentDidMount(){ 
-    widget.init({
-      widgetId: '9c9f7906-99d7-4008-9719-e8bbb2044dd1',
-      callbacks: {
-        findTimeStarted:          function(args)      { console.log('findTimeStarted', args); },
-        findTimeSuccessful:       function(response)  { console.log('findTimeSuccessful', response); },
-        findTimeFailed:           function(response)  { console.log('findTimeFailed', response); },
-        createBookingStarted:     function(args)      { console.log('createBookingStarted', args); },
-        createBookingSuccessful:  function(response)  { console.log('createBookingSuccessful', response); },
-        createBookingFailed:      function(response)  { console.log('createBookingFailed', response); },
-        getUserTimezoneStarted:   function(args)      { console.log('getUserTimezoneStarted', args); },
-        getUserTimezoneSuccesful: function(response)  { console.log('getUserTimezoneSuccesful', response); },
-        getUserTimezoneFailed:    function(response)  { console.log('getUserTimezoneFailed', response); },
-        fullCalendarInitialized:  function()          { console.log('fullCalendarInitialized'); },
-        renderCompleted:          function()          { console.log('renderCompleted'); },
-        showBookingPage:          function(slot)      { console.log('showBookingPage', slot); },
-        closeBookingPage:         function()          { console.log('closeBookingPage'); },
-        submitBookingForm:        function(values)    { console.log('submitBookingForm', values); }
-      }
-    });
-    var divElem = document.createElement('DIV');
-    divElem = widget;
-
-    console.log(widget);
-    console.log(widget.timekitSdk);
-    console.log(widget.timekitSdk.getBookings());
-    // console.log(divElem.fullCalendar());
-
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.307195, -157.857398],
       minZoom: 5,
@@ -374,13 +345,13 @@ class Livemap extends Component{
       $("#send_email").click(function(){      
         to=$("#to").val();
         subject="Thank you for volunteering with Office of Elections";
-        text="You have volunteered at...";
+        text="You have volunteered at..." + event.location;
         $("#message").text("Sending E-mail...Please wait");
-        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
-        if(data=="sent")
-        {
-            $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
-        }
+        $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+          if(data=="sent")
+          {
+              $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+          }
         });
       });
     });
@@ -392,6 +363,8 @@ class Livemap extends Component{
           <span className="close">&times;</span>
           <div id="container">
             <h1>Info to send to user</h1>
+            <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
+            <button id="send_email">Send Email</button>
             <AddToCalendar event={event} buttonTemplate={icon}/>
             <span id="message"></span>
           </div>

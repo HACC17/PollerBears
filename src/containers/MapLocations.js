@@ -79,7 +79,6 @@ class MapLocations extends Component {
 					<div className="MapLocations-container">
 						MAP GOES HERE
 						<MapLeaf />
-						<div id="bookingjs"></div>
 						<div>
 						</div>
 						<div className="location-list">
