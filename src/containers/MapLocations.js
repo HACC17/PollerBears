@@ -21,7 +21,17 @@ class MapLocations extends Component {
 				address: 'Sunshine State',
 				date: 'March 2, 2018',
 				times: '6:00pm - 8:00pm'
-			}]	
+			},{
+				name: 'Training 3',
+				address: 'Aloha State',
+				date: 'June 14, 2018',
+				times: '6:30pm - 8:00pm'
+			},{
+				name: 'Training 4',
+				address: 'Sunshine State',
+				date: 'June 16, 2018',
+				times: '9:00am - 10:30am'
+			}]
 		};
 		this.handleOptionChange = this.handleOptionChange.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -59,7 +69,7 @@ class MapLocations extends Component {
 											<div className="radio">
 												<label>
 													<input type="radio" value={times[trainings]}
-														checked={this.state.selectedTraining===times[trainings]} 
+														checked={this.state.selectedTraining===times[trainings]}
 														onChange={this.handleOptionChange}
 														/>
 													{times[trainings]}
@@ -68,7 +78,7 @@ class MapLocations extends Component {
 										</div>;
 			info.push(signUps);
 		}
-			
+
 		return(
 			<div>
 				<div>
@@ -77,7 +87,7 @@ class MapLocations extends Component {
 				<div className="col-lg-12">
 					What part of the island do you want to be trained at?
 					<div className="MapLocations-container">
-						MAP GOES HERE
+
 						<MapLeaf />
 						<div>
 						</div>
