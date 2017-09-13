@@ -3,47 +3,46 @@ const election = mongoose.model(
   "Election",
   {
     electionId:{
-      type: String,
-      required: true
+      type: String
     },
     day:{
       type: String,
-      required: true
     },
     date:{
       type: String,
-      required: true
     },
     county:{
-      type: String,
-      required: true
+      type: String
     },
     trainingPosition: {
-      type: String,
-      required: true
+      type: String
     },
     trainingLocation: {
-      type: String,
-      required: true
+      type: String
     },
     address:{
       type: String,
       required: true
     },
     city:{
-      type: String,
-      required: true
+      type: String
     },
     zip:{
-      type: String,
-      required: true
+      type: String
     },
     timeTraining:{
-      type: String,
-      required: true
+      type: String
     },
     addressbyRegion:{
       type: String
+    },
+    district:{
+      type: String,
+      required: true
+    },
+    site:{
+      type: String,
+      required: true
     }
   }
 );
