@@ -26,9 +26,12 @@ const training = mongoose.model(
     zip:{
       type: String
     },
-    timeTraining:{
+    time:{
       type: String
-    }
+    },
+    district:{
+      type: String
+    },
   }
 );
 

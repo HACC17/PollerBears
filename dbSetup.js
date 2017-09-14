@@ -30,7 +30,8 @@ csv
     address: data[5],
     city: data[6],
     zip: data[7],
-    time: data[8]
+    time: data[8],
+    district: data[9]
   });
 });
 mongoose.connection.once('open', function() {
@@ -52,7 +53,8 @@ mongoose.connection.once('open', function() {
       address: element.address,
       city: element.city,
       zip: element.zip,
-      time: element.time
+      time: element.time,
+      district: element.district
     }
   }))
   ])

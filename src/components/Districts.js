@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 const test = {
 	test: 'YOU'
@@ -21,11 +21,14 @@ const test = {
 // 	}
 // }];
 
+
 export default class Districts extends Component {
 		constructor(props){
 			super(props);
 			this.state={
-				district: 'Central Oahu'
+				data: '',
+				district: 'Central Oahu',
+				time: ''
 				// site: 'State Capitol Auditorium',
 				// address: '415 South Beretania Street',
 				// city: 'Honolulu',
@@ -34,16 +37,42 @@ export default class Districts extends Component {
 			};
 			this.handleSelection = this.handleSelection.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
+			this.getTrainings = this.getTrainings.bind(this);
 		}
 
 		handleSelection(e){
 			this.setState({district: e.target.value});
+			console.log('get trainings', this.getTrainings());
+
 		}
 
 		handleSubmit(e){
 			e.preventDefault();
 			console.log('submit', this.state.district);
 		}
+
+		getTrainings(data){
+			axios({
+				method: 'GET',
+				url: "http://localhost:3001/training/",
+				responseType: 'json'
+			}).then(function(response){
+				var trainings = response.data;
+				var keyValues;
+				console.log('response', response.data);
+				trainings.map(function(data){
+					let newArr = [data];
+					console.log('map data', newArr);
+					for (var keys in newArr){
+						keyValues = newArr[keys];
+						// data = [keyValues.county, keyValues.address, keyValues.city, keyValues.zip, keyValues.day, keyValues.date, keyValues.time, keyValues.district];
+						console.log('key vals',  keyValues);
+					}
+					return keyValues;
+				});
+			});
+		}
+
 	render(){
 		console.log('state', this.state);
 		console.log('props', this.props);
@@ -76,6 +105,7 @@ export default class Districts extends Component {
 					</form>
 				</div>
 				<div className="time-container">
+					<button onClick={this.getTrainings}>Trainings</button>
 					{view}
 				</div>
 		</div>
