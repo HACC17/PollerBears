@@ -170,9 +170,10 @@ class Form extends Component {
             onChange={this.handleUserInput}  />
         </div>
         <div className="form-group">
-          <label htmlFor="address">Mailing Address</label>
-          <input type="address" className="form-control" name="address" id="address" placeholder="Mailing Address"
+          <label htmlFor="mailingAddress">Mailing Address</label>
+          <input type="mailingAddress" className="form-control" name="mailingAddress" id="mailingAddress" placeholder="Mailing Address"
             value={this.state.mailingAddress}
+            onChange={this.handleUserInput}
           />
         </div>
         <div className="row">
@@ -180,6 +181,7 @@ class Form extends Component {
             <label htmlFor="city">City</label>
             <input type="city" className="form-control" name="city" id="city" placeholder="City"
               value={this.state.city}
+              onChange={this.handleUserInput}
             />
           </div>
           <div className="col-md-6">
@@ -187,6 +189,7 @@ class Form extends Component {
               <label htmlFor="zip">Zip Code</label>
               <input type="zip" className="form-control" name="zip" id="zip" placeholder="Zip Code"
                 value={this.state.zip}
+                onChange={this.handleUserInput}
               />
             </div>
           </div>
