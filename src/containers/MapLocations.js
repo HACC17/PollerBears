@@ -81,13 +81,9 @@ class MapLocations extends Component {
 
 		return(
 			<div>
-				<div>
-					<Breadcrumbs/>
-				</div>
 				<div className="col-lg-12">
 					What part of the island do you want to be trained at?
 					<div className="MapLocations-container">
-
 						<MapLeaf />
 						<div>
 						</div>
