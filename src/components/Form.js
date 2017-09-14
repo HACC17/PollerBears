@@ -113,7 +113,7 @@ class Form extends Component {
   render () {
       if (this.state.redirect) {
       return (
-        <Redirect to="/position"/>
+        <Redirect to="/locations"/>
       )
     }
     return (
