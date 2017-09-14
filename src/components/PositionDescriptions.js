@@ -5,7 +5,7 @@ class PositionDescription extends Component {
 		super(props);
 		this.state={
 			position: ''
-		};
+    };
 		this.handleCapitolPos = this.handleCapitolPos.bind(this);
 	}
 
@@ -19,6 +19,7 @@ class PositionDescription extends Component {
 	}
 
 	render(){
+    console.log(localStorage.getItem("lastname"));
 		return(
 			<div className="position-description">
 				<div className="row">

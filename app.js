@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const volunteer = require('./model/volunteer');
 const election = require('./model/election');
+const training = require('./model/training');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -85,6 +86,12 @@ app.get('/election', (req, res) =>{
   .then(results => res.json(results));
 });
 
+
+app.get('/training', (req, res) =>{
+  training
+  .find({})
+  .then(results => res.json(results));
+});
 app.post('/election', (req, res) =>{
   const voterElection =  new election({
     electionId: req.body.electionId,

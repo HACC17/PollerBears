@@ -472,13 +472,13 @@ class Livemap extends Component{
       $("#send_email").click(function(){
         to=$("#to").val();
         subject="Thank you for volunteering with Office of Elections";
-        text="You have volunteered at...";
+        text="You have volunteered at..." + event.location;
         $("#message").text("Sending E-mail...Please wait");
-        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
-        if(data=="sent")
-        {
-            $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
-        }
+        $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+          if(data=="sent")
+          {
+              $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+          }
         });
       });
     });
@@ -490,6 +490,8 @@ class Livemap extends Component{
           <span className="close">&times;</span>
           <div id="container">
             <h1>Info to send to user</h1>
+            <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
+            <button id="send_email">Send Email</button>
             <AddToCalendar event={event} buttonTemplate={icon}/>
             <span id="message"></span>
           </div>

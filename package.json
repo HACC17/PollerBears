@@ -13,8 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "fast-csv": "^2.4.0",
     "jquery": "^3.2.1",
@@ -22,6 +24,7 @@
     "leaflet.markercluster": "^1.1.0",
     "mongoose": "^4.11.9",
     "nodemailer": "^4.1.0",
+    "object-assign": "^4.1.1",
     "react": "^15.6.1",
     "react-add-to-calendar": "^0.1.4",
     "react-big-calendar": "^0.15.0",
@@ -31,6 +34,7 @@
     "react-leaflet-markercluster": "^1.1.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "timekit-booking": "^1.19.0"
   }
 }
