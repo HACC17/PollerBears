@@ -54,6 +54,7 @@ class Form extends Component {
       city: this.state.ciy,
       mailingAddress: this.state.mailingAddress
     });
+    localStorage.setItem("lastname", "Smith");
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
