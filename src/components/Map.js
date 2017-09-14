@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
-import $ from 'jquery'; 
+import $ from 'jquery';
+import axios from 'axios';
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
@@ -50,70 +51,82 @@ const markers = [
     "lng":-157.989612
   },
   {
+    "name":"Mililani High School",
+    "address":"95-1200 Meheula Parkway, Mililani, HI 96789",
+    "lat":21.453958,
+    "lng":-158.009271
+  },
+  {
     "name":"Mililani Uka Elementary School",
     "address":"94-380 Kuahelani Ave, Mililani, HI 96789",
     "lat":21.437221,
     "lng":-158.014535
-  }, 
+  },
   {
     "name":"Kipapa Elementary School",
     "address":"95-076 Kipapa Dr, Mililani, HI 96789",
     "lat":21.461902,
     "lng":-158.013009
-  },  
+  },
   {
     "name":"Kaiser High School",
     "address":"511 Lunalilo Home Rd, Honolulu, HI 96825",
     "lat":21.285904,
     "lng":-157.694490
-  }, 
+  },
   {
     "name":"Koko Head Elementary School",
     "address":"189 Lunalilo Home Rd, Honolulu, HI 96825",
     "lat":21.274238,
     "lng":-157.704898
-  }, 
+  },
   {
     "name":"Aina Haina Elementary School",
     "address":"801 W Hind Dr, Honolulu, HI 96821",
     "lat":21.279501,
     "lng":-157.756516
-  },   
+  },
   {
     "name":"Niu Valley Middle School",
     "address":"310 Halemaumau St, Honolulu, HI 96821",
     "lat":21.285370,
     "lng":-157.739948
-  },  
+  },
   {
     "name":"Kalani High School",
     "address":"4680 Kalanianaole Hwy, Honolulu, HI 96821",
     "lat":21.278632,
     "lng":-157.773869
-  },  
+  },
   {
     "name":"Ewa Elementary School",
     "address":"91-1280 Renton Rd, Ewa Beach, HI 96706",
     "lat":21.344594,
     "lng":-158.034659
-  },  
+  },
   {
     "name":"Campbell High School",
     "address":"91-980 North Rd, Ewa Beach, HI 96706",
     "lat":21.315785,
     "lng":-158.007437
-  }, 
+  },
   {
     "name":"Ewa Beach Elementary School",
     "address":"91-740 Papipi Rd, Ewa Beach, HI 96706",
     "lat":21.314889,
     "lng":-158.015140
-  }, 
+  },
   {
     "name":"Kapolei Elementary School",
     "address":"91-1119 Kamaaha Loop, Kapolei, HI 96707",
     "lat":21.334125,
     "lng":-158.064334
+  },
+  {
+    "name":"Kapolei High School",
+    "address":"91-5007 Kapolei Parkway, Kapolei, HI 96707",
+    "lat":21.327907,
+    "lng":-158.068294
   },
   {
     "name":"Kailua Elementary School",
@@ -230,6 +243,72 @@ const markers = [
     "lng":-158.143568
   },
   {
+    "name":"Maili Elementary School",
+    "address":"87-360 Kulaaupuni St, Waianae, HI 96792",
+    "lat":21.420045,
+    "lng":-158.172058
+  },
+  {
+    "name":"Waianae Intermediate School",
+    "address":"85-626 Farrington Highway, Waianae, HI 96792",
+    "lat":21.452113,
+    "lng":-158.191583
+  },
+  {
+    "name":"Makaha Elementary School",
+    "address":"84-200 Ala Naauao Plaza, Waianae, HI 96792",
+    "lat":21.469728,
+    "lng":-158.212216
+  },
+  {
+    "name":"Kaimuki High School",
+    "address":"2705 Kaimuki Avenue, Honolulu, HI 96816",
+    "lat":21.286361,
+    "lng":-157.816665
+  },
+  {
+    "name":"Washington Middle School",
+    "address":"1633 S King St, Honolulu, HI 96826",
+    "lat":21.295680,
+    "lng":-157.834746
+  },
+  {
+    "name":"Stevenson Middle School",
+    "address":"1202 Prospect St, Honolulu, HI 96822",
+    "lat":21.310323,
+    "lng":-157.840181
+  },
+  {
+    "name":"Mckinley High School",
+    "address":"1039 S King St, Honolulu, HI 96814",
+    "lat":21.298521,
+    "lng":-157.848445
+  },
+  {
+    "name":"Central Middle School",
+    "address":"1302 Queen Emma St, Honolulu, HI 96813",
+    "lat":21.311636,
+    "lng":-157.856622
+  },
+  {
+    "name":"Kapalama Elementary School",
+    "address":"1601 N School St, Honolulu, HI 96817",
+    "lat":21.334960,
+    "lng":-157.869371
+  },
+  {
+    "name":"Farrington High School",
+    "address":"1564 North King Street, Honolulu, HI 96817",
+    "lat":21.330631,
+    "lng":-157.873315
+  },
+  {
+    "name":"Radford High School",
+    "address":"4361 Salt Lake Blvd, Honolulu, HI 96818",
+    "lat":21.359494,
+    "lng":-157.927863
+  },
+  {
     "name":"Wahiawa Middle School",
     "address":"275 Rose St, Wahiawa, HI 96786",
     "lat":21.493666,
@@ -258,6 +337,54 @@ const markers = [
     "address":"56-490 Kamehameha Hwy, Kahuku, HI 96731",
     "lat":21.675916,
     "lng":-157.947312
+  },
+  {
+    "name":"Pearl Ridge Elementary School",
+    "address":"98-940 Moanalua Rd, Aiea, HI 96701",
+    "lat":21.388868,
+    "lng":-157.944840
+  },
+  {
+    "name":"Waimalu Elementary School",
+    "address":"98-825 Moanalua Rd, Aiea, HI 96701",
+    "lat":21.390366,
+    "lng":-157.949506
+  },
+  {
+    "name":"Lehua Elementary School",
+    "address":"791 Lehua Ave, Pearl City, HI 96782",
+    "lat":21.388716,
+    "lng":-157.971889
+  },
+  {
+    "name":"August Ahrens Elementary School",
+    "address":"94-1170 Waipahu St, Waipahu, HI 96797",
+    "lat":21.392808,
+    "lng":-158.002835
+  },
+  {
+    "name":"Waipahu High School",
+    "address":"94-1211 Farrington Hwy, Waipahu, HI 96797",
+    "lat":21.388276,
+    "lng":-157.993345
+  },
+  {
+    "name":"Waipahu Elementary School",
+    "address":"94-465 Waipahu St, Waipahu, HI 96797",
+    "lat":21.384982,
+    "lng":-158.016032
+  },
+  {
+    "name":"Kaleiopuu Elementary School",
+    "address":"94-665 Kaaholo St, Waipahu, HI 96797",
+    "lat":21.391097,
+    "lng":-158.027928
+  },
+  {
+    "name":"Mauka Lani Elementary School",
+    "address":"92-1300 Panana St, Kapolei, HI 96707",
+    "lat":21.358394,
+    "lng":-158.083459
   }
 ];
 
@@ -274,7 +401,7 @@ class Livemap extends Component{
     this.leafletElement = Leaflet.markerClusterGroup();
   }
 
-  componentDidMount(){ 
+  componentDidMount(){
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.307195, -157.857398],
       minZoom: 5,
@@ -344,7 +471,7 @@ class Livemap extends Component{
   render(){
     $(document).ready(function(){
       let from,to,subject,text;
-      $("#send_email").click(function(){      
+      $("#send_email").click(function(){
         to=$("#to").val();
         subject="Thank you for volunteering with Office of Elections";
         text="You have volunteered at..." + event.location;
