@@ -74,8 +74,8 @@ class Livemap extends Component{
     }
     axios.get("http://localhost3001/election").then(function(markers) {
       for (let i = 0; i < markers.length; i++){
-        let h5 = Leaflet.DomUtil.create('h5', 'name');
-        h5.innerHTML = markers[i].name;
+        let h5 = Leaflet.DomUtil.create('h5', 'site');
+        h5.innerHTML = markers[i].site;
         let span = Leaflet.DomUtil.create('span', 'address');
         span.innerHTML = markers[i].address;
         let div = Leaflet.DomUtil.create('div', 'mainDiv');
@@ -97,8 +97,19 @@ class Livemap extends Component{
             div.appendChild(emptySpan);
           }
         }
-        let m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}).bindPopup(div);
-        this.leafletElement.addLayer( m );
+        //let m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}).bindPopup(div);
+        //this.leafletElement.addLayer( m );
+        var searchControl = Leaflet.esri.Geocoding.geosearch().addTo(map);
+
+        axios.get("http://localhost3001/election").then(function(markers){
+          let results = markers[i].address;
+          searchControl.on('results', function(data){
+            results.clearLayers();
+            for (var i = data.results.length - 1; i >= 0; i--) {
+              results.addLayer(Leaflet.marker(data.results[i].latlng));
+            }
+          });
+        })
       }
     });
     map.addLayer( this.leafletElement );
