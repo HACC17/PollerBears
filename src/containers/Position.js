@@ -7,9 +7,6 @@ class Position extends Component {
 		return(
 			<div>
 				<div>
-					<Breadcrumbs/>
-				</div>
-				<div>
 				</div>
 				<div className="position-container col-lg-12">
 					<h1>Pick a position you want to volunteer for</h1>

@@ -17,13 +17,7 @@ class App extends Component {
                     <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link to="/form">Register</Link>
-                  </li>
-                  <li>
-                    <Link to="/position">Positions</Link>
-                  </li>
-                  <li>
-                    <Link to="/locations">Locations</Link>
+                    <Link to="/register">Register</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>

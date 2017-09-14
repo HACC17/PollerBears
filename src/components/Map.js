@@ -8,10 +8,12 @@ import axios from 'axios';
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
+import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
 
 // require('leaflet.markercluster');
+console.log(JSSocial);
 
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
@@ -492,6 +494,7 @@ class Livemap extends Component{
             <h1>Info to send to user</h1>
             <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
             <button id="send_email">Send Email</button>
+            <JSSocial/>
             <AddToCalendar event={event} buttonTemplate={icon}/>
             <span id="message"></span>
           </div>
