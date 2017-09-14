@@ -5,6 +5,7 @@ import Form from './Form';
 import Position from '../containers/Position';
 import MapLocations from '../containers/MapLocations';
 import Contact from '../containers/Contact';
+import Register from '../containers/Register';
 
 class Routes extends Component {
 	render(){
@@ -12,6 +13,7 @@ class Routes extends Component {
 			<main>
 				<Switch>
 					<Route exact path="/" component={Home}/>
+					<Route path="/register" component={Register}/>
 					<Route path="/form" component={Form}/>
 					<Route path="/position" component={Position}/>
 					<Route path="/locations" component={MapLocations}/>
