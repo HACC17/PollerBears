@@ -3,6 +3,7 @@ const app = express();
 const volunteer = require('./model/volunteer');
 const election = require('./model/election');
 const training = require('./model/training');
+const position = require('./model/position');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -27,6 +28,8 @@ app.get('/volunteer/', (req, res) =>{
   .find({})
   .then(results => res.json(results));
 });
+
+
 
 app.post('/volunteer', (req, res) =>{
   const person =  new volunteer({
@@ -90,6 +93,24 @@ app.get('/election', (req, res) =>{
 app.get('/training', (req, res) =>{
   training
   .find({})
+  .then(results => res.json(results));
+});
+
+app.get('/position', (req, res) =>{
+  position
+  .find({})
+  .then(results => res.json(results));
+});
+
+app.get('/positionCapitol', (req, res) =>{
+  position
+  .find({volunteerSite: "State Capitol"})
+  .then(results => res.json(results));
+});
+
+app.get('/positionNone', (req, res) =>{
+  position
+  .find({volunteerSite: "none"})
   .then(results => res.json(results));
 });
 app.post('/election', (req, res) =>{

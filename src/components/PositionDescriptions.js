@@ -19,7 +19,6 @@ class PositionDescription extends Component {
 	}
 
 	render(){
-    console.log(localStorage.getItem("lastname"));
 		return(
 			<div className="position-description">
 				<div className="row">

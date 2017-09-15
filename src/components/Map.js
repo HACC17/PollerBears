@@ -12,9 +12,6 @@ import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
 
-// require('leaflet.markercluster');
-console.log(JSSocial);
-
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
@@ -48,7 +45,9 @@ const markers = [
     "name":"Mililani Middle School Cafeteria",
     "address":"95-1140 Lehiwa Drive Miliani, HI 96789",
     "lat":21.475665,
-    "lng":-157.989612
+    "lng":-157.989612,
+    "trainings": ["7/14/18 11:00-1:00 p.m.", "10/3/18 6:30-8:30 p.m.", "7/14/18 9:00-10:30 a.m."],
+    "times": []
   },
   {
     "name":"Mililani High School",
@@ -78,7 +77,9 @@ const markers = [
     "name":"Koko Head Elementary School",
     "address":"189 Lunalilo Home Rd, Honolulu, HI 96825",
     "lat":21.274238,
-    "lng":-157.704898
+    "lng":-157.704898,
+    "trainings":["6/16/18 11:00-1:00 p.m.", "10/2/18 6:30-8:00 p.m.", "6/16/18 9:00-10:30 a.m."],
+    "times":[]
   },
   {
     "name":"Aina Haina Elementary School",
@@ -102,7 +103,9 @@ const markers = [
     "name":"Ewa Elementary School",
     "address":"91-1280 Renton Rd, Ewa Beach, HI 96706",
     "lat":21.344594,
-    "lng":-158.034659
+    "lng":-158.034659,
+    "trainings":["10/17/18 6:30-8:00 p.m.", "7/17/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Campbell High School",
@@ -126,7 +129,10 @@ const markers = [
     "name":"Kapolei High School",
     "address":"91-5007 Kapolei Parkway, Kapolei, HI 96707",
     "lat":21.327907,
-    "lng":-158.068294
+    "lng":-158.068294,
+    "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
+    "times":[]
+    ]
   },
   {
     "name":"Kailua Elementary School",
@@ -174,55 +180,81 @@ const markers = [
     "name":"State Capitol Auditorium",
     "address":"415 South Beretania Street Honolulu, HI 96813",
     "lat":21.307195,
-    "lng":-157.857398
+    "lng":-157.857398,
+    "trainings":["7/12/18 6:00-7:00 p.m.", "7/30/18 6:00-8:00 p.m.", "8/2/18 6:00-8:00 p.m.", "10/15/18 6:00-8:00 p.m.", "6/19/18 6:00-7:00 p.m.", "7/17/18 6:00-7:00 p.m.", "7/21/18 9:00-10:00 a.m.", "7/24/18 6:00-7:00 p.m.", "6/21/18 6:00-7:00 p.m.", "7/26/18 6:00-7:00 p.m.", "7/19/18 6:00-7:00 p.m.", "6/26/18 6:30-8:30 p.m.", "8/1/18 6:30-8:00 p.m."],
+    "times":[]
+  },
+  {
+    "name":"State Capitol Senate Conference Room 016",
+    "address":"415 South Beretania Street Honolulu, HI 96813",
+    "lat":21.307195,
+    "lng":-157.857398,
+    "trainings":["7/23/18 6:00-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Koko Head Elementary School Cafeteria",
     "address":"189 Lunalilo Home Road Honolulu, HI 96825",
     "lat":21.274238,
-    "lng":-157.704898
+    "lng":-157.704898,
+    "trainings":["6/16/18 11:00-1:00 p.m.", "10/2/18 6:30-8:00 p.m.", "6/16/18 9:00-10:30 a.m."],
+    "times":[]
   },
   {
     "name":"Kaneohe Elementary School Cafeteria",
     "address":"45-495 Kamehameha Highway Kaneohe, HI 96744",
     "lat":21.395919,
-    "lng":-157.795851
+    "lng":-157.795851,
+    "trainings":["10/9/18 6:30-8:30 p.m.", "6/23/18 11:00-1:00 p.m.", "6/23/18 9:00-10:30 a.m."],
+    "times":[]
   },
   {
     "name":"Waikiki Elementary School Cafeteria",
     "address":"3710 Leahi Avenue Honolulu, HI 96815",
     "lat":21.268166,
-    "lng":-157.814493
+    "lng":-157.814493,
+    "trainings":["10/13/18 11:00-1:00 p.m.", "7/18/18 6:30-8:30 p.m.", "10/13/18 9:00-10:30 a.m.", "6/20/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Pearl City Highlands Elementary School Cafeteria",
     "address":"1419 Waimano Home Road Pearl City, HI 96782",
     "lat":21.403286,
-    "lng":-157.965311
+    "lng":-157.965311,
+    "trainings":["7/26/18 6:00-7:00 p.m.", "6/14/18 6:30-8:00 p.m.", "10/24/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Lanakila Elementary School Cafeteria",
     "address":"717 North Kuakini Street Honolulu, HI 96817",
     "lat":21.326487,
-    "lng":-157.860453
+    "lng":-157.860453,
+    "trainings":["10/20/18 11:00-1:00 p.m.", "7/21/18 11:00-1:00 p.m.", "7/21/18 9:00-10:30 a.m.", "10/20/18 9:00-10:30 a.m.", "7/2/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Kapolei High School Cafeteria",
     "address":"91-5007 Kapolei Parkway Kapolei, HI 96707",
     "lat":21.327907,
-    "lng":-158.068294
+    "lng":-158.068294,
+    "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
+    "times":[]
   },
   {
     "name":"Manana Elementary School Cafeteria",
     "address":"1147 Kumano Street Pearl City, HI 96782",
     "lat":21.408343,
-    "lng":-157.971362
+    "lng":-157.971362,
+    "trainings":["7/5/18 6:30-8:30 p.m.", "7/25/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
-    "name":"Kaneohe Elementary School",
+    "name":"Kaneohe Elementary School Cafeteria",
     "address":"45-495 Kamehameha Hwy, Kaneohe, HI 96744",
     "lat":21.395919,
-    "lng":-157.795851
+    "lng":-157.795851,
+    "trainings":["10/9/18 6:30-8:30 p.m.", "6/23/18 11:00-1:00 p.m.", "6/23/18 9:00-10:30 a.m."],
+    "times":[]
   },
   {
     "name":"Castle High School",
@@ -270,7 +302,9 @@ const markers = [
     "name":"Washington Middle School",
     "address":"1633 S King St, Honolulu, HI 96826",
     "lat":21.295680,
-    "lng":-157.834746
+    "lng":-157.834746,
+    "trainings":["10/22/18 6:30-8:00 p.m."],
+    "times":[]
   },
   {
     "name":"Stevenson Middle School",
