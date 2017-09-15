@@ -1,0 +1,18 @@
+Position,Voluteer Site,Volunteers Needed,Training Required
+Control Center Operator,State Capitol, 100, Control Center Operator
+Absentee Ballot Team (Counting Center Official),State Capitol, 100, Absentee Ballot Team
+Ballot Storage Team (Counting Center Official),State Capitol, 10,  Ballot Storage Team + Computer Operations Team
+Computer Operations Team (Counting Center Official),State Capitol, 10,  Ballot Storage Team + Computer Operations Team
+Duplication Team (Counting Center Official),State Capitol, 20,  Duplication Team
+Manual Audit Team (Counting Center Official),State Capitol, 40,  Manual Audit Team
+Official Observer Team (Counting Center Official),State Capitol, 45,  Official Observer Team
+Poll Book Audit Team (Counting Center Official),State Capitol, 50,  Poll Book Audit Team
+Precinct Can Team (Counting Center Official),State Capitol, 13,  Precinct Can Team + Receiving Team
+Receiving Team (Counting Center Official),State Capitol, 12,  Precinct Can Team + Receiving Team
+Election Information Services Official,State Capitol, 12,  Control Center Operator
+Delivery/Collection Official,none,2,Delivery/Collection
+Facility Official,none,1,Precinct Official
+Precinct Official,none,10,Precinct Official
+Precinct Chairperson,none,1,Chair and Voter Assistance Official
+Voter Assistance Official,none,2,Chair and Voter Assistance Official
+Precinct Troubleshooter,none,1,Troubleshooter
