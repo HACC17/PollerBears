@@ -219,7 +219,7 @@ class Form extends Component {
               <label htmlFor="both">Both</label>
             </li>
           </ul>
-          <button type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
+          <button id="to-submit" type="submit" className="btn btn-primary center-block" disabled={!this.state.formValid}>Sign up</button>
         </div>
       </form>
 
