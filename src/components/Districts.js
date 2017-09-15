@@ -1,26 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-let test = "Hi";
 let stateDistrict;
 let otherArray;
-// const times = [{
-// 	"centralOahu": {
-// 		"training": {
-// 			"date": '7/14/2018',
-// 			"address": 'Mililani Middle',
-// 			"time": '11:00am - 1:00pm'
-// 		}
-// 	},
-// 	"eastHonolulu": {
-// 		"training": {
-// 			"date": '6/16/2018',
-// 			"address": 'Koko Head Elementary',
-// 			"time": '6:30pm - 8:00pm'
-// 		}
-// 	}
-// }];
-
 
 class Districts extends Component {
 		constructor(props){
@@ -68,7 +50,6 @@ class Districts extends Component {
 					for (let key in element){
 						if (key === "district"){
 							if (element[key] === stateDistrict){
-								console.log(element[key]);
 								let arr = [];
 								for (let props in element){
 									arr.push(element[props]);
