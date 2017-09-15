@@ -5,12 +5,17 @@ class Home extends Component {
   render() {
   console.log(sessionStorage.getItem({}));
     return (
-        <div className="jumbotron">
-            <h1>Hello World!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum vitae massa non maximus. Proin tincidunt, felis tristique rutrum aliquam, eros leo finibus lacus, id ornare diam eros ac arcu. </p>
-        
-            <button className="btn primary btn-lg center"><Link to="/register">Lets get started</Link></button>
+      <div className="Home container container-table">
+        <div className="row intro">
+          <h2>Volunteer for 2018 elections</h2>
+          <p className="Home-intro">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea sint earum fugit accusantium tempore voluptatum cum neque quae, nemo quos sapiente voluptatem nulla id. Sit praesentium, nemo sint eligendi saepe!
+          </p>
         </div>
+        <div className="start-button">
+          <button className="btn btn-lg center-block"><Link to="/register">START VOLUNTEERING</Link></button>
+        </div>
+      </div>
     );
   }
 }
