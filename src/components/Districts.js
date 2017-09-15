@@ -1,61 +1,78 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
-const test = {
-	test: 'YOU'
-};
-// const times = [{
-// 	"centralOahu": {
-// 		"training": {
-// 			"date": '7/14/2018',
-// 			"address": 'Mililani Middle',
-// 			"time": '11:00am - 1:00pm'
-// 		}
-// 	},
-// 	"eastHonolulu": {
-// 		"training": {
-// 			"date": '6/16/2018',
-// 			"address": 'Koko Head Elementary',
-// 			"time": '6:30pm - 8:00pm'
-// 		}
-// 	}
-// }];
+let stateDistrict;
+let otherArray;
 
-export default class Districts extends Component {
+class Districts extends Component {
 		constructor(props){
 			super(props);
 			this.state={
-				district: 'Central Oahu'
+				data: '',
+				district: 'Central Oahu',
+				time: '',
+				trainings: '',
+				testingArr: ''
 				// site: 'State Capitol Auditorium',
 				// address: '415 South Beretania Street',
 				// city: 'Honolulu',
 				// zip: '96813',
 				// time: '6:00pm - 7:00pm'
+
 			};
 			this.handleSelection = this.handleSelection.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
+			this.getTrainings = this.getTrainings.bind(this);
 		}
 
 		handleSelection(e){
 			this.setState({district: e.target.value});
+			console.log('get trainings', this.getTrainings());
+
 		}
 
 		handleSubmit(e){
 			e.preventDefault();
 			console.log('submit', this.state.district);
+			stateDistrict = this.state.district;
+			this.getTrainings();
 		}
+
+		getTrainings(data){
+			axios({
+				method: 'GET',
+				url: "http://localhost:3001/training/",
+				responseType: 'json'
+			}).then(function(response){
+				let trainings = response.data;
+				let arrayToShow = [];
+				trainings.forEach(function(element){
+					for (let key in element){
+						if (key === "district"){
+							if (element[key] === stateDistrict){
+								let arr = [];
+								for (let props in element){
+									arr.push(element[props]);
+								}
+								arrayToShow.push(arr);
+
+							}
+						}
+					}
+					otherArray = arrayToShow;
+				})
+			});
+			this.state.trainings = otherArray;
+			const inputList = this.state.trainings;
+			console.log(inputList);
+			this.setState({
+				inputList: this.state.trainings
+			})
+		}
+
 	render(){
-		console.log('state', this.state);
-		console.log('props', this.props);
 		var view;
 
-		function SiteList(props){
-			return <h1>{props.site}</h1>;
-		}
-
-		if (this.state.district==="Central Oahu"){
-			view = <SiteList site={test.test} />
-		}
 		return(
 			<div>
 				<div>
@@ -76,9 +93,12 @@ export default class Districts extends Component {
 					</form>
 				</div>
 				<div className="time-container">
-					{view}
+					<button onClick={this.getTrainings}>Trainings</button>
+					<div>{this.state.inputList}</div>
 				</div>
 		</div>
 		);
 	}
 }
+
+export default Districts;
