@@ -12,9 +12,6 @@ import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
 
-// require('leaflet.markercluster');
-console.log(JSSocial);
-
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
