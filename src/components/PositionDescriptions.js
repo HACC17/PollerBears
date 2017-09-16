@@ -21,120 +21,71 @@ class PositionDescription extends Component {
 	render(){
 		return(
 			<div className="position-description">
-				<div className="row">
-					<div className="capitol-position col-sm-4">
-						<p><strong>Capitol Title 1</strong></p>
-  					<p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-					</div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 2</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+        <fieldset id="volunteer-positions">
+  				<div className="row">
+  					<div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 1
+  					</div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 2
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 3
+            </div>
           </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 3</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 4
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 5
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 6
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 4</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 7
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 8
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 9
+            </div>
           </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 5</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 10
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 11
+            </div>
           </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 6</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 1
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 2
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 3
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 7</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 4
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 5
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 6
+            </div>
           </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 8</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 9</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 10</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Capitol Title 11</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 1</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 2</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 3</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 4</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 5</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-          <div className="capitol-position col-sm-4">
-            <p><strong>Polling Title 6</strong></p>
-            <p>Insert Job Description Here</p>
-            <p>Stipend: $85</p>
-            <button className="btn">Select</button>
-          </div>
-        </div>
+        </fieldset>
 			</div>
 		)
 	}
