@@ -39,8 +39,16 @@ class App extends Component {
                   <p>Primary Election: August 11, 2018</p>
                   <p>General Election: November 6, 2018</p>
                 </div>
-                <div className="col-sm-4">.col-sm-4</div>
-                <div className="col-sm-4">.col-sm-4</div>
+                <div className="col-sm-4">
+                  <h3>Election Dates</h3>
+                  <p>Primary Election: August 11, 2018</p>
+                  <p>General Election: November 6, 2018</p>
+                </div>
+                <div className="col-sm-4">
+                  <h3>Election Dates</h3>
+                  <p>Primary Election: August 11, 2018</p>
+                  <p>General Election: November 6, 2018</p>
+                </div>
               </div>
             </div>
           </div>
