@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
-import axios from 'axios';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Routes from './Routes';
 import {Route, Redirect} from 'react-router';
-
+import { changeForm, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import axios from 'axios';
 const from = {}
 class Form extends Component {
   constructor (props) {
@@ -41,8 +43,7 @@ class Form extends Component {
                   () => { this.validateField(name, value) });
   }
   handleFormSubmit() {
-    this.setState({redirect:true});
-    axios.post("http://localhost:3001/volunteer", {
+    var data = {
       email:this.state.email,
       firstName:this.state.firstName,
       lastName: this.state.lastName,
@@ -51,9 +52,25 @@ class Form extends Component {
       birthDate: this.state.birthDate,
       electionWorking: this.state.electionWorking,
       zip: this.state.zip,
-      city: this.state.ciy,
+      city: this.state.city,
       mailingAddress: this.state.mailingAddress
-    });
+    };
+    this.props.changeForm(data);
+    console.log(this.props.form.city);
+    console.log(this.props.form.zip);
+    console.log(this.props.form.mailingAddress);
+     axios.post("http://localhost:3001/volunteer", {
+      email: this.props.form.email,
+      password: this.props.form.password,
+      firstName: this.props.form.firstName,
+      lastName: this.props.form.lastName,
+      phoneNumber: this.props.form.phoneNumber,
+      birthDate: this.props.form.birthDate,
+      electionWorking:this.props.form.electionWorking,
+      city: this.props.form.city,
+      zip: this.props.form.zip,
+      mailingAddress: this.props.form.mailingAddress,
+      });
     localStorage.setItem("lastname", "Smith");
   }
   validateField(fieldName, value) {
@@ -119,7 +136,7 @@ class Form extends Component {
     return (
       <form onSubmit={this.handleFormSubmit} className="demoForm">
         <h2>Registration</h2>
-        
+
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
           <label htmlFor="firstName">First Name</label>
           <input type="firstName" required className="form-control" name="firstName" id="firstName"
@@ -153,7 +170,7 @@ class Form extends Component {
             </div>
           </div>
         </div>
-        
+
         <div className="row2">
             <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
               <label htmlFor="email">Email address</label>
@@ -231,4 +248,15 @@ class Form extends Component {
   }
 }
 
-export default Form;
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeForm,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);;

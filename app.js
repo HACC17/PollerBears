@@ -62,7 +62,10 @@ app.post('/volunteer', (req, res) =>{
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     birthDate: req.body.birthDate,
-    password: req.body.password
+    password: req.body.password,
+    zip: req.body.zip,
+    mailingAddress: req.body.mailingAddress,
+    city: req.body.city
     // MI:req.body.MI,
     // AKA:req.body.AKA,
     // SSN:req.body.SSN,
