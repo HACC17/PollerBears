@@ -132,7 +132,6 @@ const markers = [
     "lng":-158.068294,
     "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
     "times":[]
-    ]
   },
   {
     "name":"Kailua Elementary School",

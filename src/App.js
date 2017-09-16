@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Routes from './components/Routes';
 
-
 class App extends Component {
   render() {
     return (
