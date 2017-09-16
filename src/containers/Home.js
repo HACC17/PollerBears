@@ -5,11 +5,12 @@ class Home extends Component {
   render() {
   console.log(sessionStorage.getItem({}));
     return (
-        <div className="jumbotron">
-            <h1>Hello World!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum vitae massa non maximus. Proin tincidunt, felis tristique rutrum aliquam, eros leo finibus lacus, id ornare diam eros ac arcu. </p>
-        
-            <button className="btn primary btn-lg center"><Link to="/register">Lets get started</Link></button>
+        <div className="home-text">
+            <h2>More Than a Voter, More Than a Volunteer,</h2>
+            <h1>Be a <span className="app-name">Votenteer</span></h1>
+            <button className="btn btn-lg center home-reg-btn"><Link to="/register">Register Today</Link></button>
+            <p>Election Day Officials assist voters, provide operational support, and ensure the integrity of the voting process. Volunteers gain first-hand knowledge and experience in the electoral process while serving their community. Your help is needed, so sign up today!</p>
+
         </div>
     );
   }
