@@ -259,4 +259,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   getData,
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);;
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
