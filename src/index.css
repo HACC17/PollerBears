@@ -167,7 +167,10 @@ body {
 /*** FOOTER ***/
 .footer-container{
   background-color: #05A3AD;
-  padding: 50px 30px 200px;
+  background-image: url("/hands.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding: 25px 30px 200px;
   font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
 }
