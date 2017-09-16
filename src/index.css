@@ -61,23 +61,36 @@ body {
 .positions-grp .radio-btn {
   display: inline-block;
 }
-/*.positions-grp .radio-btn:last-of-type {
-  margin-right: 0;
-}*/
 .positions-grp .radio-btn input {
   display: none;
 }
 .positions-grp .radio-btn input[type="radio"]:checked ~ label {
-  color: #0000DE;
+  color: #FFF;
+  background-color: #05A3AD;
+  border: 3px solid #05A3AD;
 }
 .positions-grp .radio-btn label {
   display: inline-block;
-  width: 300px;
-  padding: 5px 0;
-  color: #363636;
-  color: #bdbdbd;
+  width: 325px;
+  height: 150px;
+  padding: 7px;
+  color: #686868;
   border: 3px solid;
   transition: color .3s ease;
+  transition: background-color .3s ease;
   cursor: pointer;
   user-select: none;
+}
+.positions-grp .radio-btn label .pos-desc{
+  font-size: 0.90em;
+  font-weight: normal;
+}
+
+.positions-grp .radio-btn .ops-label {
+  height: 115px;
+  line-height: 22px;
+}
+.positions-grp .radio-btn .pre-label {
+  height: 140px;
+  line-height: 19px;
 }
