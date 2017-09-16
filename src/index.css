@@ -57,9 +57,32 @@ body {
 
 
 
+/*** HOME PAGE ***/
+.overall-container{
+  background-color: #FFD95E;
+}
+
+/*** NAVIGATION BAR ***/
+.custom-nav{
+  background-color: #FFD95E;
+}
+.custom-nav h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.custom-nav h1 a{
+  color: #686868;
+  text-decoration: none;
+}
+.custom-nav h1 a .the-n{
+  color: #9B9B9B;
+}
+.custom-nav h1 a:hover{
+  color: #9B9B9B;
+}
 /*** FOR HOME PAGE TEXT ***/
 .home-text{
-  margin-top: 75px;
+  margin: 75px 0;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
@@ -88,6 +111,7 @@ body {
   margin-top: 25px;
   font-size: 1.5em;
   font-weight: 200;
+  color: #686868;
 }
 
 /*** FOR SELECTION OF POSITIONS ***/
@@ -116,6 +140,7 @@ body {
   height: 150px;
   padding: 7px;
   color: #686868;
+  background-color: #FFFFFF;
   border: 3px solid;
   transition: color .3s ease;
   transition: background-color .3s ease;

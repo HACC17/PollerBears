@@ -7,10 +7,10 @@ class App extends Component {
     return (
       <div className="App-container">
         <Router>
-          <div className="nav-header">
-            <nav className="navbar navbar-default">
+          <div className="overall-container">
+            <nav className="custom-nav">
               <div className="container-fluid">
-                <h1 className="text-left navbar-text"><Link to="/">VOTENTEER</Link></h1>
+                <h1 className="text-left navbar-text"><Link to="/">VOTE<span className="the-n">N</span>TEER</Link></h1>
                 <ul className="nav navbar-nav navbar-right">
                   <li>
                     <Link to="/">Home</Link>
