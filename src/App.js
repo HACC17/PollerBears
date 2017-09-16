@@ -34,20 +34,23 @@ class App extends Component {
             </div>
             <div className="footer-container">
               <div className="footer-text row">
-                <div className="col-sm-4">
+                <div className="footer-col col-sm-4">
                   <h3>Election Dates</h3>
                   <p>Primary Election: August 11, 2018</p>
                   <p>General Election: November 6, 2018</p>
                 </div>
-                <div className="col-sm-4">
-                  <h3>Election Dates</h3>
-                  <p>Primary Election: August 11, 2018</p>
-                  <p>General Election: November 6, 2018</p>
+                <div className="footer-col col-sm-4">
+                  <h3>Volunteer Requirements</h3>
+                  <ul>
+                    <li>At least 16 years of age on or before June 30 of the election year.</li>
+                    <li>A registered or pre-registered voter in the State of Hawaii.</li>
+                    <li>Able to read and write English.</li>
+                  </ul>
                 </div>
-                <div className="col-sm-4">
-                  <h3>Election Dates</h3>
-                  <p>Primary Election: August 11, 2018</p>
-                  <p>General Election: November 6, 2018</p>
+                <div className="footer-col col-sm-4">
+                  <h3>Contact Us</h3>
+                  <p>Phone: (808) 453-VOTE (8683)</p>
+                  <p>E-Mail: <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a></p>
                 </div>
               </div>
             </div>
