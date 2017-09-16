@@ -49,6 +49,7 @@ class Districts extends Component {
 				url: "http://localhost:3001/training/",
 				responseType: 'json'
 			}).then(function(response){
+				console.log(response);
 				let trainings = response.data;
 				let arrayToShow = [];
 				trainings.forEach(function(element){
@@ -78,6 +79,7 @@ class Districts extends Component {
 		}
 
 	render(){
+		console.log('district props', this.props);
 		var view;
 
 		return(

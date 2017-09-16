@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
 import $ from 'jquery';
 import axios from 'axios';
+// import * as formActions from '../actions/index.js';
+import { fetchPositions } from '../actions/index.js';
+
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
@@ -429,12 +433,37 @@ let event = {
   endTime: '2016-09-16T21:45:00-04:00'
 }
 
+
+const mapStateToProps = (state) => {
+  return {...state};
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetchPositions: (url) => dispatch(fetchPositions(url)),
+    };
+};
+
 class Livemap extends Component{
+  fetchPos(data){
+    axios({
+      method: 'GET',
+      url: "http://localhost:3001/position/",
+      responseType: 'json'
+    })
+      .then(function(response){
+        console.log('fetch pos res', response);
+        // dispatch(setPosition(response.position));
+      })
+  }
+
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
   }
 
   componentDidMount(){
+    this.props.fetchPositions("http://localhost:3001/position");
+    this.fetchPos();
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.307195, -157.857398],
       minZoom: 5,
@@ -501,7 +530,10 @@ class Livemap extends Component{
     map.addLayer( this.leafletElement );
 }
 
+
+
   render(){
+    console.log('this', this);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){
@@ -538,4 +570,4 @@ class Livemap extends Component{
 }
 }
 
-export default Livemap;
+export default connect(mapStateToProps, mapDispatchToProps)(Livemap);

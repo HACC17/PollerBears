@@ -9,7 +9,13 @@ class PositionDescription extends Component {
 			position: ''
     };
 		this.handleCapitolPos = this.handleCapitolPos.bind(this);
+    this.selectPosition = this.selectPosition.bind(this);
 	}
+
+  selectPosition(e){
+    this.setState({position: e.target.value});
+    console.log(e.target.value);
+  }
 
 	handleCapitolPos(e){
     console.log("Hello");
@@ -30,66 +36,66 @@ class PositionDescription extends Component {
           <p>State Capitol Positions</p>
   				<div className="row">
   					<div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="control-center-operator" /> Control Center Operator
+              <input type="radio" onClick={this.selectPosition} name="position" value="Control Center Operator" /> Control Center Operator
   					</div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="absentee-ballot-team" /> Absentee Ballot Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Absentee Ballot Team Member" /> Absentee Ballot Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="ballot-storage-team" /> Ballot Storage Team
-            </div>
-          </div>
-          <div className="row">
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="computer-operations-team" /> Computer Operations Team Member
-            </div>
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="duplication-team" /> Duplication Team Member
-            </div>
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="manual-audit-team" /> Manual Audit Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Ballot Storage Team" /> Ballot Storage Team
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="official-observer-team" /> Official Observer Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Computer Operations Team Member" /> Computer Operations Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="poll-book-audit-team" /> Poll Book Audit Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Duplication Team Member" /> Duplication Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="precinct-can-team" /> Precinct Can Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Manual Audit Team Member" /> Manual Audit Team Member
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="receiving-team" /> Receiving Team Member
+              <input type="radio" onClick={this.selectPosition} name="position" value="Official Observer Team Member" /> Official Observer Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="election-information-services-official" /> Election Information Services Official
+              <input type="radio" onClick={this.selectPosition} name="position" value="Poll Book Audit Team Member" /> Poll Book Audit Team Member
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Can Team Member" /> Precinct Can Team Member
+            </div>
+          </div>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" onClick={this.selectPosition} name="position" value="Receiving Team Member" /> Receiving Team Member
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" onClick={this.selectPosition} name="position" value="Election Information Services Official" /> Election Information Services Official
             </div>
           </div>
           <p>Polling Site Positions</p>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="delivery-collection-official" /> Delivery/Collection Official
+              <input type="radio" onClick={this.selectPosition} name="position" value="Delivery/Collection Official" /> Delivery/Collection Official
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="facility-official" /> Facility Official
+              <input type="radio" onClick={this.selectPosition}  name="position" value="Facility Official" /> Facility Official
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="precinct-operations-chair" /> Precinct Operations Chair
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Operations Chair" /> Precinct Operations Chair
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="precinct-operations-official" /> Precinct Operations Official
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Operations Official" /> Precinct Operations Official
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="precinct-voter-assistance-official" /> Precinct Voter Assistance Official
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Voter Assistance Official" /> Precinct Voter Assistance Official
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="precinct-troubleshooter" /> Precinct Troubleshooter
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Troubleshooter" /> Precinct Troubleshooter
             </div>
           </div>
         </fieldset>
