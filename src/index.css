@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Open+Sans:400,700');
+
 body, html {
   height: 100%;
 }
@@ -11,6 +13,10 @@ body {
 /* For the navigation */
 .nav li {
   margin-top: 15px;
+}
+
+#test{
+  background-color: red;
 }
 /*For the Index page */
 .Home {
@@ -47,6 +53,67 @@ body {
 .section-heading{
  text-transform: uppercase;
 }
+
+
+
+
+/*** HOME PAGE ***/
+.top-container{
+  background-color: #FFD95E;
+}
+
+/*** NAVIGATION BAR ***/
+.custom-nav{
+  background-color: #FFD95E;
+}
+.custom-nav h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.custom-nav h1 a{
+  color: #686868;
+  text-decoration: none;
+}
+.custom-nav h1 a .the-n{
+  color: #9B9B9B;
+}
+.custom-nav h1 a:hover{
+  color: #9B9B9B;
+}
+/*** FOR HOME PAGE TEXT ***/
+.home-text{
+  margin: 75px 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.home-text h2{
+  font-size: 2em;
+}
+.home-text h1{
+  font-size: 5em;
+}
+.home-text .app-name{
+  font-weight: 700;
+}
+.home-text .home-reg-btn{
+  margin: 25px 0;
+  background-color: #FE016B;
+}
+.home-text .home-reg-btn:hover{
+  background-color: #05A3AD;
+}
+.home-text .home-reg-btn a{
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.home-text p{
+  margin-top: 25px;
+  font-size: 1.5em;
+  font-weight: 200;
+  color: #686868;
+}
+
 /*** FOR SELECTION OF POSITIONS ***/
 .positions-grp {
   text-align: center;
@@ -73,6 +140,7 @@ body {
   height: 150px;
   padding: 7px;
   color: #686868;
+  background-color: #FFFFFF;
   border: 3px solid;
   transition: color .3s ease;
   transition: background-color .3s ease;
@@ -94,3 +162,20 @@ body {
 }
 
 /*** FOR SELECTION OF LOCATION ***/
+
+
+/*** FOOTER ***/
+.footer-container{
+  background-color: #05A3AD;
+  background-image: url("/hands.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding: 25px 30px 200px;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+}
+
+/*.footer-container .footer-text .footer-col{
+  padding-left: 20px;
+  padding-right: 25px;
+}*/
