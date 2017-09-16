@@ -12,7 +12,9 @@ const initialState = {
   zip: '',
   mailingAddress: '',
   position: '',
-  time: ''
+  time: '',
+  training: '',
+  district: ''
 };
 
 
@@ -29,15 +31,29 @@ const form = (state = initialState, action) => {
       state.city = action.city
       state.zip = action.zip
       state.mailingAddress = action.mailingAddress
-      console.log(state.city);
-      console.log(state.zip);
-      return "Data set";
+      return {...state}
     case 'SET_POSITION':
       state.position = action.position;
+      return {...state,
+        position: action.position
+      }
       break;
     case 'SET_TIME':
-      state.time = action.time
+      state.time = action.time;
+      return {...state,
+        time: action.time
+      }
       break;
+    case 'SET_TRAINING':
+      state.training = action.training;
+      return {...state,
+        training: action.training
+    }
+    case 'SET_DISTRICT':
+      state.district = action.district;
+      return {...state,
+        district: action.district
+    }
     default:
       return state;
   }
@@ -66,6 +82,42 @@ export const getData = (data) => {
   return dispatch => {
     dispatch({
       type: "RETURN_DATA"
+    })
+  }
+}
+
+export const changePos = (pos) => {
+  return dispatch => {
+    dispatch({
+      type: "SET_POSITION",
+      position: pos
+    })
+  }
+}
+
+export const changeTime = (time) => {
+  return dispatch => {
+    dispatch({
+      type: "SET_TIME",
+      time: time
+    })
+  }
+}
+
+export const changeTraining = (training) => {
+  return dispatch => {
+    dispatch({
+      type: "SET_TRAINING",
+      training: training
+    })
+  }
+}
+
+export const changeDistrict = (district) => {
+  return dispatch => {
+    dispatch({
+      type: "SET_DISTRICT",
+      district: district
     })
   }
 }
