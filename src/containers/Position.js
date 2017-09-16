@@ -9,13 +9,8 @@ class Position extends Component {
 				<div>
 				</div>
 				<div className="position-container col-lg-12">
-					<h1>Pick a position you want to volunteer for</h1>
-					<div className="position-info">
-						<div className="circle">
-							Position Descriptions
-							<PositionDescriptions/>
-						</div>
-					</div>
+					<h2>Select A Volunteer Position</h2>
+						<PositionDescriptions/>
 				</div>
 			</div>
 		);
