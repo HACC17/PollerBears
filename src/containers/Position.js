@@ -5,13 +5,9 @@ import PositionDescriptions from '../components/PositionDescriptions';
 class Position extends Component {
 	render(){
 		return(
-			<div>
-				<div>
-				</div>
-				<div className="position-container col-lg-12">
-					<h2>Select A Volunteer Position</h2>
-						<PositionDescriptions/>
-				</div>
+			<div className="position-container col-lg-12">
+				<h2 className="section-heading">Select A Volunteer Position</h2>
+					<PositionDescriptions/>
 			</div>
 		);
 	}
