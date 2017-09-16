@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
+
+
 const initialState = {
   email: 'test',
   password: '',
@@ -95,6 +97,15 @@ export const changePos = (pos) => {
   }
 }
 
+export function positionData(state = [], action) {
+    switch (action.type) {
+        case 'POSITIONS_FETCH_DATA_SUCCESS':
+            return action.items;
+        default:
+            return state;
+    }
+}
+
 export const changeTime = (time) => {
   return dispatch => {
     dispatch({
@@ -124,5 +135,6 @@ export const changeDistrict = (district) => {
 
 export default combineReducers({
   routing: routerReducer,
-  form
+  form,
+  positionData
 })

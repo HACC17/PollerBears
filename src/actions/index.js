@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const setForm = (data) => ({
   type: 'SET_FORM',
   email: data.email,
@@ -16,6 +18,24 @@ export const setPosition = (position) => ({
   type: 'SET_POSITION',
   position: position
 });
+
+export function positionsFetchDataSuccess(items) {
+    return {
+        type: 'POSITIONS_FETCH_DATA_SUCCESS',
+        items
+    };
+}
+
+export function fetchPositions(url){
+  return (dispatch) => {
+    return axios.get(url)
+      .then(response => {
+        dispatch(positionsFetchDataSuccess(response.data))
+      })
+      .then((items) => dispatch(fetchPositions(items)));
+  };
+}
+
 
 export const setTime = (time) => ({
   type: 'SET_TIME',

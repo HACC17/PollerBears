@@ -9,7 +9,13 @@ class PositionDescription extends Component {
 			position: ''
     };
 		this.handleCapitolPos = this.handleCapitolPos.bind(this);
+    this.selectPosition = this.selectPosition.bind(this);
 	}
+
+  selectPosition(e){
+    this.setState({position: e.target.value});
+    console.log(e.target.value);
+  }
 
 	handleCapitolPos(e){
     console.log("Hello");
@@ -30,7 +36,7 @@ class PositionDescription extends Component {
           <h3>Operational Support Positions</h3>
   				<div className="row">
   					<div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="control-center-operator" id="ops-pos-1" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Control Center Operator" id="ops-pos-1" />
               <label className="ops-label" htmlFor="ops-pos-1">
                 Control Center Operator<br />
                 <span className="pos-desc">
@@ -39,7 +45,7 @@ class PositionDescription extends Component {
               </label>
   					</div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="absentee-ballot-team" id="ops-pos-2" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Absentee Ballot Team Member"id="ops-pos-2" />
               <label className="ops-label" htmlFor="ops-pos-2">
                 Absentee Ballot Team Member<br />
                 <span className="pos-desc">
@@ -48,7 +54,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="ballot-storage-team" id="ops-pos-3" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Ballot Storage Team" id="ops-pos-3" />
               <label className="ops-label" htmlFor="ops-pos-3">
                 Ballot Storage Team<br />
                 <span className="pos-desc">
@@ -59,7 +65,7 @@ class PositionDescription extends Component {
           </div>
           <div className="row">
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="computer-operations-team" id="ops-pos-4" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Computer Operations Team Member" id="ops-pos-4" />
               <label className="ops-label" htmlFor="ops-pos-4">
                 Computer Operations Team Member<br />
                 <span className="pos-desc">
@@ -68,7 +74,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="duplication-team" id="ops-pos-5" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Duplication Team Member" id="ops-pos-5" />
               <label className="ops-label" htmlFor="ops-pos-5">
                 Duplication Team Member<br />
                 <span className="pos-desc">
@@ -77,7 +83,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="manual-audit-team" id="ops-pos-6" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Manual Audit Team Member" id="ops-pos-6" />
               <label className="ops-label" htmlFor="ops-pos-6">
                 Manual Audit Team Member<br />
                 <span className="pos-desc">
@@ -88,7 +94,7 @@ class PositionDescription extends Component {
           </div>
           <div className="row">
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="official-observer-team" id="ops-pos-7" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Official Observer Team Member" id="ops-pos-7" />
               <label className="ops-label" htmlFor="ops-pos-7">
                 Official Observer Team Member<br />
                 <span className="pos-desc">
@@ -97,7 +103,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="poll-book-audit-team" id="ops-pos-8" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Poll Book Audit Team Member" id="ops-pos-8" />
               <label className="ops-label" htmlFor="ops-pos-8">
                 Poll Book Audit Team Member<br />
                 <span className="pos-desc">
@@ -106,7 +112,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="precinct-can-team" id="ops-pos-9" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Can Team Member" id="ops-pos-9" />
               <label className="ops-label" htmlFor="ops-pos-9">
                 Precinct Can Team Member<br />
                 <span className="pos-desc">
@@ -117,7 +123,7 @@ class PositionDescription extends Component {
           </div>
           <div className="row">
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="receiving-team" id="ops-pos-10" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Receiving Team Member" id="ops-pos-10" />
               <label className="ops-label" htmlFor="ops-pos-10">
                 Receiving Team Member<br />
                 <span className="pos-desc">
@@ -126,7 +132,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="capitol-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="election-information-services-official" id="ops-pos-11" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Election Information Services Official" id="ops-pos-11" />
               <label className="ops-label" htmlFor="ops-pos-11">
                 Election Information Services Official<br />
                 <span className="pos-desc">
@@ -138,7 +144,7 @@ class PositionDescription extends Component {
           <h3>Precinct Positions</h3>
           <div className="row">
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="delivery-collection-official" id="pre-pos-1" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Delivery/Collection Official" id="pre-pos-1" />
               <label className="pre-label" htmlFor="pre-pos-1">
                 Delivery/Collection Official<br />
                 <span className="pos-desc">
@@ -147,7 +153,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="facility-official" id="pre-pos-2" />
+              <input type="radio" onClick={this.selectPosition}  name="position" value="Facility Official" id="pre-pos-2" />
               <label className="pre-label" htmlFor="pre-pos-2">
                 Facility Official<br />
                 <span className="pos-desc">
@@ -156,7 +162,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="precinct-operations-chairperson" id="pre-pos-3" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Operations Chair" id="pre-pos-3" />
               <label className="pre-label" htmlFor="pre-pos-3">
                 Precinct Operations Chairperson<br />
                 <span className="pos-desc">
@@ -167,7 +173,7 @@ class PositionDescription extends Component {
           </div>
           <div className="row">
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="precinct-operations-official" id="pre-pos-4" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Operations Official" id="pre-pos-4" />
               <label className="pre-label" htmlFor="pre-pos-4">
                 Precinct Operations Official<br />
                 <span className="pos-desc">
@@ -176,7 +182,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="precinct-voter-assistance-official" id="pre-pos-5" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Voter Assistance Official" id="pre-pos-5" />
               <label className="pre-label" htmlFor="pre-pos-5">
                 Precinct Voter Assistance Official<br />
                 <span className="pos-desc">
@@ -185,7 +191,7 @@ class PositionDescription extends Component {
               </label>
             </div>
             <div className="precinct-position radio-btn col-sm-4">
-              <input type="radio" name="volunteer-positions" value="precinct-troubleshooter" id="pre-pos-6" />
+              <input type="radio" onClick={this.selectPosition} name="position" value="Precinct Troubleshooter" id="pre-pos-6" />
               <label className="pre-label" htmlFor="pre-pos-6">
                 Precinct Troubleshooter<br />
                 <span className="pos-desc">
