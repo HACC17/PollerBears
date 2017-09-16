@@ -26,16 +26,16 @@ class Districts extends Component {
 		}
 
 		handleSelection(e){
+			e.preventDefault();
 			this.setState({district: e.target.value});
-			console.log('get trainings', this.getTrainings());
-
+			stateDistrict = {district: e.target.value};
+			console.log('selection district', stateDistrict);
 		}
 
 		handleSubmit(e){
 			e.preventDefault();
 			console.log('submit', this.state.district);
-			stateDistrict = this.state.district;
-			this.getTrainings();
+			console.log('state dist', stateDistrict);
 		}
 
 		getTrainings(data){
@@ -50,6 +50,8 @@ class Districts extends Component {
 					for (let key in element){
 						if (key === "district"){
 							if (element[key] === stateDistrict){
+								// if (element[key]){
+									// console.log('dist', element[key]);
 								let arr = [];
 								for (let props in element){
 									arr.push(element[props]);
@@ -60,14 +62,14 @@ class Districts extends Component {
 						}
 					}
 					otherArray = arrayToShow;
-				})
+				});
 			});
 			this.state.trainings = otherArray;
 			const inputList = this.state.trainings;
 			console.log(inputList);
 			this.setState({
 				inputList: this.state.trainings
-			})
+			});
 		}
 
 	render(){
@@ -89,7 +91,7 @@ class Districts extends Component {
 							  <option value="Pearl City">Pearl City</option>
 							</select>
 						</label>
-						<input type="submit" value="Submit" />
+						<button type="submit" value="Submit" onClick={this.getTrainings}>test</button>
 					</form>
 				</div>
 				<div className="time-container">
