@@ -22,67 +22,69 @@ class PositionDescription extends Component {
 		return(
 			<div className="position-description">
         <fieldset id="volunteer-positions">
+          <p>State Capitol Positions</p>
   				<div className="row">
   					<div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 1
+              <input type="radio" name="position" value="control-center-operator" /> Control Center Operator
   					</div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 2
+              <input type="radio" name="position" value="absentee-ballot-team" /> Absentee Ballot Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 3
-            </div>
-          </div>
-          <div className="row">
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 4
-            </div>
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 5
-            </div>
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 6
+              <input type="radio" name="position" value="ballot-storage-team" /> Ballot Storage Team
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 7
+              <input type="radio" name="position" value="computer-operations-team" /> Computer Operations Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 8
+              <input type="radio" name="position" value="duplication-team" /> Duplication Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 9
-            </div>
-          </div>
-          <div className="row">
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 10
-            </div>
-            <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> State Capitol Position 11
+              <input type="radio" name="position" value="manual-audit-team" /> Manual Audit Team Member
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 1
+              <input type="radio" name="position" value="official-observer-team" /> Official Observer Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 2
+              <input type="radio" name="position" value="poll-book-audit-team" /> Poll Book Audit Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 3
+              <input type="radio" name="position" value="precinct-can-team" /> Precinct Can Team Member
             </div>
           </div>
           <div className="row">
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 4
+              <input type="radio" name="position" value="receiving-team" /> Receiving Team Member
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 5
+              <input type="radio" name="position" value="election-information-services-official" /> Election Information Services Official
+            </div>
+          </div>
+          <p>Polling Site Positions</p>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="delivery-collection-official" /> Delivery/Collection Official
             </div>
             <div className="capitol-position col-sm-4">
-              <input type="radio" name="position" value="volunteer-positions" /> Polling Site Position 6
+              <input type="radio" name="position" value="facility-official" /> Facility Official
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="precinct-operations-chair" /> Precinct Operations Chair
+            </div>
+          </div>
+          <div className="row">
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="precinct-operations-official" /> Precinct Operations Official
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="precinct-voter-assistance-official" /> Precinct Voter Assistance Official
+            </div>
+            <div className="capitol-position col-sm-4">
+              <input type="radio" name="position" value="precinct-troubleshooter" /> Precinct Troubleshooter
             </div>
           </div>
         </fieldset>
