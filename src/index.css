@@ -58,7 +58,7 @@ body {
 
 
 /*** HOME PAGE ***/
-.overall-container{
+.top-container{
   background-color: #FFD95E;
 }
 
@@ -162,3 +162,12 @@ body {
 }
 
 /*** FOR SELECTION OF LOCATION ***/
+
+
+/*** FOOTER ***/
+.footer-container{
+  background-color: #05A3AD;
+  padding: 50px 30px 200px;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+}
