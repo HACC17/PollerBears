@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { changeDistrict, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 let stateDistrict;
 let otherArray;
@@ -33,6 +36,8 @@ class Districts extends Component {
 
 		handleSubmit(e){
 			e.preventDefault();
+      this.props.changeDistrict(this.state.district);
+      console.log(this.props.form.district);
 			console.log('submit', this.state.district);
 			stateDistrict = this.state.district;
 			this.getTrainings();
@@ -101,4 +106,15 @@ class Districts extends Component {
 	}
 }
 
-export default Districts;
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeDistrict,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Districts);

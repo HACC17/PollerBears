@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { changeTraining, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 class Capitol extends Component {
 		constructor(props){
@@ -21,6 +24,8 @@ class Capitol extends Component {
 
 		handleSubmit(e){
 			e.preventDefault();
+      this.props.changeTraining(this.state.training);
+      console.log(this.props.form.training);
 			console.log('submit', this.state.training);
 		}
 	render(){
@@ -41,4 +46,16 @@ class Capitol extends Component {
 	}
 }
 
-export default Capitol;
+
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeTraining,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Capitol);

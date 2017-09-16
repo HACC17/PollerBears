@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
+import { changeTime, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 // import TimekitCalendar from '../components/Timekit-Calendar';
 // import ExampleCalendar from '../components/Calendar';
 
@@ -44,7 +47,8 @@ class MapLocations extends Component {
 
 	handleFormSubmit(submit){
 		submit.preventDefault();
-		console.log('You signed up for', this.state.selectedTraining);
+    this.props.changeTime(this.state.selectedTraining);
+		console.log('You signed up for', this.props.form.time);
 	}
 
 	render(){
@@ -103,4 +107,16 @@ class MapLocations extends Component {
 	}
 }
 
-export default MapLocations;
+
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeTime,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapLocations)
