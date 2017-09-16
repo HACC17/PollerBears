@@ -84,22 +84,20 @@ class MapLocations extends Component {
 		}
 
 		return(
-			<div>
-				<div className="col-lg-12">
-					What part of the island do you want to be trained at?
-					<div className="MapLocations-container">
-						<MapLeaf />
-						<div>
-						</div>
-						<div className="location-list">
-							Name: Address: Date: Times:
-						</div>
-						<div className="signup-form">
-							<form onSubmit={this.handleFormSubmit}>
-								{info}
-								<button type="submit" className="btn btn-lg">Sign Up</button>
-							</form>
-						</div>
+			<div className="location-container col-lg-12">
+				<h2 className="section-heading">Select A Volunteer Site</h2>
+				<div className="MapLocations-container">
+					<MapLeaf />
+					<div>
+					</div>
+					<div className="location-list">
+						Name: Address: Date: Times:
+					</div>
+					<div className="signup-form">
+						<form onSubmit={this.handleFormSubmit}>
+							{info}
+							<button type="submit" className="btn btn-lg">Sign Up</button>
+						</form>
 					</div>
 				</div>
 			</div>
