@@ -26,6 +26,16 @@ export function positionsFetchDataSuccess(items) {
     };
 }
 
+export function fetchPositions(url){
+  return (dispatch) => {
+    return axios.get(url)
+      .then(response => {
+        dispatch(positionsFetchDataSuccess(response.data))
+      })
+      .then((items) => dispatch(fetchPositions(items)));
+  };
+}
+
 export function trainingsFetchDataSuccess(items) {
     return {
         type: 'TRAININGS_FETCH_DATA_SUCCESS',
@@ -40,16 +50,6 @@ export function fetchTrainings(url){
         dispatch(trainingsFetchDataSuccess(response.data))
       })
       .then((items) => dispatch(fetchTrainings(items)));
-  };
-}
-
-export function fetchPositions(url){
-  return (dispatch) => {
-    return axios.get(url)
-      .then(response => {
-        dispatch(positionsFetchDataSuccess(response.data))
-      })
-      .then((items) => dispatch(fetchPositions(items)));
   };
 }
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { changePos, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-
 class PositionDescription extends Component {
 	constructor(props){
 		super(props);
@@ -16,13 +15,13 @@ class PositionDescription extends Component {
   selectPosition(e){
     this.setState({position: e.target.value});
     this.props.changePos(e.target.value);
-    console.log(this.props.form.position);
+    // console.log(this.props.form.position);
   }
 
 	handleCapitolPos(e){
 		e.preventDefault();
 		this.setState({position: e.target.value});
-		console.log('target', e.target.value);
+		// console.log('target', e.target.value);
 		// if (document.getElementById(e.target.id).checked='true'){
 		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
 		// }
@@ -207,8 +206,8 @@ class PositionDescription extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    ...state,
-  }
+    ...state
+  };
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
