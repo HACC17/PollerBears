@@ -71,12 +71,12 @@ class Districts extends Component {
 				for (var i = 0; i < otherArray.length; i++){
 					var radioInputArr = [];
 					var breakPoint = <br/>;
-					var radioInput = <div className="district-radio" onSubmit={this.handleDistrictSubmit}>
+					var radioInput = <div className="district-radio">
 															<label>
-																<input type="radio" id={`radio${i}`} key={i}
+																<input type="radio" id={`radio${i}`} key={i} name={`radio${i}`}
 																	value={otherArray[i][0] + otherArray[i][1] + otherArray[i][3] + otherArray[i][4] + otherArray[i][5] + otherArray[i][6]}
 																	checked={this.state.time===otherArray[i][6]}
-																	onClick={this.handleTimes}
+																	onChange={this.handleTimes}
 																/>
 																{otherArray[i][6]}
 															</label>

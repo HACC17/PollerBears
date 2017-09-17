@@ -8,11 +8,6 @@ class Capitol extends Component {
 			super(props);
 			this.state={
 				training: 'State Capitol Auditorium'
-				// site: 'State Capitol Auditorium',
-				// address: '415 South Beretania Street',
-				// city: 'Honolulu',
-				// zip: '96813',
-				// time: '6:00pm - 7:00pm'
 			};
 			this.handleSelection = this.handleSelection.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
