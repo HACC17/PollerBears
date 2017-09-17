@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
 import { changeTime, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'

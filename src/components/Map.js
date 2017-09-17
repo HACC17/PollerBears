@@ -752,7 +752,6 @@ class Livemap extends Component{
 
 
   render(){
-    console.log('this pos', this.props.position);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){

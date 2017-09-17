@@ -7,7 +7,7 @@ class Capitol extends Component {
 		constructor(props){
 			super(props);
 			this.state={
-				training: ''
+				training: 'State Capitol Auditorium'
 				// site: 'State Capitol Auditorium',
 				// address: '415 South Beretania Street',
 				// city: 'Honolulu',
@@ -25,7 +25,6 @@ class Capitol extends Component {
 		handleSubmit(e){
 			e.preventDefault();
       this.props.changeTraining(this.state.training);
-      console.log(this.props.form.training);
 			console.log('submit', this.state.training);
 		}
 	render(){
@@ -35,9 +34,7 @@ class Capitol extends Component {
 				<label>
 					Select Training Location
 					<select value={this.state.training} onChange={this.handleSelection}>
-					  <option value="YMCA">YMCA</option>
-					  <option value="Capitol">Capitol</option>
-					  <option value="State Capitol Auditorium: 6:00pm - 7:00pm">State Capitol Auditorium</option>
+					  <option value="State Capitol Auditorium">State Capitol Auditorium</option>
 					</select>
 				</label>
 				<input type="submit" value="Submit" />
