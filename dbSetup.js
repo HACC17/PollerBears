@@ -26,7 +26,7 @@ csv
     day: data[0],
     date: data[1],
     area: data[2],
-    training: data[3]
+    training: data[3],
     site: data[4],
     address: data[5],
     city: data[6],
