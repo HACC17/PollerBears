@@ -4,7 +4,6 @@ import MapLeaf from '../components/Map';
 import { changeTime, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import axios from 'axios'
 // import TimekitCalendar from '../components/Timekit-Calendar';
 // import ExampleCalendar from '../components/Calendar';
 
@@ -49,23 +48,7 @@ class MapLocations extends Component {
 	handleFormSubmit(submit){
 		submit.preventDefault();
     this.props.changeTime(this.state.selectedTraining);
-      axios.post("http://localhost:3001/volunteer", {
-        email: this.props.form.email,
-        password: this.props.form.password,
-        firstName: this.props.form.firstName,
-        lastName: this.props.form.lastName,
-        phoneNumber: this.props.form.phoneNumber,
-        birthDate: this.props.form.birthDate,
-        electionWorking:this.props.form.electionWorking,
-        city: this.props.form.city,
-        zip: this.props.form.zip,
-        mailingAddress: this.props.form.mailingAddress,
-        position: this.props.form.position,
-        trainingTime: this.props.form.time,
-        trainingLocation: this.props.form.training,
-        district: this.props.form.district
-      });
-    console.log("Sumbitted Form");
+		console.log('You signed up for', this.props.form.time);
 	}
 
 	render(){
@@ -78,7 +61,6 @@ class MapLocations extends Component {
 			let dataArr = [data];
 			for (var keyValue in dataArr){
 				infoValue = dataArr[keyValue];
-				console.log('infoVal', infoValue);
 				infoBlocks = [infoValue.name, infoValue.address, infoValue.date, infoValue.times].join(' ');
 				times.push(infoValue.times);
 			}

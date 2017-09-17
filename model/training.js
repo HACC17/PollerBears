@@ -8,13 +8,13 @@ const training = mongoose.model(
     date:{
       type: String,
     },
-    county:{
+    area:{
       type: String
     },
-    trainingPosition: {
+    training:{
       type: String
     },
-    trainingLocation: {
+    site: {
       type: String
     },
     address:{
