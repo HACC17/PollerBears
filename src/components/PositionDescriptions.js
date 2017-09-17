@@ -3,7 +3,6 @@ import { changePos, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-
 class PositionDescription extends Component {
 	constructor(props){
 		super(props);
@@ -18,14 +17,13 @@ class PositionDescription extends Component {
   selectPosition(e){
     this.setState({position: e.target.value});
     this.props.changePos(e.target.value);
-    console.log('form pos', this.props.form.position);
     if (this.props.form.position === "Control Center Operator" ||
         this.props.form.position === "Absentee Ballot Team Member" || 
         this.props.form.position === "Ballot Storage Team" || 
         this.props.form.position === "Computer Operations Team Member" ||
         this.props.form.position === "Duplication Team Member" ||
         this.props.form.position === "Manual Audit Team Member" ||
-        this.props.form.position === "Official Oberserver Team Member" ||
+        this.props.form.position === "Official Observer Team Member" ||
         this.props.form.position === "Poll Book Audit Team Member" || 
         this.props.form.position === "Precinct Can Team Member" ||
         this.props.form.position === "Receiving Team Member" ||
@@ -39,7 +37,7 @@ class PositionDescription extends Component {
 	handleCapitolPos(e){
 		e.preventDefault();
 		this.setState({position: e.target.value});
-		console.log('target', e.target.value);
+		// console.log('target', e.target.value);
 		// if (document.getElementById(e.target.id).checked='true'){
 		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
 		// }
@@ -224,8 +222,8 @@ class PositionDescription extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    ...state,
-  }
+    ...state
+  };
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({

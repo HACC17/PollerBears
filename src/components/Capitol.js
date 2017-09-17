@@ -23,7 +23,7 @@ class Capitol extends Component {
 			console.log('submit', this.state.training);
 		}
 	render(){
-		console.log('state', this.state);
+		// console.log('state', this.state);
 		return(
 			<form onSubmit={this.handleSubmit}>
 				<label>

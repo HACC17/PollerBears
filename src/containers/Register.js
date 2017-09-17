@@ -22,7 +22,7 @@ class Register extends Component {
         this.props.form.position === "Computer Operations Team Member" ||
         this.props.form.position === "Duplication Team Member" ||
         this.props.form.position === "Manual Audit Team Member" ||
-        this.props.form.position === "Official Oberserver Team Member" ||
+        this.props.form.position === "Official Observer Team Member" ||
         this.props.form.position === "Poll Book Audit Team Member" || 
         this.props.form.position === "Precinct Can Team Member" ||
         this.props.form.position === "Receiving Team Member" ||

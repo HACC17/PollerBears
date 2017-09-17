@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { changeDistrict, getData} from '../reducers/'
+import { changeDistrict, changeTraining, getData, } from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchTrainings } from '../actions/index.js';
+import axios from 'axios';
 
+let trainings;
 let stateDistrict;
 let otherArray;
 
@@ -21,26 +22,40 @@ class Districts extends Component {
 			this.handleSubmit = this.handleSubmit.bind(this);
 			this.handleTimes = this.handleTimes.bind(this);
 			this.handleDistrictSubmit = this.handleDistrictSubmit.bind(this);
+			this.fetchTrain = this.fetchTrain.bind(this);
 		}
 
 		handleTimes(e){
 			this.setState({time: e.target.value});
 			console.log('target', e.target.value);
+			this.props.changeTraining(e.target.value);
+			console.log('times', this.state.times);
 		}
 
 		handleSelection(e){
 			this.setState({district: e.target.value});
 			stateDistrict = e.target.value;
+			this.props.changeDistrict(e.target.value);
 		}
 
 		handleDistrictSubmit(e){
 			e.preventDefault();
 		}
 
+  fetchTrain(data){
+    axios({
+      method: 'GET',
+      url: "http://localhost:3001/training/",
+      responseType: 'json'
+    })
+      .then(function(response){
+      	trainings = response.data;
+      });
+  }
+
 		handleSubmit(e){
 			e.preventDefault();
       // this.props.changeDistrict(this.state.district);
-				let trainings = this.props.trainingData;
 				let arr = [];
 				let arrSlice = [];
 				let arrayToShow = [];
@@ -71,19 +86,20 @@ class Districts extends Component {
 				for (var i = 0; i < otherArray.length; i++){
 					var radioInputArr = [];
 					var breakPoint = <br/>;
+					let valuesArr = [otherArray[i][0] + otherArray[i][1] + otherArray[i][3] + otherArray[i][4] + otherArray[i][5] + otherArray[i][6] + otherArray[i][7] + otherArray[i][8]];
 					var radioInput = <div className="district-radio">
 															<label>
 																<input type="radio" id={`radio${i}`} key={i} name={`radio${i}`}
-																	value={otherArray[i][0] + otherArray[i][1] + otherArray[i][3] + otherArray[i][4] + otherArray[i][5] + otherArray[i][6]}
-																	checked={this.state.time===otherArray[i][6]}
+																	value={valuesArr}
+																	checked={this.state.time===otherArray[i][8]}
 																	onChange={this.handleTimes}
 																/>
-																{otherArray[i][6]}
+																{otherArray[i][8]}
 															</label>
 														</div>;
 					radioInputArr.push(radioInput);
-					otherArray[i].splice(6);
-					otherArray[i].splice(6, 0, radioInputArr);
+					otherArray[i].splice(8);
+					otherArray[i].splice(8, 0, radioInputArr);
 					otherArray[i].push(breakPoint);
 				}
 			this.state.trainings = otherArray;
@@ -94,7 +110,7 @@ class Districts extends Component {
 		}
 
 		componentDidMount() {
-		 this.props.fetchTrainings("http://localhost:3001/training");
+			this.fetchTrain();
 		}
 
 	render(){
@@ -131,14 +147,12 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => 
 	bindActionCreators({
   changeDistrict,
+  changeTraining,
   getData,
 	}, dispatch)
-	return {
-      fetchTrainings: (url) => dispatch(fetchTrainings(url)),
-    }
-}
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Districts);
