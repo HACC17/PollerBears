@@ -7,6 +7,7 @@ import Leaflet from 'leaflet';
 import $ from 'jquery';
 import axios from 'axios';
 import { fetchPositions, fetchTrainings } from '../actions/index.js';
+// import { fetchTrainings } from '../actions/index.js';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
 import JSSocial from '../components/JSSocial';
@@ -57,8 +58,6 @@ let event = {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.form.position);
-
   statePosition = state.form.position;
   return {...state};
 }
@@ -91,7 +90,7 @@ class Livemap extends Component{
     this.props.fetchTrainings("http://localhost:3001/training");
     // this.fetchPos();
     // console.log(this.fetchPos())
-    console.log(this.props.trainingData);
+    // console.log(this.props.trainingData);
   }
 
   componentDidUpdate(){
@@ -174,7 +173,6 @@ class Livemap extends Component{
       }
       m = Leaflet.marker( [markers[i].lat, markers[i].lng], {icon: myIcon}).bindPopup(div);
       this.leafletElement.addLayer( m );
-      console.log(this.leafletElement.featureGroup);
     }
 
     map.addLayer( this.leafletElement );
