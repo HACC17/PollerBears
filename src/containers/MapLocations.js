@@ -78,12 +78,12 @@ class MapLocations extends Component {
 			let dataArr = [data];
 			for (var keyValue in dataArr){
 				infoValue = dataArr[keyValue];
+				console.log('infoVal', infoValue);
 				infoBlocks = [infoValue.name, infoValue.address, infoValue.date, infoValue.times].join(' ');
 				times.push(infoValue.times);
 			}
 			return infoBlocks;
 		});
-
 		for (var trainings in locArr){
 			let signUps = <div className="loc-info" key={trainings}>
 											{locArr[trainings]}

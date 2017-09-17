@@ -668,17 +668,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class Livemap extends Component{
-  fetchPos(data){
-    axios({
-      method: 'GET',
-      url: "http://localhost:3001/position/",
-      responseType: 'json'
-    })
-      .then(function(response){
-        console.log('fetch pos res', response);
-        // dispatch(setPosition(response.position));
-      })
-  }
 
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
@@ -686,7 +675,6 @@ class Livemap extends Component{
 
   componentDidMount(){
     this.props.fetchPositions("http://localhost:3001/position");
-    this.fetchPos();
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.49332, -157.99164],
       minZoom: 10,
@@ -764,7 +752,7 @@ class Livemap extends Component{
 
 
   render(){
-    console.log('this', this);
+    console.log('this pos', this.props.position);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){

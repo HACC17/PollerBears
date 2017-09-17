@@ -26,6 +26,23 @@ export function positionsFetchDataSuccess(items) {
     };
 }
 
+export function trainingsFetchDataSuccess(items) {
+    return {
+        type: 'TRAININGS_FETCH_DATA_SUCCESS',
+        items
+    };
+}
+
+export function fetchTrainings(url){
+  return (dispatch) => {
+    return axios.get(url)
+      .then(response => {
+        dispatch(trainingsFetchDataSuccess(response.data))
+      })
+      .then((items) => dispatch(fetchTrainings(items)));
+  };
+}
+
 export function fetchPositions(url){
   return (dispatch) => {
     return axios.get(url)
