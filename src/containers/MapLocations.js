@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
+import { changeTime, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import axios from 'axios'
 // import TimekitCalendar from '../components/Timekit-Calendar';
 // import ExampleCalendar from '../components/Calendar';
 
@@ -44,7 +48,24 @@ class MapLocations extends Component {
 
 	handleFormSubmit(submit){
 		submit.preventDefault();
-		console.log('You signed up for', this.state.selectedTraining);
+    this.props.changeTime(this.state.selectedTraining);
+      axios.post("http://localhost:3001/volunteer", {
+        email: this.props.form.email,
+        password: this.props.form.password,
+        firstName: this.props.form.firstName,
+        lastName: this.props.form.lastName,
+        phoneNumber: this.props.form.phoneNumber,
+        birthDate: this.props.form.birthDate,
+        electionWorking:this.props.form.electionWorking,
+        city: this.props.form.city,
+        zip: this.props.form.zip,
+        mailingAddress: this.props.form.mailingAddress,
+        position: this.props.form.position,
+        trainingTime: this.props.form.time,
+        trainingLocation: this.props.form.training,
+        district: this.props.form.district
+      });
+    console.log("Sumbitted Form");
 	}
 
 	render(){
@@ -80,22 +101,20 @@ class MapLocations extends Component {
 		}
 
 		return(
-			<div>
-				<div className="col-lg-12">
-					What part of the island do you want to be trained at?
-					<div className="MapLocations-container">
-						<MapLeaf />
-						<div>
-						</div>
-						<div className="location-list">
-							Name: Address: Date: Times:
-						</div>
-						<div className="signup-form">
-							<form onSubmit={this.handleFormSubmit}>
-								{info}
-								<button type="submit" className="btn btn-lg">Sign Up</button>
-							</form>
-						</div>
+			<div className="location-container col-lg-12">
+				<h2 className="section-heading">Select A Volunteer Site</h2>
+				<div className="MapLocations-container">
+					<MapLeaf />
+					<div>
+					</div>
+					<div className="location-list">
+						Name: Address: Date: Times:
+					</div>
+					<div className="signup-form">
+						<form onSubmit={this.handleFormSubmit}>
+							{info}
+							<button type="submit" className="btn btn-lg">Sign Up</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -103,4 +122,16 @@ class MapLocations extends Component {
 	}
 }
 
-export default MapLocations;
+
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeTime,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapLocations)
