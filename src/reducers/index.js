@@ -106,6 +106,15 @@ export function positionData(state = [], action) {
     }
 }
 
+export function trainingData(state = [], action) {
+    switch (action.type) {
+        case 'TRAININGS_FETCH_DATA_SUCCESS':
+            return action.items;
+        default:
+            return state;
+    }
+}
+
 export const changeTime = (time) => {
   return dispatch => {
     dispatch({
@@ -136,5 +145,6 @@ export const changeDistrict = (district) => {
 export default combineReducers({
   routing: routerReducer,
   form,
-  positionData
+  positionData,
+  trainingData
 })
