@@ -32,10 +32,14 @@ csv
     city: data[6],
     zip: data[7],
     time: data[8],
-    district: data[9],
+    isoTime: {
+      startTime: data[9],
+      endTime: data[10]
+    },
+    district: data[11],
     coordinates: {
-      lat: data[10],
-      long: data[11]
+      lat: data[12],
+      long: data[13]
     }
   });
 });
@@ -50,8 +54,6 @@ csv
     trainingNeeded: data[3]
   });
 });
-
-
 
 mongoose.connection.once('open', function() {
   Promise.all([
@@ -81,6 +83,7 @@ mongoose.connection.once('open', function() {
       city: element.city,
       zip: element.zip,
       time: element.time,
+      isoTime: element.isoTime,
       district: element.district,
       coordinates: element.coordinates
     }
