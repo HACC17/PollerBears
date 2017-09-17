@@ -56,22 +56,7 @@ class Form extends Component {
       mailingAddress: this.state.mailingAddress
     };
     this.props.changeForm(data);
-    console.log(this.props.form.city);
-    console.log(this.props.form.zip);
-    console.log(this.props.form.mailingAddress);
-     axios.post("http://localhost:3001/volunteer", {
-      email: this.props.form.email,
-      password: this.props.form.password,
-      firstName: this.props.form.firstName,
-      lastName: this.props.form.lastName,
-      phoneNumber: this.props.form.phoneNumber,
-      birthDate: this.props.form.birthDate,
-      electionWorking:this.props.form.electionWorking,
-      city: this.props.form.city,
-      zip: this.props.form.zip,
-      mailingAddress: this.props.form.mailingAddress,
-      });
-    localStorage.setItem("lastname", "Smith");
+    return false;
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
@@ -120,7 +105,6 @@ class Form extends Component {
 
   electionSelection(e){
     this.setState({electionWorking: e.target.value});
-    console.log(e.target.value);
   }
 
   errorClass(error) {
@@ -241,7 +225,7 @@ class Form extends Component {
                 </ul>
             </div>
 
-        <button type="submit" className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
+        <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
       </form>
 
     )

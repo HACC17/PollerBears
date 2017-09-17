@@ -46,8 +46,8 @@ app.post('/volunteer', (req, res) =>{
     // positionCurrent: req.body.positionCurrent,
     // trainingId: req.body.trainingId,
     // trainingDate: req.body.trainingDate,
-    // trainingTime: req.body.trainingTime,
-    // trainingLocation: req.body.trainingLocation,
+    trainingTime: req.body.trainingTime,
+    trainingLocation: req.body.trainingLocation,
     // trainingAddress: req.body.trainingAddress,
     // trainingPoint: req.body.trainingPoint,
     // trainingDescription: req.body.trainingDescription,
@@ -65,7 +65,8 @@ app.post('/volunteer', (req, res) =>{
     password: req.body.password,
     zip: req.body.zip,
     mailingAddress: req.body.mailingAddress,
-    city: req.body.city
+    city: req.body.city,
+    district: req.body.district
     // MI:req.body.MI,
     // AKA:req.body.AKA,
     // SSN:req.body.SSN,
