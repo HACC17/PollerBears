@@ -15,7 +15,9 @@ import { MapLayer } from 'react-leaflet';
 import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
+import PositionDescription from '../components/PositionDescriptions';
 
+console.log(PositionDescription);
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
@@ -465,16 +467,16 @@ class Livemap extends Component{
     this.props.fetchPositions("http://localhost:3001/position");
     this.fetchPos();
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
-      center: [21.307195, -157.857398],
-      minZoom: 5,
-      zoom: 10
+      center: [21.49332, -157.99164],
+      minZoom: 10,
+      maxZoom: 14,
+      zoom: 10,
+      setView: true
     });
     Leaflet.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
      subdomains: ['a','b','c']
     }).addTo( map );
-
-    // let myURL = $( 'script[src$="Map.js"]' ).attr( 'src' ).replace( 'Map.js', '' );
 
     let myIcon = Leaflet.icon({
       iconUrl: pic1,
@@ -528,6 +530,14 @@ class Livemap extends Component{
       this.leafletElement.addLayer( m );
     }
     map.addLayer( this.leafletElement );
+
+    var southWest = Leaflet.latLng(21.16648, -158.48465),
+    northEast = Leaflet.latLng(21.90865, -157.48627),
+    bounds = Leaflet.latLngBounds(southWest, northEast);
+
+    map.on('click', function(e) {
+      alert(e.latlng); // e is an event object (MouseEvent in this case)
+  });
 }
 
 
