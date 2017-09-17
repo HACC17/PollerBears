@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
 import $ from 'jquery';
 import axios from 'axios';
+// import * as formActions from '../actions/index.js';
+import { fetchPositions } from '../actions/index.js';
+
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
 import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
+import PositionDescription from '../components/PositionDescriptions';
 
+console.log(PositionDescription);
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
@@ -166,6 +172,7 @@ const markers = [
     "lat":21.327907,
     "lng":-158.068294,
     "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
+<<<<<<< HEAD
     "times":[
       {
         "startTime":'2018-06-30T14:00:00-04:00',
@@ -176,6 +183,9 @@ const markers = [
         "endTime":'2018-06-30T13:30:00-04:00'
       }
     ]
+=======
+    "times":[]
+>>>>>>> master
   },
   {
     "name":"Kailua Elementary School",
@@ -473,23 +483,48 @@ let event = {
   endTime: '2016-09-16T21:45:00-04:00'
 }
 
+
+const mapStateToProps = (state) => {
+  return {...state};
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetchPositions: (url) => dispatch(fetchPositions(url)),
+    };
+};
+
 class Livemap extends Component{
+  fetchPos(data){
+    axios({
+      method: 'GET',
+      url: "http://localhost:3001/position/",
+      responseType: 'json'
+    })
+      .then(function(response){
+        console.log('fetch pos res', response);
+        // dispatch(setPosition(response.position));
+      })
+  }
+
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
   }
 
   componentDidMount(){
+    this.props.fetchPositions("http://localhost:3001/position");
+    this.fetchPos();
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
-      center: [21.307195, -157.857398],
-      minZoom: 5,
-      zoom: 10
+      center: [21.49332, -157.99164],
+      minZoom: 10,
+      maxZoom: 14,
+      zoom: 10,
+      setView: true
     });
     Leaflet.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
      subdomains: ['a','b','c']
     }).addTo( map );
-
-    // let myURL = $( 'script[src$="Map.js"]' ).attr( 'src' ).replace( 'Map.js', '' );
 
     let myIcon = Leaflet.icon({
       iconUrl: pic1,
@@ -543,9 +578,20 @@ class Livemap extends Component{
       this.leafletElement.addLayer( m );
     }
     map.addLayer( this.leafletElement );
+
+    var southWest = Leaflet.latLng(21.16648, -158.48465),
+    northEast = Leaflet.latLng(21.90865, -157.48627),
+    bounds = Leaflet.latLngBounds(southWest, northEast);
+
+    map.on('click', function(e) {
+      alert(e.latlng); // e is an event object (MouseEvent in this case)
+  });
 }
 
+
+
   render(){
+    console.log('this', this);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){
@@ -582,4 +628,4 @@ class Livemap extends Component{
 }
 }
 
-export default Livemap;
+export default connect(mapStateToProps, mapDispatchToProps)(Livemap);
