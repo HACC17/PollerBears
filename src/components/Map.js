@@ -117,7 +117,7 @@ class Livemap extends Component{
       iconRetinaUrl: pic2,
       iconSize: [29, 24],
       iconAnchor: [9, 21],
-      popupAnchor: [-130, 5]
+      popupAnchor: [-130, -10]
     });
 
     let modal = document.getElementById('myModal');
