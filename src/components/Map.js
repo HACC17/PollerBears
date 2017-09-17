@@ -20,6 +20,7 @@ const zoomLevel = 12;
 let contents;
 let map = null;
 let m = null;
+let test;
 let statePosition;
 let mapHasBeenCreated = false;
 let timeActivated = false;
@@ -58,6 +59,8 @@ let event = {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state.trainingData[1]);
+  test = state.trainingData[1];
   statePosition = state.form.position;
   return {...state};
 }
@@ -88,9 +91,9 @@ class Livemap extends Component{
 
   componentDidMount(){
     this.props.fetchTrainings("http://localhost:3001/training");
-    // this.fetchPos();
-    // console.log(this.fetchPos())
+    this.fetchPos();
     // console.log(this.props.trainingData);
+
   }
 
   componentDidUpdate(){
@@ -100,6 +103,7 @@ class Livemap extends Component{
   }
 
   createMap(){
+    console.log(test.position);
     if (mapHasBeenCreated) {
       this.leafletElement = Leaflet.markerClusterGroup();
       map.removeLayer(this.leafletElement);
