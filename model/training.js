@@ -32,10 +32,9 @@ const training = mongoose.model(
     district:{
       type: String
     },
-    coordinates:[{
-      lat: String,
-      long: String
-    }],
+    coordinates:{
+      type: Object
+    },
   }
 );
 
