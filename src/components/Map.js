@@ -469,6 +469,7 @@ class Livemap extends Component{
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
       center: [21.49332, -157.99164],
       minZoom: 10,
+      maxZoom: 14,
       zoom: 10,
       setView: true
     });
