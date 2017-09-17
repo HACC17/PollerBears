@@ -70,9 +70,9 @@ mongoose.connection.once('open', function() {
     return {
       day: element.day,
       date: element.date,
-      county: element.county,
-      position: element.position,
-      location: element.location,
+      area: element.area,
+      training: element.training,
+      site: element.site,
       address: element.address,
       city: element.city,
       zip: element.zip,
