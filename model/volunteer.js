@@ -101,6 +101,9 @@ const volunteer = mongoose.model(
       type:String,
       required: true
     },
+    district:{
+      type: String
+    },
     mailingAddress:{
       type:String,
       required: true

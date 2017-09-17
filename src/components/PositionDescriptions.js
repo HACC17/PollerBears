@@ -15,7 +15,8 @@ class PositionDescription extends Component {
 
   selectPosition(e){
     this.setState({position: e.target.value});
-    console.log(e.target.value);
+    this.props.changePos(e.target.value);
+    console.log(this.props.form.position);
   }
 
 	handleCapitolPos(e){
@@ -23,8 +24,6 @@ class PositionDescription extends Component {
 		e.preventDefault();
 		this.setState({position: e.target.value});
 		console.log('target', e.target.value);
-    this.props.changePos(e.target.value);
-    console.log(this.props.form.position);
 		// if (document.getElementById(e.target.id).checked='true'){
 		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
 		// }
