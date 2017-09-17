@@ -25,9 +25,9 @@ csv
   trainingData.push({
     day: data[0],
     date: data[1],
-    county: data[2],
-    position: data[3],
-    location: data[4],
+    area: data[2],
+    training: data[3]
+    site: data[4],
     address: data[5],
     city: data[6],
     zip: data[7],
