@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import MapLeaf from '../components/Map';
+import { changeTime, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 // import TimekitCalendar from '../components/Timekit-Calendar';
 // import ExampleCalendar from '../components/Calendar';
 
@@ -44,63 +47,32 @@ class MapLocations extends Component {
 
 	handleFormSubmit(submit){
 		submit.preventDefault();
-		console.log('You signed up for', this.state.selectedTraining);
+    this.props.changeTime(this.state.selectedTraining);
+		console.log('You signed up for', this.props.form.time);
 	}
 
 	render(){
-		let loc = this.state.locations;
-		let info = [];
-		let infoValue;
-		let infoBlocks;
-		let times = [];
-		let locArr = loc.map(function(data){
-			let dataArr = [data];
-			for (var keyValue in dataArr){
-				infoValue = dataArr[keyValue];
-				infoBlocks = [infoValue.name, infoValue.address, infoValue.date, infoValue.times].join(' ');
-				times.push(infoValue.times);
-			}
-			return infoBlocks;
-		});
-
-		for (var trainings in locArr){
-			let signUps = <div className="loc-info" key={trainings}>
-											{locArr[trainings]}
-											<div className="radio">
-												<label>
-													<input type="radio" value={times[trainings]}
-														checked={this.state.selectedTraining===times[trainings]}
-														onChange={this.handleOptionChange}
-														/>
-													{times[trainings]}
-												</label>
-											</div>
-										</div>;
-			info.push(signUps);
-		}
-
 		return(
-			<div>
-				<div className="col-lg-12">
-					What part of the island do you want to be trained at?
-					<div className="MapLocations-container">
-						<MapLeaf />
-						<div>
-						</div>
-						<div className="location-list">
-							Name: Address: Date: Times:
-						</div>
-						<div className="signup-form">
-							<form onSubmit={this.handleFormSubmit}>
-								{info}
-								<button type="submit" className="btn btn-lg">Sign Up</button>
-							</form>
-						</div>
-					</div>
+			<div className="location-container col-lg-12">
+				<h2 className="section-heading">Select A Volunteer Site</h2>
+				<div className="MapLocations-container">
+					<MapLeaf />
 				</div>
 			</div>
 		);
 	}
 }
 
-export default MapLocations;
+
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeTime,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapLocations)

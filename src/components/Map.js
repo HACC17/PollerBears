@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
 import $ from 'jquery';
 import axios from 'axios';
+// import * as formActions from '../actions/index.js';
+import { fetchPositions } from '../actions/index.js';
+
 // import markerClusters from 'leaflet.markercluster';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import { MapLayer } from 'react-leaflet';
 import JSSocial from '../components/JSSocial';
 import pic1 from '../images/pin24.png';
 import pic2 from '../images/pin48.png';
+import PositionDescription from '../components/PositionDescriptions';
 
+console.log(PositionDescription);
 const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
@@ -33,7 +39,7 @@ const markers = [
     },
     {
       "startTime":'2018-07-14T14:00:00-04:00',
-      "endTime":'2018-07-14T16:30:00-04:00'
+      "endTime":'2018-07-14T16:00:00-04:00'
     },
     {
       "startTime":'2018-10-03T21:30:00-04:00',
@@ -47,7 +53,20 @@ const markers = [
     "lat":21.475665,
     "lng":-157.989612,
     "trainings": ["7/14/18 11:00-1:00 p.m.", "10/3/18 6:30-8:30 p.m.", "7/14/18 9:00-10:30 a.m."],
-    "times": []
+    "times": [
+      {
+        "startTime":'2018-07-14T14:00:00-04:00',
+        "endTime":'2018-07-14T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-10-03T21:30:00-04:00',
+        "endTime":'2018-10-03T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-07-14T12:00:00-04:00',
+        "endTime":'2018-07-14T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Mililani High School",
@@ -79,7 +98,20 @@ const markers = [
     "lat":21.274238,
     "lng":-157.704898,
     "trainings":["6/16/18 11:00-1:00 p.m.", "10/2/18 6:30-8:00 p.m.", "6/16/18 9:00-10:30 a.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-06-16T14:00:00-04:00',
+        "endTime":'2018-06-16T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-10-02T21:30:00-04:00',
+        "endTime":'2018-10-02T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-16T12:00:00-04:00',
+        "endTime":'2018-06-16T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Aina Haina Elementary School",
@@ -105,7 +137,16 @@ const markers = [
     "lat":21.344594,
     "lng":-158.034659,
     "trainings":["10/17/18 6:30-8:00 p.m.", "7/17/18 6:30-8:00 p.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-10-17T21:30:00-04:00',
+        "endTime":'2018-10-17T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-17T21:30:00-04:00',
+        "endTime":'2018-07-17T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Campbell High School",
@@ -131,7 +172,20 @@ const markers = [
     "lat":21.327907,
     "lng":-158.068294,
     "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
+<<<<<<< HEAD
     "times":[]
+=======
+    "times":[
+      {
+        "startTime":'2018-06-30T14:00:00-04:00',
+        "endTime":'2018-06-30T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-30T12:00:00-04:00',
+        "endTime":'2018-06-30T13:30:00-04:00'
+      }
+    ]
+>>>>>>> master
   },
   {
     "name":"Kailua Elementary School",
@@ -180,8 +234,65 @@ const markers = [
     "address":"415 South Beretania Street Honolulu, HI 96813",
     "lat":21.307195,
     "lng":-157.857398,
-    "trainings":["7/12/18 6:00-7:00 p.m.", "7/30/18 6:00-8:00 p.m.", "8/2/18 6:00-8:00 p.m.", "10/15/18 6:00-8:00 p.m.", "6/19/18 6:00-7:00 p.m.", "7/17/18 6:00-7:00 p.m.", "7/21/18 9:00-10:00 a.m.", "7/24/18 6:00-7:00 p.m.", "6/21/18 6:00-7:00 p.m.", "7/26/18 6:00-7:00 p.m.", "7/19/18 6:00-7:00 p.m.", "6/26/18 6:30-8:30 p.m.", "8/1/18 6:30-8:00 p.m."],
-    "times":[]
+    "trainings":["7/12/18 6:00-7:00 p.m.", "7/30/18 6:00-8:00 p.m.", "8/2/18 6:00-8:00 p.m.",
+    "10/15/18 6:00-8:00 p.m.", "6/19/18 6:00-7:00 p.m.", "7/17/18 6:00-7:00 p.m.",
+    "7/21/18 9:00-10:00 a.m.", "7/24/18 6:00-7:00 p.m.", "6/21/18 6:00-7:00 p.m.",
+    "7/26/18 6:00-7:00 p.m.", "7/19/18 6:00-7:00 p.m.", "6/26/18 6:30-8:30 p.m.",
+    "8/1/18 6:30-8:00 p.m."],
+    "times":[
+      {
+        "startTime":'2018-07-12T21:00:00-04:00',
+        "endTime":'2018-07-12T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-30T21:00:00-04:00',
+        "endTime":'2018-07-30T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-08-02T21:00:00-04:00',
+        "endTime":'2018-08-02T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-10-15T21:00:00-04:00',
+        "endTime":'2018-10-15T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-19T21:00:00-04:00',
+        "endTime":'2018-06-19T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-17T21:00:00-04:00',
+        "endTime":'2018-07-17T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-21T12:00:00-04:00',
+        "endTime":'2018-07-21T13:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-24T21:00:00-04:00',
+        "endTime":'2018-07-24T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-21T21:00:00-04:00',
+        "endTime":'2018-06-21T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-26T21:00:00-04:00',
+        "endTime":'2018-07-26T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-19T21:00:00-04:00',
+        "endTime":'2018-07-19T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-26T21:30:00-04:00',
+        "endTime":'2018-06-26T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-08-01T21:30:00-04:00',
+        "endTime":'2018-08-01T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"State Capitol Senate Conference Room 016",
@@ -189,7 +300,12 @@ const markers = [
     "lat":21.307195,
     "lng":-157.857398,
     "trainings":["7/23/18 6:00-8:00 p.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-07-23T21:00:00-04:00',
+        "endTime":'2018-07-23T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Koko Head Elementary School Cafeteria",
@@ -197,7 +313,20 @@ const markers = [
     "lat":21.274238,
     "lng":-157.704898,
     "trainings":["6/16/18 11:00-1:00 p.m.", "10/2/18 6:30-8:00 p.m.", "6/16/18 9:00-10:30 a.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-06-16T14:00:00-04:00',
+        "endTime":'2018-10-17T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-10-02T21:30:00-04:00',
+        "endTime":'2018-10-02T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-16T12:00:00-04:00',
+        "endTime":'2018-06-16T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Kaneohe Elementary School Cafeteria",
@@ -205,15 +334,46 @@ const markers = [
     "lat":21.395919,
     "lng":-157.795851,
     "trainings":["10/9/18 6:30-8:30 p.m.", "6/23/18 11:00-1:00 p.m.", "6/23/18 9:00-10:30 a.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-10-09T21:30:00-04:00',
+        "endTime":'2018-10-09T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-06-23T14:00:00-04:00',
+        "endTime":'2018-06-23T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-23T12:00:00-04:00',
+        "endTime":'2018-06-23T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Waikiki Elementary School Cafeteria",
     "address":"3710 Leahi Avenue Honolulu, HI 96815",
     "lat":21.268166,
     "lng":-157.814493,
-    "trainings":["10/13/18 11:00-1:00 p.m.", "7/18/18 6:30-8:30 p.m.", "10/13/18 9:00-10:30 a.m.", "6/20/18 6:30-8:00 p.m."],
-    "times":[]
+    "trainings":["10/13/18 11:00-1:00 p.m.", "7/18/18 6:30-8:30 p.m.",
+    "10/13/18 9:00-10:30 a.m.", "6/20/18 6:30-8:00 p.m."],
+    "times":[
+      {
+        "startTime":'2018-10-13T14:00:00-04:00',
+        "endTime":'2018-10-13T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-18T21:30:00-04:00',
+        "endTime":'2018-07-18T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-10-13T12:00:00-04:00',
+        "endTime":'2018-10-13T13:30:00-04:00'
+      },
+      {
+        "startTime":'2018-06-20T21:30:00-04:00',
+        "endTime":'2018-06-20T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Pearl City Highlands Elementary School Cafeteria",
@@ -221,15 +381,50 @@ const markers = [
     "lat":21.403286,
     "lng":-157.965311,
     "trainings":["7/26/18 6:00-7:00 p.m.", "6/14/18 6:30-8:00 p.m.", "10/24/18 6:30-8:00 p.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-07-26T21:00:00-04:00',
+        "endTime":'2018-07-26T22:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-14T21:30:00-04:00',
+        "endTime":'2018-06-14T23:00:00-04:00'
+      },
+      {
+        "startTime":'2018-10-24T21:30:00-04:00',
+        "endTime":'2018-10-24T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Lanakila Elementary School Cafeteria",
     "address":"717 North Kuakini Street Honolulu, HI 96817",
     "lat":21.326487,
     "lng":-157.860453,
-    "trainings":["10/20/18 11:00-1:00 p.m.", "7/21/18 11:00-1:00 p.m.", "7/21/18 9:00-10:30 a.m.", "10/20/18 9:00-10:30 a.m.", "7/2/18 6:30-8:00 p.m."],
-    "times":[]
+    "trainings":["10/20/18 11:00-1:00 p.m.", "7/21/18 11:00-1:00 p.m.", "7/21/18 9:00-10:30 a.m.",
+    "10/20/18 9:00-10:30 a.m.", "7/2/18 6:30-8:00 p.m."],
+    "times":[
+      {
+        "startTime":'2018-10-20T14:00:00-04:00',
+        "endTime":'2018-10-20T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-21T14:00:00-04:00',
+        "endTime":'2018-07-21T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-07-21T12:00:00-04:00',
+        "endTime":'2018-07-21T13:30:00-04:00'
+      },
+      {
+        "startTime":'2018-10-20T12:00:00-04:00',
+        "endTime":'2018-10-20T13:30:00-04:00'
+      },
+      {
+        "startTime":'2018-07-02T21:30:00-04:00',
+        "endTime":'2018-07-02T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Kapolei High School Cafeteria",
@@ -237,7 +432,16 @@ const markers = [
     "lat":21.327907,
     "lng":-158.068294,
     "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-06-30T14:00:00-04:00',
+        "endTime":'2018-06-30T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-30T12:00:00-04:00',
+        "endTime":'2018-06-30T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Manana Elementary School Cafeteria",
@@ -245,7 +449,16 @@ const markers = [
     "lat":21.408343,
     "lng":-157.971362,
     "trainings":["7/5/18 6:30-8:30 p.m.", "7/25/18 6:30-8:00 p.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-07-05T21:30:00-04:00',
+        "endTime":'2018-07-05T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-07-25T21:30:00-04:00',
+        "endTime":'2018-07-25T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Kaneohe Elementary School Cafeteria",
@@ -253,7 +466,20 @@ const markers = [
     "lat":21.395919,
     "lng":-157.795851,
     "trainings":["10/9/18 6:30-8:30 p.m.", "6/23/18 11:00-1:00 p.m.", "6/23/18 9:00-10:30 a.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-10-09T21:30:00-04:00',
+        "endTime":'2018-10-09T23:30:00-04:00'
+      },
+      {
+        "startTime":'2018-06-23T14:00:00-04:00',
+        "endTime":'2018-06-23T16:00:00-04:00'
+      },
+      {
+        "startTime":'2018-06-23T12:00:00-04:00',
+        "endTime":'2018-06-23T13:30:00-04:00'
+      }
+    ]
   },
   {
     "name":"Castle High School",
@@ -303,7 +529,12 @@ const markers = [
     "lat":21.295680,
     "lng":-157.834746,
     "trainings":["10/22/18 6:30-8:00 p.m."],
-    "times":[]
+    "times":[
+      {
+        "startTime":'2018-10-22T21:30:00-04:00',
+        "endTime":'2018-10-22T23:00:00-04:00'
+      }
+    ]
   },
   {
     "name":"Stevenson Middle School",
@@ -429,23 +660,36 @@ let event = {
   endTime: '2016-09-16T21:45:00-04:00'
 }
 
+
+const mapStateToProps = (state) => {
+  return {...state};
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      fetchPositions: (url) => dispatch(fetchPositions(url)),
+    };
+};
+
 class Livemap extends Component{
+
   componentWillMount() {
     this.leafletElement = Leaflet.markerClusterGroup();
   }
 
   componentDidMount(){
+    this.props.fetchPositions("http://localhost:3001/position");
     let map = Leaflet.map( ReactDOM.findDOMNode(this), {
-      center: [21.307195, -157.857398],
-      minZoom: 5,
-      zoom: 10
+      center: [21.49332, -157.99164],
+      minZoom: 10,
+      maxZoom: 14,
+      zoom: 10,
+      setView: true
     });
     Leaflet.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
      subdomains: ['a','b','c']
     }).addTo( map );
-
-    // let myURL = $( 'script[src$="Map.js"]' ).attr( 'src' ).replace( 'Map.js', '' );
 
     let myIcon = Leaflet.icon({
       iconUrl: pic1,
@@ -499,9 +743,20 @@ class Livemap extends Component{
       this.leafletElement.addLayer( m );
     }
     map.addLayer( this.leafletElement );
+
+    var southWest = Leaflet.latLng(21.16648, -158.48465),
+    northEast = Leaflet.latLng(21.90865, -157.48627),
+    bounds = Leaflet.latLngBounds(southWest, northEast);
+
+    map.on('click', function(e) {
+      alert(e.latlng); // e is an event object (MouseEvent in this case)
+  });
 }
 
+
+
   render(){
+    console.log('this pos', this.props.position);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){
@@ -535,7 +790,7 @@ class Livemap extends Component{
         </div>
       </div>
     );
-}
+  }
 }
 
-export default Livemap;
+export default connect(mapStateToProps, mapDispatchToProps)(Livemap);

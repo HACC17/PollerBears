@@ -12,7 +12,6 @@ class Register extends Component {
 				<Form/>
 				<Position/>
 				<MapLocations/>
-				<Capitol/>
 				<Districts/>
 			</div>
 		)

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
-import axios from 'axios';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Routes from './Routes';
 import {Route, Redirect} from 'react-router';
-
+import { changeForm, getData} from '../reducers/'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import axios from 'axios';
 const from = {}
 class Form extends Component {
   constructor (props) {
@@ -41,8 +43,7 @@ class Form extends Component {
                   () => { this.validateField(name, value) });
   }
   handleFormSubmit() {
-    this.setState({redirect:true});
-    axios.post("http://localhost:3001/volunteer", {
+    var data = {
       email:this.state.email,
       firstName:this.state.firstName,
       lastName: this.state.lastName,
@@ -51,10 +52,11 @@ class Form extends Component {
       birthDate: this.state.birthDate,
       electionWorking: this.state.electionWorking,
       zip: this.state.zip,
-      city: this.state.ciy,
+      city: this.state.city,
       mailingAddress: this.state.mailingAddress
-    });
-    localStorage.setItem("lastname", "Smith");
+    };
+    this.props.changeForm(data);
+    return false;
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
@@ -103,7 +105,6 @@ class Form extends Component {
 
   electionSelection(e){
     this.setState({electionWorking: e.target.value});
-    console.log(e.target.value);
   }
 
   errorClass(error) {
@@ -119,7 +120,7 @@ class Form extends Component {
     return (
       <form onSubmit={this.handleFormSubmit} className="demoForm">
         <h2>Registration</h2>
-        
+
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
           <label htmlFor="firstName">First Name</label>
           <input type="firstName" required className="form-control" name="firstName" id="firstName"
@@ -153,7 +154,7 @@ class Form extends Component {
             </div>
           </div>
         </div>
-        
+
         <div className="row2">
             <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
               <label htmlFor="email">Email address</label>
@@ -224,11 +225,22 @@ class Form extends Component {
                 </ul>
             </div>
 
-        <button type="submit" className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
+        <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
       </form>
 
     )
   }
 }
 
-export default Form;
+const mapStateToProps = (state) => {
+  return {
+    ...state
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  changeForm,
+  getData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
