@@ -23,6 +23,7 @@ class PositionDescription extends Component {
 		this.setState({position: e.target.value});
 		console.log('target', e.target.value);
     this.props.changePos(e.target.value);
+    let newPosition = this.props.form.position;
     console.log(this.props.form.position);
 		// if (document.getElementById(e.target.id).checked='true'){
 		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
