@@ -19,6 +19,7 @@ const mapCenter = [39.9528, -75.1638];
 const zoomLevel = 12;
 let contents;
 let map = null;
+let m;
 let test;
 let statePosition;
 let mapHasBeenCreated = false;
@@ -117,7 +118,7 @@ class Livemap extends Component{
       iconRetinaUrl: pic2,
       iconSize: [29, 24],
       iconAnchor: [9, 21],
-      popupAnchor: [-130, -10]
+      popupAnchor: [-155, -10]
     });
 
     let modal = document.getElementById('myModal');
@@ -136,41 +137,44 @@ class Livemap extends Component{
         }
     }
     for (let i = 1; i < mapMarkers.length; i++){
-      let trainingAddress = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
-      let h4 = Leaflet.DomUtil.create('h4', 'position');
-      h4.innerHTML = mapMarkers[i].training;
-      let span = Leaflet.DomUtil.create('span', 'address');
-      span.innerHTML = trainingAddress;
-      let h5 = Leaflet.DomUtil.create('h5', 'site');
-      h5.innerHTML = mapMarkers[i].site;
-      let div = Leaflet.DomUtil.create('div', 'mainDiv');
-      div.appendChild(h4);
-      div.appendChild(h5);
-      div.appendChild(span);
-
+      if (mapMarkers[i].site === "State Capitol Auditorium"){
+        console.log("State Capitol Items", mapMarkers[i]);
+      }
       if (mapMarkers[i].training.includes(statePosition)){
-        let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
-        let mainButton = Leaflet.DomUtil.create('button', 'email');
-        mainButton.innerHTML = mapMarkers[i].date + " " + mapMarkers[i].time;
-        mainButton.onclick = function(){
-            modal.style.display = "block";
-            contents = this.innerHTML;
-            console.log(trainingAddress)
-            event.location = mapMarkers[i].address + " " + mapMarkers[i].city + " " + mapMarkers[i].zip;
-            let isoDate = mapMarkers[i].date.replace(/(..).(..).(....)/, "$3-$1-$2");
-            event.title += mapMarkers[i].training;
-            event.startTime = isoDate + mapMarkers[i].isoTime.startTime;
-            event.endTime = isoDate + mapMarkers[i].isoTime.endTime;
-            emailCreds.fullTime = mapMarkers[i].time;
-            emailCreds.date = mapMarkers[i].date;
+        let trainingAddress = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
+        let h4 = Leaflet.DomUtil.create('h4', 'position');
+        h4.innerHTML = mapMarkers[i].training;
+        let span = Leaflet.DomUtil.create('span', 'address');
+        span.innerHTML = trainingAddress;
+        let h5 = Leaflet.DomUtil.create('h5', 'site');
+        h5.innerHTML = mapMarkers[i].site;
+        let div = Leaflet.DomUtil.create('div', 'mainDiv');
+        div.appendChild(h4);
+        div.appendChild(h5);
+        div.appendChild(span);
+
+          let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
+          let mainButton = Leaflet.DomUtil.create('button', 'email');
+          mainButton.innerHTML = mapMarkers[i].date + " " + mapMarkers[i].time;
+          mainButton.onclick = function(){
+              modal.style.display = "block";
+              contents = this.innerHTML;
+              console.log(trainingAddress)
+              event.location = mapMarkers[i].address + " " + mapMarkers[i].city + " " + mapMarkers[i].zip;
+              let isoDate = mapMarkers[i].date.replace(/(..).(..).(....)/, "$3-$1-$2");
+              event.title += mapMarkers[i].training;
+              event.startTime = isoDate + mapMarkers[i].isoTime.startTime;
+              event.endTime = isoDate + mapMarkers[i].isoTime.endTime;
+              emailCreds.fullTime = mapMarkers[i].time;
+              emailCreds.date = mapMarkers[i].date;
+          }
+          div.appendChild(mainButton);
+          div.appendChild(emptySpan);
+          let numLat = Number(mapMarkers[i].coordinates.lat);
+          let numLong = Number(mapMarkers[i].coordinates.long);
+          m = Leaflet.marker( [numLat, numLong], {icon: myIcon}).bindPopup(div);
+          this.leafletElement.addLayer( m );
         }
-        div.appendChild(mainButton);
-        div.appendChild(emptySpan);
-        }
-        let numLat = Number(mapMarkers[i].coordinates.lat);
-        let numLong = Number(mapMarkers[i].coordinates.long);
-        let m = Leaflet.marker( [numLat, numLong], {icon: myIcon}).bindPopup(div);
-        this.leafletElement.addLayer( m );
     }
     map.addLayer( this.leafletElement );
     mapHasBeenCreated = true;
@@ -190,7 +194,10 @@ class Livemap extends Component{
               $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
           }
         });
-      });
+        setTimeout(function(){
+          window.location.href=window.location.href;
+        }, 5000);
+    });
     });
     return (
       <div>
