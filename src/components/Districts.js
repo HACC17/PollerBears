@@ -79,7 +79,7 @@ class Districts extends Component {
 		}
 
 	render(){
-		console.log('district props', this.props);
+		// console.log('district props', this.props);
 		var view;
 
 		return(

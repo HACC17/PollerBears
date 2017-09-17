@@ -15,14 +15,14 @@ class PositionDescription extends Component {
   selectPosition(e){
     this.setState({position: e.target.value});
     this.props.changePos(e.target.value);
-    console.log(this.props.form.position);
+    // console.log(this.props.form.position);
   }
 
 	handleCapitolPos(e){
-    console.log("Hello");
+    // console.log("Hello");
 		e.preventDefault();
 		this.setState({position: e.target.value});
-		console.log('target', e.target.value);
+		// console.log('target', e.target.value);
 		// if (document.getElementById(e.target.id).checked='true'){
 		// 	document.getElementById(e.target.id).parentNode.style='border: 5px solid red';
 		// }
