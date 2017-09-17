@@ -786,7 +786,7 @@ class Livemap extends Component{
         </div>
       </div>
     );
-}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Livemap);

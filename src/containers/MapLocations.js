@@ -69,53 +69,11 @@ class MapLocations extends Component {
 	}
 
 	render(){
-		let loc = this.state.locations;
-		let info = [];
-		let infoValue;
-		let infoBlocks;
-		let times = [];
-		let locArr = loc.map(function(data){
-			let dataArr = [data];
-			for (var keyValue in dataArr){
-				infoValue = dataArr[keyValue];
-				console.log('infoVal', infoValue);
-				infoBlocks = [infoValue.name, infoValue.address, infoValue.date, infoValue.times].join(' ');
-				times.push(infoValue.times);
-			}
-			return infoBlocks;
-		});
-		for (var trainings in locArr){
-			let signUps = <div className="loc-info" key={trainings}>
-											{locArr[trainings]}
-											<div className="radio">
-												<label>
-													<input type="radio" value={times[trainings]}
-														checked={this.state.selectedTraining===times[trainings]}
-														onChange={this.handleOptionChange}
-														/>
-													{times[trainings]}
-												</label>
-											</div>
-										</div>;
-			info.push(signUps);
-		}
-
 		return(
 			<div className="location-container col-lg-12">
 				<h2 className="section-heading">Select A Volunteer Site</h2>
 				<div className="MapLocations-container">
 					<MapLeaf />
-					<div>
-					</div>
-					<div className="location-list">
-						Name: Address: Date: Times:
-					</div>
-					<div className="signup-form">
-						<form onSubmit={this.handleFormSubmit}>
-							{info}
-							<button type="submit" className="btn btn-lg">Sign Up</button>
-						</form>
-					</div>
 				</div>
 			</div>
 		);
