@@ -35,16 +35,16 @@ const markers = [
     "trainings": ["7/14/18 9:00-10:30 a.m.", "7/14/18 11:00-1:00 p.m.", "10/3/2018 6:30-830 p.m."],
     "times": [
     {
-      "startTime":'2018-07-14T12:00:00-04:00',
-      "endTime":'2018-07-14T13:30:00-04:00'
+      "startTime":'2018-07-14T09:00:00-07:00',
+      "endTime":'2018-07-14T10:30:00-07:00'
     },
     {
-      "startTime":'2018-07-14T14:00:00-04:00',
-      "endTime":'2018-07-14T16:30:00-04:00'
+      "startTime":'2018-07-14T14:00:00',
+      "endTime":'2018-07-14T16:30:00'
     },
     {
-      "startTime":'2018-10-03T21:30:00-04:00',
-      "endTime":'2018-10-03T23:30:00-04:00'
+      "startTime":'2018-10-03T21:30:00',
+      "endTime":'2018-10-03T23:30:00'
     }
     ]
   }
@@ -54,8 +54,8 @@ let event = {
   title: 'Volunteer Training',
   description: 'Volunteer Training Again!',
   location: '',
-  startTime: '2016-09-16T20:15:00-04:00',
-  endTime: '2016-09-16T21:45:00-04:00'
+  startTime: '2016-09-16T20:15:00',
+  endTime: '2016-09-16T21:45:00'
 }
 
 const mapStateToProps = (state) => {
@@ -151,34 +151,42 @@ class Livemap extends Component{
         }
     }
     for (let i = 1; i < mapMarkers.length; i++){
+      let trainingAddress = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
+      let h4 = Leaflet.DomUtil.create('h4', 'position');
+      h4.innerHTML = mapMarkers[i].training;
       let span = Leaflet.DomUtil.create('span', 'address');
-      span.innerHTML = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
+      span.innerHTML = trainingAddress;
       let h5 = Leaflet.DomUtil.create('h5', 'site');
       h5.innerHTML = mapMarkers[i].site;
       let div = Leaflet.DomUtil.create('div', 'mainDiv');
+      div.appendChild(h4);
       div.appendChild(h5);
       div.appendChild(span);
       
-      console.log("Training " + mapMarkers[i].training);
-      console.log("stateeePos " + statePosition);
+      // console.log("Training " + mapMarkers[i].training);
+      // console.log("stateeePos " + statePosition);
       if (mapMarkers[i].training.includes(statePosition)){
         console.log("yes");
+        let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
+        let mainButton = Leaflet.DomUtil.create('button', 'email');
+        mainButton.innerHTML = mapMarkers[i].date + " " + mapMarkers[i].time;
+        mainButton.onclick = function(){
+            modal.style.display = "block";
+            contents = this.innerHTML;
+            event.location = trainingAddress;
+            console.log(mapMarkers[i]);
+            let isoDate = mapMarkers[i].date.replace(/(..).(..).(....)/, "$3-$1-$2");
+            event.startTime = isoDate + mapMarkers[i].isoTime.startTime;
+            event.endTime = isoDate + mapMarkers[i].isoTime.endTime;
+            console.log(event);
+        }
+        
+        div.appendChild(mainButton);
+        div.appendChild(emptySpan);
         let numLat = Number(mapMarkers[i].coordinates.lat);
         let numLong = Number(mapMarkers[i].coordinates.long);
         m = Leaflet.marker( [numLat, numLong], {icon: myIcon}).bindPopup(div);
         this.leafletElement.addLayer( m );
-          // let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
-          // let mainButton = Leaflet.DomUtil.create('button', 'email');
-          // mainButton.innerHTML = mapMarkers[i].trainings[j];
-          // mainButton.onclick = function(){
-          //     modal.style.display = "block";
-          //     contents = this.innerHTML;
-          //     event.location= mapMarkers[i].address;
-          //     event.time = mapMarkers[i].times[j].startTime;
-          //     event.endTime = mapMarkers[i].times[j].endTime;
-          // }
-          // div.appendChild(mainButton);
-          // div.appendChild(emptySpan);
         }
     }
 

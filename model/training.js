@@ -29,6 +29,9 @@ const training = mongoose.model(
     time:{
       type: String
     },
+    isoTime:{
+      type: Object
+    },
     district:{
       type: String
     },
