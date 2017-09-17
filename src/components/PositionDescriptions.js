@@ -19,7 +19,6 @@ class PositionDescription extends Component {
   }
 
 	handleCapitolPos(e){
-    // console.log("Hello");
 		e.preventDefault();
 		this.setState({position: e.target.value});
 		// console.log('target', e.target.value);

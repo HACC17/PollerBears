@@ -33,7 +33,10 @@ csv
     zip: data[7],
     time: data[8],
     district: data[9],
-    coordinates: data[10]
+    coordinates: {
+      lat: data[10],
+      long: data[11]
+    }
   });
 });
 
