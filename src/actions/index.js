@@ -19,6 +19,11 @@ export const setPosition = (position) => ({
   position: position
 });
 
+export const setDistrict = (district) => ({
+  type: 'SET_DISTRICT',
+  district: district
+});
+
 export function positionsFetchDataSuccess(items) {
     return {
         type: 'POSITIONS_FETCH_DATA_SUCCESS',

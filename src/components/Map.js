@@ -79,7 +79,6 @@ class Livemap extends Component{
       responseType: 'json'
     })
       .then(function(response){
-        console.log('fetch pos res', response.data);
         mapMarkers = response.data;
         // dispatch(setPosition(response.position));
       })
@@ -195,7 +194,6 @@ class Livemap extends Component{
   }
 
   render(){
-    // console.log('this', this);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){

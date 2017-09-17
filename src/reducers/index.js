@@ -51,6 +51,7 @@ const form = (state = initialState, action) => {
       return {...state,
         training: action.training
     }
+      break;
     case 'SET_DISTRICT':
       state.district = action.district;
       return {...state,
@@ -136,7 +137,7 @@ export const changeTraining = (training) => {
 export const changeDistrict = (district) => {
   return dispatch => {
     dispatch({
-      type: "SET_DISTRICT",
+      type: 'SET_DISTRICT',
       district: district
     })
   }
