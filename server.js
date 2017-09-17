@@ -42,8 +42,7 @@ app.get('/send',function(req,res){
       from: "PollerBears <fsgcodedummy@gmail.com",
       to : req.query.to,
       subject : req.query.subject,
-      text : req.query.text,
-      html: '<b> Testing </b>'
+      text : req.query.text
   }
   console.log(mailOptions);
   smtpTransport.sendMail(mailOptions, function(error, response){
