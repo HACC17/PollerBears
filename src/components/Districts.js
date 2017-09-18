@@ -27,6 +27,7 @@ class Districts extends Component {
 
 		handleTimes(e){
 			this.setState({time: e.target.value});
+      console.log(e.target.value);
 			this.props.changeTraining(e.target.value);
 		}
 
@@ -43,7 +44,7 @@ class Districts extends Component {
   fetchTrain(data){
     axios({
       method: 'GET',
-      url: "http://localhost:3001/training/",
+      url: "http://localhost:3001/training",
       responseType: 'json'
     })
       .then(function(response){
