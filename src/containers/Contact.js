@@ -7,7 +7,7 @@ class Contact extends Component {
                 <article>
                     <h2>Contact Us</h2>
                     <section>
-                        <h3>cheif election officer</h3>
+                        <h3>chief election officer</h3>
                         Scott T. Nago
                     </section>
                     
