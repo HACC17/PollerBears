@@ -197,9 +197,12 @@ class Livemap extends Component{
         $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
           if(data=="sent")
           {
-              $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+              $("#message").empty().html("Email is been sent at "+to+" . \nRedirect in 10 seconds");
           }
         });
+        setTimeout(function () { 
+          window.location.replace("/");
+        }, 10000);
     });
     });
     return (

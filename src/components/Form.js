@@ -89,10 +89,12 @@ class Form extends Component {
     $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
       if(data=="sent")
       {
-          $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+          $("#message").empty().html("Email is been sent at "+to+". Check your inbox and sign up for more trainings!");
       }
     });
-    return;
+    setTimeout(function () { 
+      window.location.replace("/");
+    }, 10000);
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
