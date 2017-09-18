@@ -29,9 +29,7 @@ class Register extends Component {
         this.props.form.position === "Election Information Services Official"){
 			view = <Capitol/>
 		}else{
-			view = <div>
-								<Districts/>
-							</div>
+			view = <Districts/>
 		}
 
 		return(
