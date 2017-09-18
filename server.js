@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+var mongodb = require("mongodb");
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json');
 const fs = require('fs');
@@ -10,10 +11,16 @@ const path = require('path');
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 
+mongodb.MongoClient.connect(url, function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
 mongoose.connection.once('open', function() {
   console.log('connected');
 
-  var server = app.listen(3001, function(){
+  var server = app.listen(process.env.PORT || 3001, function(){
     var host = server.address().address;
     var port = server.address().port;
     console.log('listening on',host, port);
