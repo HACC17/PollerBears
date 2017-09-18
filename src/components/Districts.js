@@ -27,7 +27,6 @@ class Districts extends Component {
 
 		handleTimes(e){
 			this.setState({time: e.target.value});
-      console.log(e.target.value);
 			this.props.changeTraining(e.target.value);
 		}
 
