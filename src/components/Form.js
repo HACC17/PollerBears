@@ -92,7 +92,7 @@ class Form extends Component {
           $("#message").empty().html("Email is been sent at "+to+". Check your inbox and sign up for more trainings!");
       }
     });
-    setTimeout(function () { 
+    setTimeout(function () {
       window.location.replace("/");
     }, 10000);
   }
@@ -170,7 +170,7 @@ class Form extends Component {
       <div className="registration-container">
       <h1 className="reg-form-header">Register to Become an Election Day Official</h1>
       <div className="basic-info-container col-lg-12">
-      <h2 className="section-heading">Basic Details</h2>
+      <h2 className="section-heading"><i className="fa fa-address-card" aria-hidden="true"></i> Basic Details</h2>
       <form onSubmit={this.handleFormSubmit} className="demoForm">
 
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>

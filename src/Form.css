@@ -98,7 +98,7 @@
   vertical-align: 1px;
 }
 .election-choices ul li input[type="radio"]:checked + label:before {
-  background-color: #2de1a8;
+  background-color: #05A3AD;
   color: #fff;
 }
 .election-choices input[type="radio"] {
