@@ -172,20 +172,21 @@ class Form extends Component {
       <div className="basic-info-container col-lg-12">
       <h2 className="section-heading"><i className="fa fa-address-card" aria-hidden="true"></i> Basic Details</h2>
       <form onSubmit={this.handleFormSubmit} className="demoForm">
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
-          <label htmlFor="firstName">First Name</label>
-          <input type="firstName" required className="form-control" name="firstName" id="firstName"
-            placeholder="Noelani"
-            value={this.state.firstName}
-            onChange={this.handleUserInput}  />
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)}`}>
-          <label htmlFor="lastNameValid">Last Name</label>
-          <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
-            placeholder="Shibuya"
-            value={this.state.lastName}
-            onChange={this.handleUserInput}  />
+        <div className="row">
+          <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)} col-md-6`}>
+            <label htmlFor="firstName">First Name</label>
+            <input type="firstName" required className="form-control" name="firstName" id="firstName"
+              placeholder="Noelani"
+              value={this.state.firstName}
+              onChange={this.handleUserInput}  />
+          </div>
+          <div className={`form-group ${this.errorClass(this.state.formErrors.lastName)} col-md-6`}>
+            <label htmlFor="lastNameValid">Last Name</label>
+            <input type="lastName" required className="form-control" name="lastName" id="lastNameValid"
+              placeholder="Shibuya"
+              value={this.state.lastName}
+              onChange={this.handleUserInput}  />
+          </div>
         </div>
         <div className="row">
           <div className={`form-group ${this.errorClass(this.state.formErrors.phoneNumber)} col-md-6`}>
@@ -207,15 +208,15 @@ class Form extends Component {
           </div>
         </div>
 
-        <div className="row2">
-            <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-              <label htmlFor="email">Email address</label>
+        <div className="row">
+            <div className={`form-group ${this.errorClass(this.state.formErrors.email)} col-md-6`}>
+              <label htmlFor="email">Email Address</label>
               <input type="email" required className="form-control" name="email" id="email"
                 placeholder="noelanishibuya@example.com"
                 value={this.state.email}
                 onChange={this.handleUserInput}  />
             </div>
-            <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+            <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
               <label htmlFor="password">Password</label>
               <input type="password" className="form-control" name="password" id="password"
                 placeholder="example123!"
@@ -250,7 +251,7 @@ class Form extends Component {
           </div>
         </div>
 
-        <h3>Which election do you want to volunteer for?</h3>
+        <h4>Which election do you want to volunteer for?</h4>
             <div className="radio election-choices">
                 <ul className="radios">
                     <li>
