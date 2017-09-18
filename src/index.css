@@ -190,6 +190,14 @@ body {
   background-color: #FFFFFF;
   padding-bottom: 30px;
 }
+.location-container{
+  margin: 0;
+}
+.district-container{
+  margin: 25px 0;
+  background-color: #FFFFFF;
+  padding-bottom: 30px;
+}
 
 /*** CONTACT PAGE ***/
 .contact-page {
