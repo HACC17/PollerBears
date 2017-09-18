@@ -21,6 +21,7 @@ When first accessing the site the user is presented with this landing page. It c
 
 ![Image](/screenshots/landing-page.png)
 
+### Registration
 After selecting "Register Now", the user is presented with the registration form.
 
 ![Image](/screenshots/registration-form.png)
@@ -29,13 +30,17 @@ As the user scrolls down, they are able to see the Operational Support Positions
 
 ![Image](/screenshots/positions.png)
 
+### Map
 Upon selection of position, the map renders the locations of the position trainings
 
 ![Image](/screenshots/map.png)
 
+### Sharing
 When selecting a marker and an available time, an option for sharing to email, social media accounts, and  calendar, becomes available.
 
 ![Image](/screenshots/sharing.png)
+
+##### Email Preview
 ![Image](/screenshots/email.png)
 
 ## Developers Guide
