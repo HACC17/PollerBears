@@ -40,7 +40,7 @@ When selecting a marker and an available time, an option for sharing to email, s
 
 ![Image](/screenshots/sharing.png)
 
-##### Email Preview
+### Email
 ![Image](/screenshots/email.png)
 
 ## Developers Guide
