@@ -48,6 +48,7 @@
     box-shadow: none;
     border-radius: 0;
     padding: 0;
+    padding-left: 5px;
 }
 
 .form-group input:focus {
@@ -59,6 +60,7 @@
     font-family: "Open Sans", sans-serif;
     font-size: 0.8em;
     padding: 0;
+    text-transform: uppercase;
 }
 
 .personalStyle {
@@ -72,11 +74,11 @@
 
 .election-choices ul {
   text-align: left;
-  padding-top: 15px;
-  padding-left: 0;
+/*  padding-top: 15px;
+*/  padding-left: 0;
   list-style-type: none;
-  margin-bottom: 30px;
-}
+/*  margin-bottom: 30px;
+*/}
 .election-choices ul li {
     display: inline-block;
     padding: 0;

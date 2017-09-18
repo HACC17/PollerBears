@@ -188,8 +188,6 @@ body {
 .basic-info-container, .position-container, .location-container{
   margin: 25px 0;
   background-color: #FFFFFF;
-}
-.position-container, .location-container{
   padding-bottom: 30px;
 }
 
