@@ -6,7 +6,7 @@ body, html {
 body {
   margin: 0;
   padding: 0;
-  font-family: serif;
+  font-family: sans-serif;
   height: 100%;
     background-color:yellow;
 }
@@ -81,6 +81,7 @@ body {
 .custom-nav h1 a:hover{
   color: #9B9B9B;
 }
+
 /*** FOR HOME PAGE TEXT ***/
 .home-text{
   margin: 75px 0;
@@ -192,6 +193,60 @@ body {
   padding-bottom: 30px;
 }
 
+/*** CONTACT PAGE ***/
+.contact-page {
+    height: 80%;
+    width: 70vw;
+    margin: 0 auto 20px auto;
+    font-size: 1.125em;
+}
+
+.contact-page h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4em;
+    font-weight: 600;
+    font-kerning: none;
+    letter-spacing: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contact-page section {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-page section > h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+
+.contact-page article section h4 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+.phone-container {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.phone-flex {
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+}
+
 /*** FOOTER ***/
 .footer-container{
   background-color: #05A3AD;
@@ -201,18 +256,36 @@ body {
   padding: 25px 30px 200px;
   font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
+    width: 100%;
+    font-size: 1.125em;
 }
 
-.footer-container .footer-text .footer-col{
+.footer-flex {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.footer-flex-item {
+    height: auto;
+    width: auto;
+}
+
+.footer-flex-item ul li {
+    margin-bottom: 5px;
+}
+
+.footer-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
+/*.footer-container .footer-text .footer-col{
   padding-left: 20px;
-  padding-right: 35px;
-}
-.footer-container .footer-text .footer-col h3{
-  font-weight: bold;
-}
-.footer-container .footer-text .footer-col ul li{
-  margin-left: 25px;
-}
-/*.fa-address-card, .fa-users, .fa-globe{
-  color: #05A3AD;
+  padding-right: 25px;
 }*/

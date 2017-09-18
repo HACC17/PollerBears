@@ -17,7 +17,7 @@ class App extends Component {
                       <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/form">Register</Link>
+                      <Link to="/register">Register</Link>
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
@@ -33,30 +33,28 @@ class App extends Component {
               </div>
             </div>
             <div className="footer-container">
-              <div className="footer-text row">
-                <div className="footer-col col-sm-4">
-                  <h3>Election Dates</h3>
-                  <ul>
-                    <li><strong>Primary Election:</strong> August 11, 2018</li>
-                    <li><strong>General Election:</strong> November 6, 2018</li>
-                  </ul>
+                <div className="footer-flex">
+                    <div className="footer-flex-item">
+                        <h3>Election Dates</h3>
+                        <p>Primary Election: August 11, 2018</p>
+                        <p>General Election: November 6, 2018</p>
+                    </div>
+
+                    <div className="footer-flex-item">
+                        <h3>Volunteer Requirements</h3>
+                        <ul>
+                        <li>At least 16 years of age on or before June 30 of the election year.</li>
+                        <li>A registered or pre-registered voter in the State of Hawaii.</li>
+                        <li>Able to read and write English.</li>
+                        </ul>
+                    </div>
+
+                    <div className="footer-flex-item">
+                        <h3>Contact Us</h3>
+                        <p>Phone: (808) 453-VOTE (8683)</p>
+                        <p>E-Mail: <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a></p>
+                    </div>
                 </div>
-                <div className="footer-col col-sm-4">
-                  <h3>Volunteer Requirements</h3>
-                  <ul>
-                    <li>At least 16 years of age on or before June 30 of the election year.</li>
-                    <li>A registered or pre-registered voter in the State of Hawaii.</li>
-                    <li>Able to read and write English.</li>
-                  </ul>
-                </div>
-                <div className="footer-col col-sm-4">
-                  <h3>Contact Us</h3>
-                  <ul>
-                    <li><strong>Phone:</strong> (808) 453-VOTE (8683)</li>
-                    <li><strong>E-Mail:</strong> <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </Router>
