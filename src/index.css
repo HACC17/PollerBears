@@ -318,3 +318,17 @@ ul.right-menu li a:hover{
   padding-left: 20px;
   padding-right: 25px;
 }*/
+
+.submit-reg-btn{
+  background-color: #05A3AD;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.submit-reg-btn:hover{
+  background-color: #52F0FA;
+  color: #FFFFFF;
+}

@@ -286,7 +286,7 @@ class Form extends Component {
                 {view}
               </div>
             </div>
-        <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
+        <button type='button' onClick={this.handleFormSubmit} className="btn btn-lg center-block personalStyle submit-reg-btn" disabled={!this.state.formValid}>Sign up</button>
       </div>
     )
   }
