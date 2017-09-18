@@ -229,6 +229,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
     width: 100%;
+    font-size: 1.125em;
 }
 
 .footer-flex {
@@ -242,6 +243,10 @@ body {
 .footer-flex-item {
     height: auto;
     width: auto;
+}
+
+.footer-flex-item ul li {
+    margin-bottom: 5px;
 }
 
 .footer-container h3 {
