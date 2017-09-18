@@ -12,18 +12,12 @@ class App extends Component {
               <nav className="custom-nav">
                 <div className="container-fluid">
                   <h1 className="text-left navbar-text"><Link to="/">VOTE<span className="the-n">N</span>TEER</Link></h1>
-                  <ul className="nav navbar-nav navbar-right">
+                  <ul className="nav navbar-nav navbar-right right-menu">
                     <li>
                       <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/register">Register</Link>
-                    </li>
-                    <li>
                       <Link to="/contact">Contact</Link>
-                    </li>
-                    <li>
-                      <Link to="/faqs">FAQs</Link>
                     </li>
                   </ul>
                 </div>

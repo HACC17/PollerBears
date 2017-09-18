@@ -15,6 +15,7 @@ body {
   margin-top: 15px;
 }
 
+
 #test{
   background-color: red;
 }
@@ -80,6 +81,19 @@ body {
 }
 .custom-nav h1 a:hover{
   color: #9B9B9B;
+}
+
+ul.right-menu{
+  margin-right: 20px;
+}
+ul.right-menu li a{
+  color: #686868;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+ul.right-menu li a:hover{
+  background-color: transparent;
+  color: #05A3AD;
 }
 
 /*** FOR HOME PAGE TEXT ***/
