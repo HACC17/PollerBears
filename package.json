@@ -25,6 +25,7 @@
     "mongoose": "^4.11.9",
     "nodemailer": "^4.1.0",
     "object-assign": "^4.1.1",
+    "password-hash": "^1.2.2",
     "react": "^15.6.1",
     "react-add-to-calendar": "^0.1.4",
     "react-big-calendar": "^0.15.0",

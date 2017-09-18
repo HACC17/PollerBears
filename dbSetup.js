@@ -25,14 +25,22 @@ csv
   trainingData.push({
     day: data[0],
     date: data[1],
-    county: data[2],
-    position: data[3],
-    location: data[4],
+    area: data[2],
+    training: data[3],
+    site: data[4],
     address: data[5],
     city: data[6],
     zip: data[7],
     time: data[8],
-    district: data[9]
+    isoTime: {
+      startTime: data[9],
+      endTime: data[10]
+    },
+    district: data[11],
+    coordinates: {
+      lat: data[12],
+      long: data[13]
+    }
   });
 });
 
@@ -46,8 +54,6 @@ csv
     trainingNeeded: data[3]
   });
 });
-
-
 
 mongoose.connection.once('open', function() {
   Promise.all([
@@ -70,14 +76,16 @@ mongoose.connection.once('open', function() {
     return {
       day: element.day,
       date: element.date,
-      county: element.county,
-      position: element.position,
-      location: element.location,
+      area: element.area,
+      training: element.training,
+      site: element.site,
       address: element.address,
       city: element.city,
       zip: element.zip,
       time: element.time,
-      district: element.district
+      isoTime: element.isoTime,
+      district: element.district,
+      coordinates: element.coordinates
     }
   }))
   ])

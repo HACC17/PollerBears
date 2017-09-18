@@ -19,6 +19,11 @@ export const setPosition = (position) => ({
   position: position
 });
 
+export const setDistrict = (district) => ({
+  type: 'SET_DISTRICT',
+  district: district
+});
+
 export function positionsFetchDataSuccess(items) {
     return {
         type: 'POSITIONS_FETCH_DATA_SUCCESS',
@@ -33,6 +38,23 @@ export function fetchPositions(url){
         dispatch(positionsFetchDataSuccess(response.data))
       })
       .then((items) => dispatch(fetchPositions(items)));
+  };
+}
+
+export function trainingsFetchDataSuccess(items) {
+    return {
+        type: 'TRAININGS_FETCH_DATA_SUCCESS',
+        items
+    };
+}
+
+export function fetchTrainings(url){
+  return (dispatch) => {
+    return axios.get(url)
+      .then(response => {
+        dispatch(trainingsFetchDataSuccess(response.data))
+      })
+      .then((items) => dispatch(fetchTrainings(items)));
   };
 }
 

@@ -1,44 +1,44 @@
-Day,Date,Election Area,Training,Training Site,Address,City,Zip Code,Time,District
-Thur,7/12/2018,Ballot Operations,Delivery/Collection,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Thur,7/26/2018,Ballot Operations,Delivery/Collection,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:00 - 7:00 p.m.,Pearl City
-Mon,7/30/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,Metro
-Thur,8/2/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,Metro
-Mon,10/15/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,Metro
-Tue,6/19/2018,Counting Center Operations,Absentee Ballot Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Tue,7/17/2018,Counting Center Operations,Ballot Storage Team + Computer Operations Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Sat,7/21/2018,Counting Center Operations,Duplication Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,9:00 - 10:00 a.m.,Metro
-Tue,7/24/2018,Counting Center Operations,Manual Audit Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Thur,6/21/2018,Counting Center Operations,Official Observer Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Thur,7/26/2018,Counting Center Operations,Poll Book Audit Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Thur,7/19/2018,Counting Center Operations,Precinct Can Team + Receiving Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,Metro
-Sat,6/16/2018,Precinct Operations,Chair and Voter Assistance Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,11:00 - 1:00 p.m.,East Honolulu
-Tue,10/9/2018,Precinct Operations,Chair and Voter Assistance Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,6:30 - 8:30 p.m.,Kaneohe
-Sat,10/13/2018,Precinct Operations,Chair and Voter Assistance Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,11:00 - 1:00 p.m.,Metro
-Sat,10/20/2018,Precinct Operations,Chair and Voter Assistance Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,11:00 - 1:00 p.m.,Metro
-Sat,6/23/2018,Precinct Operations,Chair and Voter Assistance Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,11:00 - 1:00 p.m.,Kaneohe
-Tue,6/26/2018,Precinct Operations,Chair and Voter Assistance Official,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:30 - 8:30 p.m.,Metro
-Sat,6/30/2018,Precinct Operations,Chair and Voter Assistance Official,Kapolei High School Cafeteria,91-5007 Kapolei Parkway,Kapolei,96707,11:00 - 1:00 p.m.,Ewa
-Thur,7/5/2018,Precinct Operations,Chair and Voter Assistance Official,Manana Elementary School Cafeteria,1147 Kumano Street,Pearl City,96782,6:30 - 8:30 p.m.,Pearl City
-Sat,7/14/2018,Precinct Operations,Chair and Voter Assistance Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,11:00 - 1:00 p.m.,Central Oahu
-Wed,7/18/2018,Precinct Operations,Chair and Voter Assistance Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,6:30 - 8:30 p.m.,Metro
-Sat,7/21/2018,Precinct Operations,Chair and Voter Assistance Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,11:00 - 1:00 p.m.,Metro
-Wed,10/3/2018,Precinct Operations,Chair and Voter Assistance Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,6:30 - 8:30 p.m.,Central Oahu
-Thur,6/14/2018,Precinct Operations,Precinct Official,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:30 - 8:00 p.m.,Pearl City
-Sat,7/21/2018,Precinct Operations,Precinct Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,9:00 - 10:30 a.m.,Metro
-Wed,7/25/2018,Precinct Operations,Precinct Official,Manana Elementary School Cafeteria,1147 Kumano Street,Pearl City,96782,6:30 - 8:00 p.m.,Pearl City
-Wed,8/1/2018,Precinct Operations,Precinct Official,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:30 - 8:00 p.m.,Metro
-Tue,10/2/2018,Precinct Operations,Precinct Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,6:30 - 8:00 p.m.,East Honolulu
-Sat,10/13/2018,Precinct Operations,Precinct Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,9:00 - 10:30 a.m.,Metro
-Wed,10/17/2018,Precinct Operations,Precinct Official,Ewa Elementary School Cafeteria,91-1280 Renton Road,Ewa Beach,96706,6:30 - 8:00 p.m.,Ewa
-Sat,10/20/2018,Precinct Operations,Precinct Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,9:00 - 10:30 a.m.,Metro
-Mon,10/22/2018,Precinct Operations,Precinct Official,Washington Middle School Cafeteria,1633 South King Street,Honolulu,96826,6:30 - 8:00 p.m.,Metro
-Wed,10/24/2018,Precinct Operations,Precinct Official,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:30 - 8:00 p.m.,Pearl City
-Sat,6/16/2018,Precinct Operations,Precinct Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,9:00 - 10:30 a.m.,East Honolulu
-Wed,6/20/2018,Precinct Operations,Precinct Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,6:30 - 8:00 p.m.,Metro
-Sat,6/23/2018,Precinct Operations,Precinct Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,9:00 - 10:30 a.m.,Kaneohe
-Sat,6/30/2018,Precinct Operations,Precinct Official,Kapolei High School Cafeteria,91-5007 Kapolei Parkway,Kapolei,96707,9:00 - 10:30 a.m.,Ewa
-Mon,7/2/2018,Precinct Operations,Precinct Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,6:30 - 8:00 p.m.,Metro
-Mon,7/9/2018,Precinct Operations,Precinct Official,Aiea Elementary School Cafeteria,99-370 Moanalua Road,Aiea,96701,6:30 - 8:00 p.m.,Pearl City
-Sat,7/14/2018,Precinct Operations,Precinct Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,9:00 - 10:30 a.m.,Central Oahu
-Tue,7/17/2018,Precinct Operations,Precinct Official,Ewa Elementary School Cafeteria,91-1280 Renton Road,Ewa Beach,96706,6:30 - 8:00 p.m.,Ewa
-Mon,7/23/2018,Precinct Operations,Troubleshooter,State Capitol Senate Conference Room 016,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,Metro
+Day,Date,Election Area,Training,Training Site,Address,City,Zip Code,Time,IsoStartTime,IsoEndTime,District,Lat,Long
+Thur,07/12/2018,Ballot Operations,Delivery/Collection Official,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Thur,07/26/2018,Ballot Operations,Delivery/Collection Official,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Pearl City,21.403286,-157.857398
+ Mon,07/30/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,T18:00:00-07:00,T20:00:00-07:00,Metro,21.307195,-157.857398
+ Thur,08/2/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,T18:00:00-07:00,T20:00:00-07:00,Metro,21.307195,-157.857398
+ Mon,10/15/2018,Control Center Operator,Control Center Operator,House of Representatives Chambers,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,T18:00:00-07:00,T20:00:00-07:00,Metro,21.307195,-157.857398
+ Tue,06/19/2018,Counting Center Operations,Absentee Ballot Team Member,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Tue,07/17/2018,Counting Center Operations,Ballot Storage Team + Computer Operations Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Sat,07/21/2018,Counting Center Operations,Duplication Team,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,9:00 - 10:00 a.m.,T09:00:00-07:00,T10:00:00-07:00,Metro,21.307195,-157.857398
+ Tue,07/24/2018,Counting Center Operations,Manual Audit Team Member,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Thur,06/21/2018,Counting Center Operations,Official Observer Team Member,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Thur,07/26/2018,Counting Center Operations,Poll Book Audit Team Member,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Thur,07/19/2018,Counting Center Operations,Precinct Can Team Member + Receiving Team Member,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:00 - 7:00 p.m.,T18:00:00-07:00,T19:00:00-07:00,Metro,21.307195,-157.857398
+ Sat,06/16/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,East Honolulu,21.274238,-157.704898
+ Tue,10/09/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,6:30 - 8:30 p.m.,T18:30:00-07:00,T20:30:00-07:00,Kaneohe,21.395919,-157.795851
+ Sat,10/13/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Metro,21.268166,-157.814493
+ Sat,10/20/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Metro,21.326487,-157.860453
+ Sat,06/23/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Kaneohe,21.395919,-157.795851
+ Tue,06/26/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:30 - 8:30 p.m.,T18:30:00-07:00,T20:30:00-07:00,Metro,21.307195,-157.857398
+ Sat,06/30/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Kapolei High School Cafeteria,91-5007 Kapolei Parkway,Kapolei,96707,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Ewa,21.327907,-158.068294
+ Thur,07/05/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Manana Elementary School Cafeteria,1147 Kumano Street,Pearl City,96782,6:30 - 8:30 p.m.,T18:30:00-07:00,T20:30:00-07:00,Pearl City,21.408343,-157.971362
+ Sat,07/14/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Central Oahu,21.475665,-157.989612
+ Wed,07/18/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,6:30 - 8:30 p.m.,T18:30:00-07:00,T20:30:00-07:00,Metro,21.268166,-157.814493
+ Sat,07/21/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,11:00 - 1:00 p.m.,T11:00:00-07:00,T13:00:00-07:00,Metro,21.326487,-157.860453
+ Wed,10/03/2018,Precinct Operations,Chair and Precinct Voter Assistance Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,6:30 - 8:30 p.m.,T18:30:00-07:00,T20:30:00-07:00,Central Oahu,21.475665,-157.989612
+ Thur,06/14/2018,Precinct Operations,Precinct Operations Official,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Pearl City,21.403286,-157.965311
+ Sat,07/21/2018,Precinct Operations,Precinct Operations Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Metro,21.326487,-157.860453
+ Wed,07/25/2018,Precinct Operations,Precinct Operations Official,Manana Elementary School Cafeteria,1147 Kumano Street,Pearl City,96782,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Pearl City,21.408343,-157.971362
+ Wed,08/01/2018,Precinct Operations,Precinct Operations Official,State Capitol Auditorium,415 South Beretania Street,Honolulu,96813,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Metro,21.307195,-157.857398
+ Tue,10/02/2018,Precinct Operations,Precinct Operations Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,East Honolulu,21.274238,-157.704898
+ Sat,10/13/2018,Precinct Operations,Precinct Operations Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Metro,21.268166,-157.814493
+ Wed,10/17/2018,Precinct Operations,Precinct Operations Official,Ewa Elementary School Cafeteria,91-1280 Renton Road,Ewa Beach,96706,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Ewa,21.344594,-158.034659
+ Sat,10/20/2018,Precinct Operations,Precinct Operations Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Metro,21.326487,-157.860453
+ Mon,10/22/2018,Precinct Operations,Precinct Operations Official,Washington Middle School Cafeteria,1633 South King Street,Honolulu,96826,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Metro,21.295680,-157.834746
+ Wed,10/24/2018,Precinct Operations,Precinct Operations Official,Pearl City Highlands Elementary School Cafeteria,1419 Waimano Home Road,Pearl City,96782,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Pearl City,21.403286,-157.965311
+ Sat,06/16/2018,Precinct Operations,Precinct Operations Official,Koko Head Elementary School Cafeteria,189 Lunalilo Home Road,Honolulu,96825,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,East Honolulu,21.274238,-157.704898
+ Wed,06/20/2018,Precinct Operations,Precinct Operations Official,Waikiki Elementary School Cafeteria,3710 Leahi Avenue,Honolulu,96815,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Metro,21.268166,-157.814493
+ Sat,06/23/2018,Precinct Operations,Precinct Operations Official,Kaneohe Elementary School Cafeteria,45-495 Kamehameha Highway,Kaneohe,96744,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Kaneohe,21.395919,-157.795851
+ Sat,06/30/2018,Precinct Operations,Precinct Operations Official,Kapolei High School Cafeteria,91-5007 Kapolei Parkway,Kapolei,96707,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Ewa,21.327907,-158.068294
+ Mon,07/02/2018,Precinct Operations,Precinct Operations Official,Lanakila Elementary School Cafeteria,717 North Kuakini Street,Honolulu,96817,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Metro,21.326487,-157.860453
+ Mon,07/09/2018,Precinct Operations,Precinct Operations Official,Aiea Elementary School Cafeteria,99-370 Moanalua Road,Aiea,96701,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Pearl City,21.376121,-157.928209
+ Sat,07/14/2018,Precinct Operations,Precinct Operations Official,Mililani Middle School Cafeteria,95-1140 Lehiwa Drive,Mililani,96789,9:00 - 10:30 a.m.,T09:00:00-07:00,T10:30:00-07:00,Central Oahu,21.475665,-157.989612
+ Tue,07/17/2018,Precinct Operations,Precinct Operations Official,Ewa Elementary School Cafeteria,91-1280 Renton Road,Ewa Beach,96706,6:30 - 8:00 p.m.,T18:30:00-07:00,T20:00:00-07:00,Ewa,21.344594,-158.034659
+ Mon,07/23/2018,Precinct Operations,Precinct Troubleshooter,State Capitol Senate Conference Room 016,415 South Beretania Street,Honolulu,96813,6:00 - 8:00 p.m.,T18:00:00-07:00,T20:00:00-07:00,Metro,21.307195,-157.857398

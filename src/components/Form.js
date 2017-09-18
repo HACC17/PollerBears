@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import MapLocations from '../containers/MapLocations';
+import Position from '../containers/Position';
+import Capitol from '../components/Capitol';
+import Districts from '../components/Districts';
+import $ from 'jquery';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -9,6 +14,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import axios from 'axios';
 const from = {}
+let view;
+
 class Form extends Component {
   constructor (props) {
     super(props);
@@ -56,7 +63,38 @@ class Form extends Component {
       mailingAddress: this.state.mailingAddress
     };
     this.props.changeForm(data);
-    return false;
+    var sendData = {
+      email: this.props.form.email,
+      password: this.props.form.password,
+      firstName: this.props.form.firstName,
+      lastName: this.props.form.lastName,
+      phoneNumber: this.props.form.phoneNumber,
+      birthDate: this.props.form.birthDate,
+      electionWorking: this.props.form.electionWorking,
+      city: this.props.form.city,
+      zip: this.props.form.zip,
+      mailingAddress: this.props.form.mailingAddress,
+      position: this.props.form.position,
+      trainingTime: this.props.form.time,
+      trainingLocation: this.props.form.training,
+      district: this.props.form.district
+    }
+    axios.post("http://localhost:3001/volunteer", sendData);
+    // return false;
+    console.log(this.props.form);
+    let from,to,subject,text;
+    to=this.props.form.email;
+    subject="You are making a difference!";
+    text="Hello " + sendData.firstName + ",\n\nThank you for volunteering with Office of Elections.\n\nHere are the details of your event for the position: " + sendData.position + "\n" + this.props.form.training + "\n\nIf the information above is incorrect, please contact us and we will be happy to assist you.\n\nOtherwise, we are excited to have you on board with us!\n\nSincerely,\n\nOffice of Elections\n\nPhone: (808) 453-VOTE (8683)\nE-mail: elections@hawaii.gov\n";
+    $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+      if(data=="sent")
+      {
+          $("#message").empty().html("Email is been sent at "+to+". Check your inbox and sign up for more trainings!");
+      }
+    });
+    setTimeout(function () { 
+      window.location.replace("/");
+    }, 10000);
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
@@ -112,12 +150,25 @@ class Form extends Component {
   }
 
   render () {
-      if (this.state.redirect) {
-      return (
-        <Redirect to="/locations"/>
-      )
+    if (this.props.form.position === "Control Center Operator" ||
+        this.props.form.position === "Absentee Ballot Team Member" ||
+        this.props.form.position === "Ballot Storage Team" ||
+        this.props.form.position === "Computer Operations Team Member" ||
+        this.props.form.position === "Duplication Team Member" ||
+        this.props.form.position === "Manual Audit Team Member" ||
+        this.props.form.position === "Official Observer Team Member" ||
+        this.props.form.position === "Poll Book Audit Team Member" ||
+        this.props.form.position === "Precinct Can Team Member" ||
+        this.props.form.position === "Receiving Team Member" ||
+        this.props.form.position === "Election Information Services Official"){
+      view = <Capitol/>
+    }else{
+      view = <Districts/>
     }
+
     return (
+      <div>
+      <div>
       <form onSubmit={this.handleFormSubmit} className="demoForm">
         <h2>Registration</h2>
 
@@ -224,10 +275,17 @@ class Form extends Component {
                     </li>
                 </ul>
             </div>
-
+          </form>
+          </div>
+            <div>
+              <div>
+                <Position/>
+                <MapLocations/>
+                {view}
+              </div>
+            </div>
         <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
-      </form>
-
+      </div>
     )
   }
 }

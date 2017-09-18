@@ -2,7 +2,7 @@ const dotenv = require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
-const CONFIG = require('./config.json');
+const CONFIG = require('./config.json'); 
 const fs = require('fs');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
@@ -42,8 +42,7 @@ app.get('/send',function(req,res){
       from: "PollerBears <fsgcodedummy@gmail.com",
       to : req.query.to,
       subject : req.query.subject,
-      text : req.query.text,
-      html: '<b> Testing </b>'
+      text : req.query.text
   }
   console.log(mailOptions);
   smtpTransport.sendMail(mailOptions, function(error, response){

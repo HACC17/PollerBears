@@ -51,6 +51,7 @@ const form = (state = initialState, action) => {
       return {...state,
         training: action.training
     }
+      break;
     case 'SET_DISTRICT':
       state.district = action.district;
       return {...state,
@@ -106,6 +107,15 @@ export function positionData(state = [], action) {
     }
 }
 
+export function trainingData(state = [], action) {
+    switch (action.type) {
+        case 'TRAININGS_FETCH_DATA_SUCCESS':
+            return action.items;
+        default:
+            return state;
+    }
+}
+
 export const changeTime = (time) => {
   return dispatch => {
     dispatch({
@@ -127,7 +137,7 @@ export const changeTraining = (training) => {
 export const changeDistrict = (district) => {
   return dispatch => {
     dispatch({
-      type: "SET_DISTRICT",
+      type: 'SET_DISTRICT',
       district: district
     })
   }
@@ -136,5 +146,6 @@ export const changeDistrict = (district) => {
 export default combineReducers({
   routing: routerReducer,
   form,
-  positionData
+  positionData,
+  trainingData
 })

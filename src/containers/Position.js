@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Breadcrumbs from '../components/Breadcrumbs';
 import PositionDescriptions from '../components/PositionDescriptions';
 
 class Position extends Component {
