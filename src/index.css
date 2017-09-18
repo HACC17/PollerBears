@@ -50,9 +50,6 @@ body {
   padding-bottom: 25px;
 }
 
-.section-heading{
- text-transform: uppercase;
-}
 
 
 
@@ -118,6 +115,20 @@ body {
   color: #686868;
 }
 
+/*** REGISTRATION PAGE ***/
+.registration-container h1, .registration-container h2, .registration-container h3, .registration-container h4, .registration-container h5, .registration-container h6{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.registration-container h1{
+  text-align: center;
+}
+.section-heading{
+  text-transform: uppercase;
+}
+.reg-form-header{
+  font-weight: bold;
+}
 /*** FOR SELECTION OF POSITIONS ***/
 .positions-grp {
   text-align: center;
@@ -166,7 +177,13 @@ body {
 }
 
 /*** FOR SELECTION OF LOCATION ***/
-
+.basic-info-container, .position-container, .location-container{
+  margin: 25px 0;
+  background-color: #FFFFFF;
+}
+.position-container{
+  padding-bottom: 30px;
+}
 
 /*** FOOTER ***/
 .footer-container{

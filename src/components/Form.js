@@ -152,10 +152,11 @@ class Form extends Component {
     }
 
     return (
-      <div>
-      <div>
+      <div className="registration-container">
+      <h1 className="reg-form-header">Register to Become an Election Day Official</h1>
+      <div className="basic-info-container col-lg-12">
+      <h2 className="section-heading">Basic Details</h2>
       <form onSubmit={this.handleFormSubmit} className="demoForm">
-        <h2>Registration</h2>
 
         <div className={`form-group ${this.errorClass(this.state.formErrors.firstName)}`}>
           <label htmlFor="firstName">First Name</label>
