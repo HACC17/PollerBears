@@ -274,7 +274,8 @@ body {
 }
 
 .footer-flex-item ul li {
-    margin-bottom: 5px;
+  margin-left: 25px;
+  margin-bottom: 5px;
 }
 
 .footer-container h3 {
@@ -282,8 +283,16 @@ body {
     margin-bottom: 10px;
     font-weight: 600;
     letter-spacing: 2px;
-    text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
+}
+
+.footer-container a{
+  color: #FFD95E;
+  text-decoration: none;
+}
+.footer-container a:hover{
+  color: #FE8C11;
+  text-decoration: none;
 }
 /*.footer-container .footer-text .footer-col{
   padding-left: 20px;

@@ -36,8 +36,8 @@ class App extends Component {
                 <div className="footer-flex">
                     <div className="footer-flex-item">
                         <h3>Election Dates</h3>
-                        <p>Primary Election: August 11, 2018</p>
-                        <p>General Election: November 6, 2018</p>
+                        <p><strong>Primary Election:</strong> August 11, 2018</p>
+                        <p><strong>General Election:</strong> November 6, 2018</p>
                     </div>
 
                     <div className="footer-flex-item">
@@ -51,8 +51,8 @@ class App extends Component {
 
                     <div className="footer-flex-item">
                         <h3>Contact Us</h3>
-                        <p>Phone: (808) 453-VOTE (8683)</p>
-                        <p>E-Mail: <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a></p>
+                        <p><strong>Phone:</strong> (808) 453-VOTE (8683)</p>
+                        <p><strong>E-Mail:</strong> <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a></p>
                     </div>
                 </div>
             </div>
