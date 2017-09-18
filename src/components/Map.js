@@ -172,9 +172,6 @@ const markers = [
     "lat":21.327907,
     "lng":-158.068294,
     "trainings":["6/30/18 11:00-1:00 p.m.", "6/30/18 9:00-10:30 a.m."],
-<<<<<<< HEAD
-    "times":[]
-=======
     "times":[
       {
         "startTime":'2018-06-30T14:00:00-04:00',
@@ -185,7 +182,6 @@ const markers = [
         "endTime":'2018-06-30T13:30:00-04:00'
       }
     ]
->>>>>>> master
   },
   {
     "name":"Kailua Elementary School",
