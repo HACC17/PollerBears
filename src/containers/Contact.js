@@ -4,31 +4,58 @@ class Contact extends Component {
 	render(){
 		return(
 			<div className="contact-page">
-				<div className="contact-us">
-					<h1>Contact Us</h1>
-				</div>
-				<div>
-					<p><strong>CHIEF ELECTION OFFICER</strong><br />
-					Scott T. Nago</p>
-					<div>
-						<p>Address<br/>
-						Office of Elections 802 Lehua Avenue Pearl City, Hawaii 96782</p>
-						<p><strong>Phone</strong><br/>
-						(808)453-VOTE(8683)</p>
-						<p><strong>Neighbor Island Toll Free</strong><br/>
-						1-800-442-VOTE(8683)</p>
-						<p><strong>TTY</strong><br />
-						(808)453-6150<br />
-						<strong>TY Toll Free</strong></p>
-						<p><strong>Fax</strong><br/>
-						(808)453-6006</p>
-						<p><strong>Email</strong><br/>
-						elections@hawaii.gov</p>
-						<p><strong>Hours</strong><br/>
-						7:45am - 4:30pm<br />
-						<em>Except Saturday, Sunday, and holidays</em></p>
-					</div>
-				</div>
+                <article>
+                    <h2>Contact Us</h2>
+                    <section>
+                        <h3>cheif election officer</h3>
+                        Scott T. Nago
+                    </section>
+                    
+                    <section>
+                        <h3>Office of Elections Address</h3>
+                        <p>
+                            Office of Elections <br />
+                            802 Lehua Avenue <br />
+                            Pearl City, Hawaii 96782
+                        </p>
+                        <p className="col">
+                            <h4>Hours</h4>
+                            7:45am - 4:30pm<br />
+                            <em>Except Saturday, Sunday, and holidays</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h3>Phone</h3>
+                        <section  className="phone-container">
+                            <div className="phone-flex">
+                                <h4>Oahu</h4>
+                                808-453-VOTE(8683)
+                            </div>
+        
+                            <div className="phone-flex">
+                                <h4>Neighbor Island Toll Free</h4>
+                                1-800-442-VOTE(8683)
+                            </div>
+                                
+                            <div className="phone-flex">
+                                <h4>TTY</h4>
+                                (808)453-6150
+                            </div>
+                        </section>
+                    </section>
+            
+                    <section>
+                        <h3>Fax</h3>
+                        (808)453-6006
+                    </section>
+            
+                    <section>
+                        <h3>Email</h3>
+                        <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a>
+                    </section>
+            
+                </article>
 			</div>
 		);
 	}
