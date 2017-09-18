@@ -54,4 +54,4 @@ When selecting a marker and an available time, an option for sharing to email, s
 4. ```node dbSetup.js```
 5. ```npm run start```
 
-* Open the site on localhost:3000 from any browser.
+* Open the site on `localhost:3000` from any browser.
