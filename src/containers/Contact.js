@@ -52,7 +52,7 @@ class Contact extends Component {
             
                     <section>
                         <h3>Email</h3>
-                        <a href="mailto:elections@hawaii.gov">elections@hawaii.gov</a>
+                        <a href="mailto:elections@hawaii.gov" target="_top">elections@hawaii.gov</a>
                     </section>
             
                 </article>

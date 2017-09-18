@@ -228,8 +228,30 @@ body {
   padding: 25px 30px 200px;
   font-family: 'Open Sans', sans-serif;
   color: #FFFFFF;
+    width: 100%;
 }
 
+.footer-flex {
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+    
+.footer-flex-item {
+    height: auto;
+    width: auto;
+}
+
+.footer-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+}
 /*.footer-container .footer-text .footer-col{
   padding-left: 20px;
   padding-right: 25px;
