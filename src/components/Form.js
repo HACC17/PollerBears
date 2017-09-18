@@ -74,8 +74,8 @@ class Form extends Component {
       zip: this.props.form.zip,
       mailingAddress: this.props.form.mailingAddress,
       position: this.props.form.position,
-      time: this.props.form.time,
-      training: this.props.form.training,
+      trainingTime: this.props.form.time,
+      trainingLocation: this.props.form.training,
       district: this.props.form.district
     }
     axios.post("http://localhost:3001/volunteer", sendData);
