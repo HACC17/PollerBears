@@ -2,37 +2,105 @@ import React, { Component } from 'react';
 import { changeTraining, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import axios from 'axios';
+
+let trainings;
 
 class Capitol extends Component {
 		constructor(props){
 			super(props);
 			this.state={
-				training: 'State Capitol Auditorium'
+				training: "State Capitol Senate Conference Room 016",
+				capitol: false,
+				inputList: ''
 			};
 			this.handleSelection = this.handleSelection.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
+			this.fetchTrain = this.fetchTrain.bind(this);
+			this.handleTimes = this.handleTimes.bind(this);
 		}
 
 		handleSelection(e){
-			this.setState({training: e.target.value});
+			this.props.changeTraining(document.getElementById('capitol-training').value);
 		}
 
-		handleSubmit(e){
-			e.preventDefault();
-      this.props.changeTraining(this.state.training);
-			console.log('submit', this.state.training);
+		handleTimes(e){
+			this.setState({time: e.target.value});
+			console.log('target', e.target.value);
+			this.props.changeTraining(e.target.value);
 		}
+
+			handleSubmit(e){
+				e.preventDefault();
+				this.props.changeTraining(document.getElementById('capitol-training').value);
+      // this.props.changeDistrict(this.state.district);
+      let sites;
+      let siteArr = [];
+      for (var i = 1; i < trainings.length; i++){
+	      if (trainings[i].site === "State Capitol Auditorium"){
+	      	let newArr = [];
+	      	newArr.push(trainings[i]);
+	        for (var keyVal in newArr){
+	        	var newVal = newArr[keyVal];
+	        	sites = [newVal.day + ' ', newVal.date + ' ', newVal.site + ' ', newVal.address + ' ', newVal.city + ' ', newVal.zip + ' ', newVal.time];
+	        	siteArr.push(sites);
+	        }
+	      }
+		  }
+      for (var i = 0; i < siteArr.length; i++){
+					var radioInputArr = [];
+					var breakPoint = <br/>;
+					let valuesArr = [siteArr[i][0] + siteArr[i][1] + siteArr[i][3] + siteArr[i][4] + siteArr[i][5] + siteArr[i][6]];
+					var radioInput = <div className="cap-radio">
+															<label>
+																<input type="radio" id={`radio${i}`} key={i} name={`radio${i}`}
+																	value={valuesArr}
+																	checked={this.state.time===siteArr[i][6]}
+																	onChange={this.handleTimes}
+																/>
+																{siteArr[i][6]}
+															</label>
+														</div>;
+					radioInputArr.push(radioInput);
+					siteArr[i].splice(6);
+					siteArr[i].splice(6, 0, radioInputArr);
+					siteArr[i].push(breakPoint);
+				}
+			  this.state.trainings = siteArr;
+				const inputList = this.state.trainings;
+				this.setState({
+					inputList: this.state.trainings
+				});
+		}
+
+  fetchTrain(data){
+    axios({
+      method: 'GET',
+      url: "http://localhost:3001/training/",
+      responseType: 'json'
+    })
+      .then(function(response){
+      	trainings = response.data;
+      });
+  }
+
+	componentDidMount() {
+		this.fetchTrain();
+	}
+
 	render(){
-		// console.log('state', this.state);
 		return(
 			<form onSubmit={this.handleSubmit}>
 				<label>
-					Select Training Location
+					Training Location: 
 					<select value={this.state.training} onChange={this.handleSelection}>
-					  <option value="State Capitol Auditorium">State Capitol Auditorium</option>
+					  <option id="capitol-training" defaultValue="State Capitol Senate Conference Room 016"
+							checked={this.state.training === "State Capitol Senate Conference Room 016"}
+					  	>State Capitol Senate Conference Room 016</option>
 					</select>
 				</label>
-				<input type="submit" value="Submit" />
+				<button type="submit" onClick={this.handleSubmit}>View Schedule</button>
+				<div>{this.state.inputList}</div>
 			</form>
 		);
 	}

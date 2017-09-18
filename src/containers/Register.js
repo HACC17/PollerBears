@@ -30,10 +30,7 @@ class Register extends Component {
 			view = <Capitol/>
 		}else{
 			view = <div>
-								<MapLocations/>
-								<div>
-									<Districts/>
-								</div>
+								<Districts/>
 							</div>
 		}
 
@@ -41,6 +38,7 @@ class Register extends Component {
 			<div>
 				<Form/>
 				<Position/>
+				<MapLocations/>
 				{view}
 			</div>
 		)
