@@ -200,9 +200,6 @@ class Livemap extends Component{
               $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
           }
         });
-        setTimeout(function(){
-          window.location.href=window.location.href;
-        }, 5000);
     });
     });
     return (

@@ -3,6 +3,7 @@ import MapLocations from '../containers/MapLocations';
 import Position from '../containers/Position';
 import Capitol from '../components/Capitol';
 import Districts from '../components/Districts';
+import $ from 'jquery';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -80,6 +81,18 @@ class Form extends Component {
     }
     axios.post("http://localhost:3001/volunteer", sendData);
     // return false;
+    console.log(this.props.form);
+    let from,to,subject,text;
+    to=this.props.form.email;
+    subject="You are making a difference!";
+    text="Hello" + sendData.firstName + ",\n\nThank you for volunteering with Office of Elections.\n\nHere are the details of your event for the position: " + sendData.position + "\n" + this.props.form.training + "\n\nIf the information above is incorrect, please contact us and we will be happy to assist you.\n\nOtherwise, we are excited to have you on board with us!\n\nSincerely,\n\nOffice of Elections\n\nPhone: (808) 453-VOTE (8683)\nE-mail: elections@hawaii.gov\n";
+    $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+      if(data=="sent")
+      {
+          $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
+      }
+    });
+    return;
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
