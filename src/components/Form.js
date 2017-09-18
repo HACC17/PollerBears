@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Position from '../containers/Position';
+import MapLocations from '../containers/MapLocations';
+import Capitol from '../components/Capitol';
+import Districts from '../components/Districts';
 import { FormErrors } from './FormErrors';
 import '../Form.css';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
@@ -9,6 +13,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import axios from 'axios';
 const from = {}
+let view; 
+
 class Form extends Component {
   constructor (props) {
     super(props);
@@ -56,7 +62,12 @@ class Form extends Component {
       mailingAddress: this.state.mailingAddress
     };
     this.props.changeForm(data);
-    return false;
+    axios({
+      method: 'POST',
+      url: "http://localhost:3001/volunteer/",
+      responseType: 'json'
+    });
+    // return false;
   }
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
@@ -112,12 +123,28 @@ class Form extends Component {
   }
 
   render () {
-      if (this.state.redirect) {
-      return (
-        <Redirect to="/locations"/>
-      )
+    if (this.props.form.position === "Control Center Operator" ||
+        this.props.form.position === "Absentee Ballot Team Member" || 
+        this.props.form.position === "Ballot Storage Team" || 
+        this.props.form.position === "Computer Operations Team Member" ||
+        this.props.form.position === "Duplication Team Member" ||
+        this.props.form.position === "Manual Audit Team Member" ||
+        this.props.form.position === "Official Observer Team Member" ||
+        this.props.form.position === "Poll Book Audit Team Member" || 
+        this.props.form.position === "Precinct Can Team Member" ||
+        this.props.form.position === "Receiving Team Member" ||
+        this.props.form.position === "Election Information Services Official"){
+      view = <Capitol/>
+    }else{
+      view = <div>
+                <Districts/>
+              </div>
     }
+  
+
     return (
+      <div>
+      <div>
       <form onSubmit={this.handleFormSubmit} className="demoForm">
         <h2>Registration</h2>
 
@@ -224,10 +251,17 @@ class Form extends Component {
                     </li>
                 </ul>
             </div>
-
+          </form>
+          </div>
+            <div>
+              <div>
+                <div><Position/></div>
+                <div><MapLocations/></div>
+                <div>{view}</div>
+              </div>
+            </div>
         <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
-      </form>
-
+      </div>
     )
   }
 }

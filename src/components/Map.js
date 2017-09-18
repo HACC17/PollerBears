@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+import { changeTraining, changeTime } from '../reducers/'
+import { bindActionCreators } from 'redux'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
@@ -57,6 +59,13 @@ class Livemap extends Component{
   constructor (props){
     super(props);
     this.createMap = this.createMap.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.changeTraining(event.location);
+    this.props.changeTime(emailCreds.date + ' ' + emailCreds.fullTime)
   }
 
   fetchPos(data){
@@ -76,7 +85,7 @@ class Livemap extends Component{
   }
 
   componentDidMount(){
-    this.props.fetchTrainings("http://localhost:3001/training");
+    // this.props.fetchTrainings("http://localhost:3001/training");
     this.fetchPos();
     // console.log(this.props.trainingData);
 
@@ -208,7 +217,7 @@ class Livemap extends Component{
           <div id="container">
             <h1>Share this information: </h1>
             <input id="to" type="text" placeholder="yourEmail@gmail.com" />
-            <button id="send_email">Send Email</button>
+            <button id="send_email" onClick={this.handleSubmit}>Send Email</button>
             <JSSocial/>
             <AddToCalendar event={event} buttonTemplate={icon}/>
             <span id="message"></span>
@@ -220,10 +229,10 @@ class Livemap extends Component{
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-      fetchTrainings: (url) => dispatch(fetchTrainings(url)),
-    };
-};
+const mapDispatchToProps = (dispatch) => 
+  bindActionCreators({
+  changeTraining,
+  changeTime
+  }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Livemap);
