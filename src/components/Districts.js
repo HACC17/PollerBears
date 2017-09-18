@@ -24,22 +24,12 @@ class Districts extends Component {
 			};
 			this.handleSelection = this.handleSelection.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
-			this.handleTimes = this.handleTimes.bind(this);
-			this.handleDistrictSubmit = this.handleDistrictSubmit.bind(this);
-		}
-
-		handleTimes(e){
-			this.setState({time: e.target.value});
-			console.log('target', e.target.value);
 		}
 
 		handleSelection(e){
+			e.preventDefault();
 			this.setState({district: e.target.value});
 			stateDistrict = e.target.value;
-		}
-
-		handleDistrictSubmit(e){
-			e.preventDefault();
 		}
 
 		handleSubmit(e){
@@ -49,56 +39,88 @@ class Districts extends Component {
 				let arr = [];
 				let arrSlice = [];
 				let arrayToShow = [];
-				let trainingsArr = trainings.forEach(function(element){
-					for (let key in element){
+				let trainInfo = [];
+				let trainingBlocks;
+				let trainingsArr = trainings.map(function(element){
+					let elArr = [element];
+					for (let keyVal in elArr){
+						trainVal = elArr[keyVal];
+						trainingBlocks = [trainVal.day, trainVal.date, trainVal.county, trainVal.address, trainVal.city, trainVal.zip, trainVal.time, trainVal.district];
+						times.push(trainVal.time);
+					}
+					for (let key in trainVal){
 						if (key === "district"){
-							if (element[key] === stateDistrict){
-								let arr = [];
-								for (let props in element){
-									arr.push(element[props] + ' ');
-									var arrSlice = arr.slice(2);
+							if (trainVal[key] === stateDistrict){
+								for (let props in trainVal){
+									// let signUps = <div className="train-info" key={props}>
+									// 				{trainingBlocks}
+									// 				<div className="radio">
+									// 					<label>
+									// 						<input type="radio" value={times[props]}
+									// 							/>
+									// 						{times[props]}
+									// 					</label>
+									// 				</div>
+									// 			</div>;
+									// info.push(signUps);
+									// console.log('info', info);
+									// arr.push(info);
+									arr.push(trainVal[props]);
+									arrSlice = arr.slice(2).join(' ');
+									// console.log('arrSlice', arr);
 								}
 								arrayToShow.push(arrSlice);
 							}
 						}
 					}
 					otherArray = arrayToShow;
-					return otherArray;
+					return trainingBlocks;
 				});
-				for (var i = 0; i < otherArray.length; i++){
-					var radioInputArr = [];
-					var breakPoint = <br/>;
-					var radioInput = <div className="district-radio" onSubmit={this.handleDistrictSubmit}>
-															<label>
-																<input type="radio" id={i} key={i}
-																	value={otherArray[i][6]}
-																	checked={this.state.time===otherArray[i][6]}
-																	onClick={this.handleTimes}
+				for (var items in trainingsArr){
+					let signUps = <div className="train-info" key={items}>
+													{trainingsArr[items]}
+													<div className="radio">
+														<label>
+															<input type="radio" value={times[items]}
+																checked={this.state.selectedTraining===times[items]}
+																onChange={this.handleOptionChange}
 																/>
-																{otherArray[i][6]}
-															</label>
-														</div>;
-					radioInputArr.push(radioInput);
-					let newOther = otherArray[i].splice(6);
-					otherArray[i].splice(6, 0, radioInputArr);
-					otherArray[i].push(breakPoint);
+															{times[items]}
+														</label>
+													</div>
+												</div>;
+					info.push(signUps);
 				}
+				console.log('info', info);
+				console.log('other array', otherArray);
 			this.state.trainings = otherArray;
 			const inputList = this.state.trainings;
 			this.setState({
 				inputList: this.state.trainings
 			});
+
+			// trainingsArr = trainings.map(function(data){
+			// 	let datArr = [data];
+			// 	for (var keyValue in datArr){
+			// 		var trainVal = datArr[keyValue];
+			// 		console.log('train val', trainVal.time);
+			// 		times.push(trainVal.time);
+			// 	}
+			// });
+
 		}
+
 
 		componentDidMount() {
 		 this.props.fetchTrainings("http://localhost:3001/training");
 		}
 
 	render(){
+
+
 		return(
 			<div>
 				<div>
-					<br/>
 					<form onSubmit={this.handleSubmit}>
 						<label>
 							Select District
@@ -112,11 +134,12 @@ class Districts extends Component {
 							  <option value="Pearl City">Pearl City</option>
 							</select>
 						</label>
-						<button onChange={this.handleSubmit}>Trainings</button>
-						<div className="time-container">
-							<div>{this.state.inputList}</div>
-						</div>
+						<button type="submit" value="Submit" onClick={this.getTrainings}>test</button>
 					</form>
+				</div>
+				<div className="time-container">
+					<button onClick={this.handleSubmit}>Trainings</button>
+					<div>{this.state.inputList}</div>
 				</div>
 		</div>
 		);
