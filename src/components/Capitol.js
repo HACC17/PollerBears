@@ -25,6 +25,7 @@ class Capitol extends Component {
 		}
 
 		handleTimes(e){
+			e.preventDefault();
 			this.setState({time: e.target.value});
 			console.log('target', e.target.value);
 			this.props.changeTraining(e.target.value);
