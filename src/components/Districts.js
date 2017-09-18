@@ -9,37 +9,36 @@ let stateDistrict;
 let otherArray;
 
 class Districts extends Component {
-		constructor(props){
-			super(props);
-			this.state={
-				data: '',
-				district: '',
-				time: '',
-				trainings: '',
-				testingArr: ''
-			};
-			this.handleSelection = this.handleSelection.bind(this);
-			this.handleSubmit = this.handleSubmit.bind(this);
-			this.handleTimes = this.handleTimes.bind(this);
-			this.handleDistrictSubmit = this.handleDistrictSubmit.bind(this);
-			this.fetchTrain = this.fetchTrain.bind(this);
-		}
+    constructor(props){
+      super(props);
+      this.state={
+        data: '',
+        district: '',
+        time: '',
+        trainings: '',
+        testingArr: ''
+      };
+      this.handleSelection = this.handleSelection.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleTimes = this.handleTimes.bind(this);
+      this.handleDistrictSubmit = this.handleDistrictSubmit.bind(this);
+      this.fetchTrain = this.fetchTrain.bind(this);
+    }
 
 		handleTimes(e){
 			this.setState({time: e.target.value});
-			console.log('target', e.target.value);
 			this.props.changeTraining(e.target.value);
 		}
 
-		handleSelection(e){
-			this.setState({district: e.target.value});
-			stateDistrict = e.target.value;
-			this.props.changeDistrict(e.target.value);
-		}
+    handleSelection(e){
+      this.setState({district: e.target.value});
+      stateDistrict = e.target.value;
+      this.props.changeDistrict(e.target.value);
+    }
 
-		handleDistrictSubmit(e){
-			e.preventDefault();
-		}
+    handleDistrictSubmit(e){
+      e.preventDefault();
+    }
 
   fetchTrain(data){
     axios({
@@ -48,12 +47,12 @@ class Districts extends Component {
       responseType: 'json'
     })
       .then(function(response){
-      	trainings = response.data;
+        trainings = response.data;
       });
   }
 
-		handleSubmit(e){
-			e.preventDefault();
+    handleSubmit(e){
+      e.preventDefault();
       // this.props.changeDistrict(this.state.district);
 				let arr = [];
 				let arrSlice = [];
@@ -107,36 +106,36 @@ class Districts extends Component {
 			});
 		}
 
-		componentDidMount() {
-			this.fetchTrain();
-		}
+    componentDidMount() {
+      this.fetchTrain();
+    }
 
-	render(){
-		return(
-			<div>
-				<div>
-					<br/>
-					<form onChange={this.handleSubmit}>
-						<label>
-							Select District
-							<select value={this.state.district} onChange={this.handleSelection}>
-							  <option placeholder="Choose a District" defaultValue="Choose a District" disabled>Choose a District</option>
-							  <option value="Central Oahu">Central Oahu</option>
-							  <option value="East Honolulu">East Honolulu</option>
-							  <option value="Ewa">Ewa</option>
-							  <option value="Kaneohe">Kaneohe</option>
-							  <option value="Metro">Metro</option>
-							  <option value="Pearl City">Pearl City</option>
-							</select>
-						</label>
-						<div className="time-container">
-							<div>{this.state.inputList}</div>
-						</div>
-					</form>
-				</div>
-		</div>
-		);
-	}
+  render(){
+    return(
+      <div>
+        <div>
+          <br/>
+          <form onChange={this.handleSubmit}>
+            <label>
+              Select District
+              <select value={this.state.district} onChange={this.handleSelection}>
+                <option placeholder="Choose a District" defaultValue="Choose a District" disabled>Choose a District</option>
+                <option value="Central Oahu">Central Oahu</option>
+                <option value="East Honolulu">East Honolulu</option>
+                <option value="Ewa">Ewa</option>
+                <option value="Kaneohe">Kaneohe</option>
+                <option value="Metro">Metro</option>
+                <option value="Pearl City">Pearl City</option>
+              </select>
+            </label>
+            <div className="time-container">
+              <div>{this.state.inputList}</div>
+            </div>
+          </form>
+        </div>
+    </div>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -145,12 +144,12 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = dispatch => 
-	bindActionCreators({
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
   changeDistrict,
   changeTraining,
   getData,
-	}, dispatch)
+  }, dispatch)
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Districts);
