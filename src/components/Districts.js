@@ -112,12 +112,11 @@ class Districts extends Component {
 
   render(){
     return(
-      <div>
+      <div className="location-container col-lg-12">
         <div>
-          <br/>
           <form onChange={this.handleSubmit}>
             <label>
-              Select District
+              Select A District:
               <select value={this.state.district} onChange={this.handleSelection}>
                 <option placeholder="Choose a District" defaultValue="Choose a District" disabled>Choose a District</option>
                 <option value="Central Oahu">Central Oahu</option>

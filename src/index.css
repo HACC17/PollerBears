@@ -15,6 +15,7 @@ body {
   margin-top: 15px;
 }
 
+
 #test{
   background-color: red;
 }
@@ -50,9 +51,6 @@ body {
   padding-bottom: 25px;
 }
 
-.section-heading{
- text-transform: uppercase;
-}
 
 
 
@@ -60,11 +58,15 @@ body {
 /*** HOME PAGE ***/
 .top-container{
   background-color: #FFD95E;
+  background-image: url("/BG.jpg");
+  background-repeat: no-repeat;
+  background-position: top bottom;
+  background-size:cover;
 }
 
 /*** NAVIGATION BAR ***/
 .custom-nav{
-  background-color: #FFD95E;
+  /*background-color: #FFD95E;*/
 }
 .custom-nav h1{
   font-family: 'Montserrat', sans-serif;
@@ -79,6 +81,19 @@ body {
 }
 .custom-nav h1 a:hover{
   color: #9B9B9B;
+}
+
+ul.right-menu{
+  margin-right: 20px;
+}
+ul.right-menu li a{
+  color: #686868;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+ul.right-menu li a:hover{
+  background-color: transparent;
+  color: #05A3AD;
 }
 
 /*** FOR HOME PAGE TEXT ***/
@@ -115,9 +130,30 @@ body {
   color: #686868;
 }
 
+/*** REGISTRATION PAGE ***/
+.registration-container h1, .registration-container h2, .registration-container h3, .registration-container h4, .registration-container h5, .registration-container h6{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.registration-container h1{
+  text-align: center;
+}
+.registration-container p, .registration-container label{
+  font-family: 'Open Sans', sans-serif;
+}
+.section-heading{
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.reg-form-header{
+  font-weight: bold;
+}
 /*** FOR SELECTION OF POSITIONS ***/
 .positions-grp {
   text-align: center;
+}
+.positions-grp h3{
+  font-size: 1.5em;
 }
 .positions-grp:after {
   content: ' ';
@@ -163,7 +199,19 @@ body {
 }
 
 /*** FOR SELECTION OF LOCATION ***/
-
+.basic-info-container, .position-container, .location-container{
+  margin: 25px 0;
+  background-color: #FFFFFF;
+  padding-bottom: 30px;
+}
+.location-container{
+  margin: 0;
+}
+.district-container{
+  margin: 25px 0;
+  background-color: #FFFFFF;
+  padding-bottom: 30px;
+}
 
 /*** CONTACT PAGE ***/
 .contact-page {
@@ -239,14 +287,15 @@ body {
     justify-content: space-around;
     flex-direction: row;
 }
-    
+
 .footer-flex-item {
     height: auto;
     width: auto;
 }
 
 .footer-flex-item ul li {
-    margin-bottom: 5px;
+  margin-left: 25px;
+  margin-bottom: 5px;
 }
 
 .footer-container h3 {
@@ -254,10 +303,32 @@ body {
     margin-bottom: 10px;
     font-weight: 600;
     letter-spacing: 2px;
-    text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
+}
+
+.footer-container a{
+  color: #FFD95E;
+  text-decoration: none;
+}
+.footer-container a:hover{
+  color: #FE8C11;
+  text-decoration: none;
 }
 /*.footer-container .footer-text .footer-col{
   padding-left: 20px;
   padding-right: 25px;
 }*/
+
+.submit-reg-btn{
+  background-color: #05A3AD;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.submit-reg-btn:hover{
+  background-color: #52F0FA;
+  color: #FFFFFF;
+}

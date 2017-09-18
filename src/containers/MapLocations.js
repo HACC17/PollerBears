@@ -53,7 +53,7 @@ class MapLocations extends Component {
 	render(){
 		return(
 			<div className="location-container col-lg-12">
-				<h2 className="section-heading">Select A Volunteer Site</h2>
+				<h2 className="section-heading"><i className="fa fa-globe" aria-hidden="true"></i> Select A Volunteer Site</h2>
 				<div className="MapLocations-container">
 					<MapLeaf />
 				</div>

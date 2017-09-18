@@ -99,18 +99,22 @@ class Capitol extends Component {
 
 	render(){
 		return(
-			<form onSubmit={this.handleSubmit}>
-				<label>
-					Training Location: 
-					<select value={this.state.training} onChange={this.handleSelection}>
-					  <option id="capitol-training" defaultValue="State Capitol Senate Conference Room 016"
-							checked={this.state.training === "State Capitol Senate Conference Room 016"}
-					  	>State Capitol Senate Conference Room 016</option>
-					</select>
-				</label>
-				<button type="submit" onClick={this.handleSubmit}>View Schedule</button>
-				<div>{this.state.inputList}</div>
-			</form>
+      <div className="location-container col-lg-12">
+        <div>
+    			<form onSubmit={this.handleSubmit}>
+    				<label>
+    					Training Location:
+    					<select value={this.state.training} onChange={this.handleSelection}>
+    					  <option id="capitol-training" defaultValue="State Capitol Senate Conference Room 016"
+    							checked={this.state.training === "State Capitol Senate Conference Room 016"}
+    					  	>State Capitol Senate Conference Room 016</option>
+    					</select>
+    				</label>
+    				<button type="submit" onClick={this.handleSubmit}>View Schedule</button>
+    				<div>{this.state.inputList}</div>
+    			</form>
+        </div>
+      </div>
 		);
 	}
 }
