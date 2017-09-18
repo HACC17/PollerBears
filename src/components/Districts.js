@@ -114,7 +114,6 @@ class Districts extends Component {
     return(
       <div className="location-container col-lg-12">
         <div>
-          <br/>
           <form onChange={this.handleSubmit}>
             <label>
               Select A District:
