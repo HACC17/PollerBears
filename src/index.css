@@ -6,7 +6,7 @@ body, html {
 body {
   margin: 0;
   padding: 0;
-  font-family: serif;
+  font-family: sans-serif;
   height: 100%;
     background-color:yellow;
 }
@@ -80,6 +80,7 @@ body {
 .custom-nav h1 a:hover{
   color: #9B9B9B;
 }
+
 /*** FOR HOME PAGE TEXT ***/
 .home-text{
   margin: 75px 0;
