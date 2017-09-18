@@ -43,21 +43,15 @@ When selecting a marker and an available time, an option for sharing to email, s
 * To run this application, you must first have [Node](https://nodejs.org/en/) installed on your machine. 
 * Fork this project on https://github.com/HACC17/PollerBears
 * Clone the project to your machine with:
-```
-git clone https://github.com/HACC17/PollerBears.git
-```
-npm install
-```
+
+1. ```git clone https://github.com/HACC17/PollerBears.git```
+2. ```npm install```
+
 * Run the application locally with:
-```
-mongod
-```
-mongo
-```
-nodemon server.js
-```
-node dbSetup.js
-```
-npm run start
-```
+1. ```mongod```
+2. ```mongo```
+3. ```nodemon server.js```
+4. ```node dbSetup.js```
+5. ```npm run start```
+
 * Open the site on localhost:3000 from any browser.
