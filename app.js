@@ -5,6 +5,7 @@ const election = require('./model/election');
 const training = require('./model/training');
 const position = require('./model/position');
 const bodyParser = require('body-parser');
+const passwordHash = require('password-hash');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -62,20 +63,11 @@ app.post('/volunteer', (req, res) =>{
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     birthDate: req.body.birthDate,
-    password: req.body.password,
+    password: passwordHash.generate(req.body.password),
     zip: req.body.zip,
     mailingAddress: req.body.mailingAddress,
     city: req.body.city,
     district: req.body.district
-    // MI:req.body.MI,
-    // AKA:req.body.AKA,
-    // SSN:req.body.SSN,
-    // homePhone:req.body.homePhone,
-    // cellPhone:req.body.cellPhone,
-    // workPhone:req.body.workPhone,
-    // bestTime:req.body.bestTime,
-    // about:req.body.about,
-    // addressOne: req.body.addressOne,
   });
   return person.save()
   .then(result => {res.json(req.body);})
