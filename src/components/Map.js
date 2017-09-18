@@ -197,7 +197,7 @@ class Livemap extends Component{
         $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
           if(data=="sent")
           {
-              $("#message").empty().html("Email is been sent at "+to+" . \nRedirect in 10 seconds");
+              $("#message").empty().html("Email is been sent at "+to+" . Check your inbox and sign up for more trainings!");
           }
         });
         setTimeout(function () { 
