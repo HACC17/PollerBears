@@ -60,11 +60,15 @@ body {
 /*** HOME PAGE ***/
 .top-container{
   background-color: #FFD95E;
+  background-image: url("/BG.jpg");
+  background-repeat: no-repeat;
+  background-position: top bottom;
+  background-size:cover;
 }
 
 /*** NAVIGATION BAR ***/
 .custom-nav{
-  background-color: #FFD95E;
+  /*background-color: #FFD95E;*/
 }
 .custom-nav h1{
   font-family: 'Montserrat', sans-serif;
