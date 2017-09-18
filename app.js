@@ -67,15 +67,6 @@ app.post('/volunteer', (req, res) =>{
     mailingAddress: req.body.mailingAddress,
     city: req.body.city,
     district: req.body.district
-    // MI:req.body.MI,
-    // AKA:req.body.AKA,
-    // SSN:req.body.SSN,
-    // homePhone:req.body.homePhone,
-    // cellPhone:req.body.cellPhone,
-    // workPhone:req.body.workPhone,
-    // bestTime:req.body.bestTime,
-    // about:req.body.about,
-    // addressOne: req.body.addressOne,
   });
   return person.save()
   .then(result => {res.json(req.body);})

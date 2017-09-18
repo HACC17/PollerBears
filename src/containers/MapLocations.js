@@ -41,12 +41,12 @@ class MapLocations extends Component {
 
 	handleOptionChange (e){
 		this.setState({selectedTraining: e.target.value});
+    this.props.changeTime(this.state.selectedTraining);
 		console.log(e.target.value);
 	}
 
 	handleFormSubmit(submit){
 		submit.preventDefault();
-    this.props.changeTime(this.state.selectedTraining);
 		console.log('You signed up for', this.props.form.time);
 	}
 
