@@ -6,7 +6,7 @@ const CONFIG = require('./config.json');
 const fs = require('fs');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
-const path = require('path');
+const path = require('path'); 
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 
