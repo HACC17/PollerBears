@@ -19,43 +19,30 @@ const mapCenter = [39.9528, -75.1638];
 const zoomLevel = 12;
 let contents;
 let map = null;
-let m = null;
+let m;
 let test;
 let statePosition;
 let mapHasBeenCreated = false;
 let timeActivated = false;
 let icon = { 'calendar-plus-o': 'left' };
 let mapMarkers = [];
-const markers = [
-  {
-    "name":"Mililani Mauka Elementary School",
-    "address":"95-1111 Makaikai St, Mililani, HI 96789",
-    "lat":21.471129,
-    "lng":-158.000850,
-    "trainings": ["7/14/18 9:00-10:30 a.m.", "7/14/18 11:00-1:00 p.m.", "10/3/2018 6:30-830 p.m."],
-    "times": [
-    {
-      "startTime":'2018-07-14T12:00:00-04:00',
-      "endTime":'2018-07-14T13:30:00-04:00'
-    },
-    {
-      "startTime":'2018-07-14T14:00:00-04:00',
-      "endTime":'2018-07-14T16:30:00-04:00'
-    },
-    {
-      "startTime":'2018-10-03T21:30:00-04:00',
-      "endTime":'2018-10-03T23:30:00-04:00'
-    }
-    ]
-  }
-];
 
 let event = {
+  title: 'Volunteer Training for ',
+  description: 'Phone: (808) 453-VOTE (8683) E-Mail: elections@hawaii.gov',
+  location: '',
+  startTime: '2016-09-16T20:15:00',
+  endTime: '2016-09-16T21:45:00'
+}
+
+let emailCreds = {
   title: 'Volunteer Training',
   description: 'Volunteer Training Again!',
   location: '',
-  startTime: '2016-09-16T20:15:00-04:00',
-  endTime: '2016-09-16T21:45:00-04:00'
+  startTime: '2016-09-16T20:15:00',
+  endTime: '2016-09-16T21:45:00',
+  fullTime: '',
+  date: ''
 }
 
 const mapStateToProps = (state) => {
@@ -79,7 +66,6 @@ class Livemap extends Component{
       responseType: 'json'
     })
       .then(function(response){
-        console.log('fetch pos res', response.data);
         mapMarkers = response.data;
         // dispatch(setPosition(response.position));
       })
@@ -132,7 +118,7 @@ class Livemap extends Component{
       iconRetinaUrl: pic2,
       iconSize: [29, 24],
       iconAnchor: [9, 21],
-      popupAnchor: [-130, 5]
+      popupAnchor: [-155, -10]
     });
 
     let modal = document.getElementById('myModal');
@@ -151,49 +137,56 @@ class Livemap extends Component{
         }
     }
     for (let i = 1; i < mapMarkers.length; i++){
-      let span = Leaflet.DomUtil.create('span', 'address');
-      span.innerHTML = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
-      let h5 = Leaflet.DomUtil.create('h5', 'site');
-      h5.innerHTML = mapMarkers[i].site;
-      let div = Leaflet.DomUtil.create('div', 'mainDiv');
-      div.appendChild(h5);
-      div.appendChild(span);
-      
-      console.log("Training " + mapMarkers[i].training);
-      console.log("stateeePos " + statePosition);
+      if (mapMarkers[i].site === "State Capitol Auditorium"){
+        console.log("State Capitol Items", mapMarkers[i]);
+      }
       if (mapMarkers[i].training.includes(statePosition)){
-        console.log("yes");
-        let numLat = Number(mapMarkers[i].coordinates.lat);
-        let numLong = Number(mapMarkers[i].coordinates.long);
-        m = Leaflet.marker( [numLat, numLong], {icon: myIcon}).bindPopup(div);
-        this.leafletElement.addLayer( m );
-          // let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
-          // let mainButton = Leaflet.DomUtil.create('button', 'email');
-          // mainButton.innerHTML = mapMarkers[i].trainings[j];
-          // mainButton.onclick = function(){
-          //     modal.style.display = "block";
-          //     contents = this.innerHTML;
-          //     event.location= mapMarkers[i].address;
-          //     event.time = mapMarkers[i].times[j].startTime;
-          //     event.endTime = mapMarkers[i].times[j].endTime;
-          // }
-          // div.appendChild(mainButton);
-          // div.appendChild(emptySpan);
+        let trainingAddress = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
+        let h4 = Leaflet.DomUtil.create('h4', 'position');
+        h4.innerHTML = mapMarkers[i].training;
+        let span = Leaflet.DomUtil.create('span', 'address');
+        span.innerHTML = trainingAddress;
+        let h5 = Leaflet.DomUtil.create('h5', 'site');
+        h5.innerHTML = mapMarkers[i].site;
+        let div = Leaflet.DomUtil.create('div', 'mainDiv');
+        div.appendChild(h4);
+        div.appendChild(h5);
+        div.appendChild(span);
+
+          let emptySpan = Leaflet.DomUtil.create('h5', 'emptySpan');
+          let mainButton = Leaflet.DomUtil.create('button', 'email');
+          mainButton.innerHTML = mapMarkers[i].date + " " + mapMarkers[i].time;
+          mainButton.onclick = function(){
+              modal.style.display = "block";
+              contents = this.innerHTML;
+              console.log(trainingAddress)
+              event.location = mapMarkers[i].address + " " + mapMarkers[i].city + " " + mapMarkers[i].zip;
+              let isoDate = mapMarkers[i].date.replace(/(..).(..).(....)/, "$3-$1-$2");
+              event.title += mapMarkers[i].training;
+              event.startTime = isoDate + mapMarkers[i].isoTime.startTime;
+              event.endTime = isoDate + mapMarkers[i].isoTime.endTime;
+              emailCreds.fullTime = mapMarkers[i].time;
+              emailCreds.date = mapMarkers[i].date;
+          }
+          div.appendChild(mainButton);
+          div.appendChild(emptySpan);
+          let numLat = Number(mapMarkers[i].coordinates.lat);
+          let numLong = Number(mapMarkers[i].coordinates.long);
+          m = Leaflet.marker( [numLat, numLong], {icon: myIcon}).bindPopup(div);
+          this.leafletElement.addLayer( m );
         }
     }
-
     map.addLayer( this.leafletElement );
     mapHasBeenCreated = true;
   }
 
   render(){
-    // console.log('this', this);
     $(document).ready(function(){
       let from,to,subject,text;
       $("#send_email").click(function(){
         to=$("#to").val();
-        subject="Thank you for volunteering with Office of Elections";
-        text="You have volunteered at..." + event.location;
+        subject="You are making a difference!";
+        text="Thank you for volunteering with Office of Elections.\n\nHere are the details of your event:\n\n Position: " + event.title + " \nLocation: " + event.location + "\nDate: " + emailCreds.date + "\nTime: " + emailCreds.fullTime + "\n\nIf the information above is incorrect, please contact us and we will be happy to assist you.\n\nOtherwise, we are excited to have you on board with us!\n\nSincerely,\n\nOffice of Elections\n\nPhone: (808) 453-VOTE (8683)\nE-mail: elections@hawaii.gov\n";
         $("#message").text("Sending E-mail...Please wait");
         $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
           if(data=="sent")
@@ -201,7 +194,10 @@ class Livemap extends Component{
               $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
           }
         });
-      });
+        setTimeout(function(){
+          window.location.href=window.location.href;
+        }, 5000);
+    });
     });
     return (
       <div>
@@ -210,8 +206,8 @@ class Livemap extends Component{
         <div className="modal-content">
           <span className="close">&times;</span>
           <div id="container">
-            <h1>Info to send to user</h1>
-            <input id="to" type="text" placeholder="Enter E-mail ID where you want to send" />
+            <h1>Share this information: </h1>
+            <input id="to" type="text" placeholder="yourEmail@gmail.com" />
             <button id="send_email">Send Email</button>
             <JSSocial/>
             <AddToCalendar event={event} buttonTemplate={icon}/>

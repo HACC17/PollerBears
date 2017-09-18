@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { changePos, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 class PositionDescription extends Component {
 	constructor(props){
 		super(props);
 		this.state={
-			position: ''
+			position: '',
+      site: false
     };
 		this.handleCapitolPos = this.handleCapitolPos.bind(this);
     this.selectPosition = this.selectPosition.bind(this);
@@ -15,7 +17,21 @@ class PositionDescription extends Component {
   selectPosition(e){
     this.setState({position: e.target.value});
     this.props.changePos(e.target.value);
-    // console.log(this.props.form.position);
+    if (this.props.form.position === "Control Center Operator" ||
+        this.props.form.position === "Absentee Ballot Team Member" || 
+        this.props.form.position === "Ballot Storage Team" || 
+        this.props.form.position === "Computer Operations Team Member" ||
+        this.props.form.position === "Duplication Team Member" ||
+        this.props.form.position === "Manual Audit Team Member" ||
+        this.props.form.position === "Official Observer Team Member" ||
+        this.props.form.position === "Poll Book Audit Team Member" || 
+        this.props.form.position === "Precinct Can Team Member" ||
+        this.props.form.position === "Receiving Team Member" ||
+        this.props.form.position === "Election Information Services Official"){
+      this.setState({site: true});
+    }else{
+      this.setState({site: false});
+    }
   }
 
 	handleCapitolPos(e){
