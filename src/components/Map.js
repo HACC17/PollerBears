@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { changeTraining } from '../reducers/'
+import { changeTraining, changeTime } from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import AddToCalendar from 'react-add-to-calendar';
@@ -64,6 +64,7 @@ class Livemap extends Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.changeTraining(event.location);
+    this.props.changeTime(emailCreds.date + ' ' + emailCreds.fullTime)
   }
 
   fetchPos(data){
@@ -224,6 +225,7 @@ class Livemap extends Component{
 const mapDispatchToProps = (dispatch) => 
   bindActionCreators({
   changeTraining,
+  changeTime
   }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Livemap);
