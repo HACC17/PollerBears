@@ -93,7 +93,6 @@ class Livemap extends Component{
 
   componentDidUpdate(){
     // map.remove();
-    console.log(statePosition);
     this.createMap();
   }
 
@@ -147,7 +146,6 @@ class Livemap extends Component{
     }
     for (let i = 1; i < mapMarkers.length; i++){
       if (mapMarkers[i].site === "State Capitol Auditorium"){
-        console.log("State Capitol Items", mapMarkers[i]);
       }
       if (mapMarkers[i].training.includes(statePosition)){
         let trainingAddress = mapMarkers[i].address + ", " + mapMarkers[i].city + ", HI " + mapMarkers[i].zip;
@@ -168,7 +166,6 @@ class Livemap extends Component{
           mainButton.onclick = function(){
               modal.style.display = "block";
               contents = this.innerHTML;
-              console.log(trainingAddress)
               event.location = mapMarkers[i].address + " " + mapMarkers[i].city + " " + mapMarkers[i].zip;
               let isoDate = mapMarkers[i].date.replace(/(..).(..).(....)/, "$3-$1-$2");
               event.title += mapMarkers[i].training;

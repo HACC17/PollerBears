@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Position from '../containers/Position';
 import MapLocations from '../containers/MapLocations';
+import Position from '../containers/Position';
 import Capitol from '../components/Capitol';
 import Districts from '../components/Districts';
 import { FormErrors } from './FormErrors';
@@ -148,11 +148,8 @@ class Form extends Component {
         this.props.form.position === "Election Information Services Official"){
       view = <Capitol/>
     }else{
-      view = <div>
-                <Districts/>
-              </div>
+      view = <Districts/>
     }
-
 
     return (
       <div>
@@ -267,9 +264,9 @@ class Form extends Component {
           </div>
             <div>
               <div>
-                <div><Position/></div>
-                <div><MapLocations/></div>
-                <div>{view}</div>
+                <Position/>
+                <MapLocations/>
+                {view}
               </div>
             </div>
         <button type='button' onClick={this.handleFormSubmit} className="btn btn-primary btn-lg center-block personalStyle" disabled={!this.state.formValid}>Sign up</button>
