@@ -5,6 +5,7 @@ const election = require('./model/election');
 const training = require('./model/training');
 const position = require('./model/position');
 const bodyParser = require('body-parser');
+const passwordHash = require('password-hash');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -62,7 +63,7 @@ app.post('/volunteer', (req, res) =>{
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     birthDate: req.body.birthDate,
-    password: req.body.password,
+    password: passwordHash.generate(req.body.password),
     zip: req.body.zip,
     mailingAddress: req.body.mailingAddress,
     city: req.body.city,
