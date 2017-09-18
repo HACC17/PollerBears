@@ -47,26 +47,34 @@ class Capitol extends Component {
 	        }
 	      }
 		  }
-      for (var i = 0; i < siteArr.length; i++){
+      for (var j = 0; j < siteArr.length; j++){
 					var radioInputArr = [];
 					var breakPoint = <br/>;
-					let valuesArr = [siteArr[i][0] + siteArr[i][1] + siteArr[i][3] + siteArr[i][4] + siteArr[i][5] + siteArr[i][6]];
+					let valuesArr = [siteArr[j][0] + siteArr[j][1] + siteArr[j][3] + siteArr[j][4] + siteArr[j][5] + siteArr[j][6]];
 					var radioInput = <div className="cap-radio">
 															<label>
-																<input type="radio" id={`radio${i}`} key={i} name={`radio${i}`}
+																<input type="radio" id={`capitol${j}`} key={j} name={`capitol${j}`}
 																	value={valuesArr}
-																	checked={this.state.time===siteArr[i][6]}
+																	checked={this.state.time===siteArr[j][6]}
 																	onChange={this.handleTimes}
 																/>
-																{siteArr[i][6]}
+																{siteArr[j][6]}
 															</label>
 														</div>;
 					radioInputArr.push(radioInput);
-					siteArr[i].splice(6);
-					siteArr[i].splice(6, 0, radioInputArr);
-					siteArr[i].push(breakPoint);
+					siteArr[j].splice(6);
+					siteArr[j].splice(6, 0, radioInputArr);
+					siteArr[j].push(breakPoint);
 				}
-			  this.state.trainings = siteArr;
+			  this.state.trainings = siteArr.sort(function(a, b){
+						if (a[1] > b[1]){
+							return 1;
+						}
+						if (a[1] < b[1]){
+							return -1;
+						}
+						return 0;
+					});
 				const inputList = this.state.trainings;
 				this.setState({
 					inputList: this.state.trainings

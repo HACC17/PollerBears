@@ -29,7 +29,6 @@ class Districts extends Component {
 			this.setState({time: e.target.value});
 			console.log('target', e.target.value);
 			this.props.changeTraining(e.target.value);
-			console.log('times', this.state.times);
 		}
 
 		handleSelection(e){
@@ -59,14 +58,13 @@ class Districts extends Component {
 				let arr = [];
 				let arrSlice = [];
 				let arrayToShow = [];
-				let trainingsArr = trainings.forEach(function(element){
+				trainings.forEach(function(element){
 					for (let key in element){
 						if (key === "district"){
 							if (element[key] === stateDistrict){
-								let arr = [];
 								for (let props in element){
 									arr.push(element[props] + ' ');
-									var arrSlice = arr.slice(2);
+									arrSlice = arr.slice(2);
 								}
 								arrayToShow.push(arrSlice);
 							}
