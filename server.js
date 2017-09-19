@@ -13,7 +13,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 mongoose.connection.once('open', function() {
   console.log('connected');
 
-  var server = app.listen(3001, function(){
+  var server = app.listen(13001, function(){
     var host = server.address().address;
     var port = server.address().port;
     console.log('listening on',host, port);
@@ -56,6 +56,6 @@ app.get('/send',function(req,res){
   });
 });
 
-app.listen(8000,function(){
-    console.log("Express Started on Port 8000");
+app.listen(18000,function(){
+    console.log("Express Started on Port 18000");
 });

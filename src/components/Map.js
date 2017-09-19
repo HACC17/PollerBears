@@ -71,7 +71,7 @@ class Livemap extends Component{
   fetchPos(data){
     axios({
       method: 'GET',
-      url: "http://localhost:3001/training/",
+      url: "http://localhost:13001/training/",
       responseType: 'json'
     })
       .then(function(response){
@@ -194,7 +194,7 @@ class Livemap extends Component{
         subject="You are making a difference!";
         text="Thank you for volunteering with Office of Elections.\n\nHere are the details of your event:\n\n Position: " + event.title + " \nLocation: " + event.location + "\nDate: " + emailCreds.date + "\nTime: " + emailCreds.fullTime + "\n\nIf the information above is incorrect, please contact us and we will be happy to assist you.\n\nOtherwise, we are excited to have you on board with us!\n\nSincerely,\n\nOffice of Elections\n\nPhone: (808) 453-VOTE (8683)\nE-mail: elections@hawaii.gov\n";
         $("#message").text("Sending E-mail...Please wait");
-        $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+        $.get("http://localhost:18000/send",{to:to,subject:subject,text:text},function(data){
           if(data=="sent")
           {
               $("#message").empty().html("Email is been sent at "+to+" . Check your inbox and sign up for more trainings!");
