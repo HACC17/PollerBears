@@ -71,7 +71,7 @@ class Livemap extends Component{
   fetchPos(data){
     axios({
       method: 'GET',
-      url: "http://localhost:3001/training/",
+      url: "http://138.68.61.219:3001/training/",
       responseType: 'json'
     })
       .then(function(response){

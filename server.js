@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json'); 
 const fs = require('fs');
-const connection = mongoose.connect(CONFIG.MONGO_URL);
+const connection = mongoose.connect(CONFIG.REACT_APP_MONGO_URL);
 const app = require('./app');
 const path = require('path');
 
@@ -54,8 +54,4 @@ app.get('/send',function(req,res){
       res.end("sent");
        }
   });
-});
-
-app.listen(8000,function(){
-    console.log("Express Started on Port 8000");
 });

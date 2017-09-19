@@ -20,7 +20,7 @@ class ExampleCalendar extends React.Component {
 			subject="Thank you for volunteering with Office of Elections";
 			text="You have volunteered at...";
 			$("#message").text("Sending E-mail...Please wait");
-			$.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+			$.get("http://138.68.61.219:3001/send",{to:to,subject:subject,text:text},function(data){
 			if(data=="sent")
 			{
 			    $("#message").empty().html("Email is been sent at "+to+" . Please check inbox!");
