@@ -15,6 +15,10 @@ Election Day Officials assist voters, provide operational support, and ensure th
 * Select a Volunteer Site:
   * Upon selection of position, users can either select a volunteer site on a displayed map or from a dropdown menu. Either option will send a confirmation email to the user. You are also able to share that you're volunteering! Have you friends join you too!
 
+## Technologies Used
+
+ React, Redux, MongoDb, Leaflet
+
 ## [Site Walkthrough](testing)
 
 When first accessing the site the user is presented with this landing page. It contains links to the registration page, contact page, and FAQ in the footer.
