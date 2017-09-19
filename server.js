@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json'); 
+const mailConfig = require('./env.json');
 const fs = require('fs');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
@@ -25,8 +26,8 @@ var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     auth: {
-        user: process.env.SMTP_LOGIN,
-        pass: process.env.SMTP_PASSW
+        user: mailConfig.SMTP_LOGIN,
+        pass: mailConfig.SMTP_PASSW
     }
 });
 /*------------------SMTP Over-----------------------------*/
