@@ -85,7 +85,7 @@ class Capitol extends Component {
   fetchTrain(data){
     axios({
       method: 'GET',
-      url: "http://127.0.0.1:13001/training/",
+      url: "http://localhost:13001/training/",
       responseType: 'json'
     })
       .then(function(response){
