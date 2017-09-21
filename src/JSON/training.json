@@ -1,0 +1,970 @@
+[
+    {
+        "_id": "59bf2df04a80177a3a6f618e",
+        "__v": 0,
+        "day": "Day",
+        "date": "Date",
+        "area": "Election Area",
+        "training": "Training",
+        "site": "Training Site",
+        "address": "Address",
+        "city": "City",
+        "zip": "Zip Code",
+        "time": "Time",
+        "isoTime": {
+            "startTime": "IsoStartTime",
+            "endTime": "IsoEndTime"
+        },
+        "district": "District",
+        "coordinates": {
+            "lat": "Lat",
+            "long": "Long"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618f",
+        "__v": 0,
+        "day": "Thur",
+        "date": "07/12/2018",
+        "area": "Ballot Operations",
+        "training": "Delivery/Collection Official",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6190",
+        "__v": 0,
+        "day": " Thur",
+        "date": "07/26/2018",
+        "area": "Ballot Operations",
+        "training": "Delivery/Collection Official",
+        "site": "Pearl City Highlands Elementary School Cafeteria",
+        "address": "1419 Waimano Home Road",
+        "city": "Pearl City",
+        "zip": "96782",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.403286",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6191",
+        "__v": 0,
+        "day": " Mon",
+        "date": "07/30/2018",
+        "area": "Control Center Operator",
+        "training": "Control Center Operator",
+        "site": "House of Representatives Chambers",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6192",
+        "__v": 0,
+        "day": " Thur",
+        "date": "08/2/2018",
+        "area": "Control Center Operator",
+        "training": "Control Center Operator",
+        "site": "House of Representatives Chambers",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6193",
+        "__v": 0,
+        "day": " Mon",
+        "date": "10/15/2018",
+        "area": "Control Center Operator",
+        "training": "Control Center Operator",
+        "site": "House of Representatives Chambers",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6194",
+        "__v": 0,
+        "day": " Tue",
+        "date": "06/19/2018",
+        "area": "Counting Center Operations",
+        "training": "Absentee Ballot Team Member",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6195",
+        "__v": 0,
+        "day": " Tue",
+        "date": "07/17/2018",
+        "area": "Counting Center Operations",
+        "training": "Ballot Storage Team + Computer Operations Team",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6196",
+        "__v": 0,
+        "day": " Sat",
+        "date": "07/21/2018",
+        "area": "Counting Center Operations",
+        "training": "Duplication Team",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "9:00 - 10:00 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6197",
+        "__v": 0,
+        "day": " Tue",
+        "date": "07/24/2018",
+        "area": "Counting Center Operations",
+        "training": "Manual Audit Team Member",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6198",
+        "__v": 0,
+        "day": " Thur",
+        "date": "06/21/2018",
+        "area": "Counting Center Operations",
+        "training": "Official Observer Team Member",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6199",
+        "__v": 0,
+        "day": " Thur",
+        "date": "07/26/2018",
+        "area": "Counting Center Operations",
+        "training": "Poll Book Audit Team Member",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619a",
+        "__v": 0,
+        "day": " Thur",
+        "date": "07/19/2018",
+        "area": "Counting Center Operations",
+        "training": "Precinct Can Team Member + Receiving Team Member",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 7:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T19:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619b",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/16/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Koko Head Elementary School Cafeteria",
+        "address": "189 Lunalilo Home Road",
+        "city": "Honolulu",
+        "zip": "96825",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "East Honolulu",
+        "coordinates": {
+            "lat": "21.274238",
+            "long": "-157.704898"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619c",
+        "__v": 0,
+        "day": " Tue",
+        "date": "10/09/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Kaneohe Elementary School Cafeteria",
+        "address": "45-495 Kamehameha Highway",
+        "city": "Kaneohe",
+        "zip": "96744",
+        "time": "6:30 - 8:30 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:30:00-07:00"
+        },
+        "district": "Kaneohe",
+        "coordinates": {
+            "lat": "21.395919",
+            "long": "-157.795851"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619d",
+        "__v": 0,
+        "day": " Sat",
+        "date": "10/13/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Waikiki Elementary School Cafeteria",
+        "address": "3710 Leahi Avenue",
+        "city": "Honolulu",
+        "zip": "96815",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.268166",
+            "long": "-157.814493"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619e",
+        "__v": 0,
+        "day": " Sat",
+        "date": "10/20/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Lanakila Elementary School Cafeteria",
+        "address": "717 North Kuakini Street",
+        "city": "Honolulu",
+        "zip": "96817",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.326487",
+            "long": "-157.860453"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f619f",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/23/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Kaneohe Elementary School Cafeteria",
+        "address": "45-495 Kamehameha Highway",
+        "city": "Kaneohe",
+        "zip": "96744",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Kaneohe",
+        "coordinates": {
+            "lat": "21.395919",
+            "long": "-157.795851"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a0",
+        "__v": 0,
+        "day": " Tue",
+        "date": "06/26/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:30 - 8:30 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:30:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a1",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/30/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Kapolei High School Cafeteria",
+        "address": "91-5007 Kapolei Parkway",
+        "city": "Kapolei",
+        "zip": "96707",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Ewa",
+        "coordinates": {
+            "lat": "21.327907",
+            "long": "-158.068294"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a2",
+        "__v": 0,
+        "day": " Thur",
+        "date": "07/05/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Manana Elementary School Cafeteria",
+        "address": "1147 Kumano Street",
+        "city": "Pearl City",
+        "zip": "96782",
+        "time": "6:30 - 8:30 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:30:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.408343",
+            "long": "-157.971362"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a3",
+        "__v": 0,
+        "day": " Sat",
+        "date": "07/14/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Mililani Middle School Cafeteria",
+        "address": "95-1140 Lehiwa Drive",
+        "city": "Mililani",
+        "zip": "96789",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Central Oahu",
+        "coordinates": {
+            "lat": "21.475665",
+            "long": "-157.989612"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a4",
+        "__v": 0,
+        "day": " Wed",
+        "date": "07/18/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Waikiki Elementary School Cafeteria",
+        "address": "3710 Leahi Avenue",
+        "city": "Honolulu",
+        "zip": "96815",
+        "time": "6:30 - 8:30 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:30:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.268166",
+            "long": "-157.814493"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a5",
+        "__v": 0,
+        "day": " Sat",
+        "date": "07/21/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Lanakila Elementary School Cafeteria",
+        "address": "717 North Kuakini Street",
+        "city": "Honolulu",
+        "zip": "96817",
+        "time": "11:00 - 1:00 p.m.",
+        "isoTime": {
+            "startTime": "T11:00:00-07:00",
+            "endTime": "T13:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.326487",
+            "long": "-157.860453"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a6",
+        "__v": 0,
+        "day": " Wed",
+        "date": "10/03/2018",
+        "area": "Precinct Operations",
+        "training": "Chair and Precinct Voter Assistance Official",
+        "site": "Mililani Middle School Cafeteria",
+        "address": "95-1140 Lehiwa Drive",
+        "city": "Mililani",
+        "zip": "96789",
+        "time": "6:30 - 8:30 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:30:00-07:00"
+        },
+        "district": "Central Oahu",
+        "coordinates": {
+            "lat": "21.475665",
+            "long": "-157.989612"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a7",
+        "__v": 0,
+        "day": " Thur",
+        "date": "06/14/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Pearl City Highlands Elementary School Cafeteria",
+        "address": "1419 Waimano Home Road",
+        "city": "Pearl City",
+        "zip": "96782",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.403286",
+            "long": "-157.965311"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a8",
+        "__v": 0,
+        "day": " Sat",
+        "date": "07/21/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Lanakila Elementary School Cafeteria",
+        "address": "717 North Kuakini Street",
+        "city": "Honolulu",
+        "zip": "96817",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.326487",
+            "long": "-157.860453"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61a9",
+        "__v": 0,
+        "day": " Wed",
+        "date": "07/25/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Manana Elementary School Cafeteria",
+        "address": "1147 Kumano Street",
+        "city": "Pearl City",
+        "zip": "96782",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.408343",
+            "long": "-157.971362"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61aa",
+        "__v": 0,
+        "day": " Wed",
+        "date": "08/01/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "State Capitol Auditorium",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61ab",
+        "__v": 0,
+        "day": " Tue",
+        "date": "10/02/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Koko Head Elementary School Cafeteria",
+        "address": "189 Lunalilo Home Road",
+        "city": "Honolulu",
+        "zip": "96825",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "East Honolulu",
+        "coordinates": {
+            "lat": "21.274238",
+            "long": "-157.704898"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61ac",
+        "__v": 0,
+        "day": " Sat",
+        "date": "10/13/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Waikiki Elementary School Cafeteria",
+        "address": "3710 Leahi Avenue",
+        "city": "Honolulu",
+        "zip": "96815",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.268166",
+            "long": "-157.814493"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61ad",
+        "__v": 0,
+        "day": " Wed",
+        "date": "10/17/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Ewa Elementary School Cafeteria",
+        "address": "91-1280 Renton Road",
+        "city": "Ewa Beach",
+        "zip": "96706",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Ewa",
+        "coordinates": {
+            "lat": "21.344594",
+            "long": "-158.034659"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61ae",
+        "__v": 0,
+        "day": " Sat",
+        "date": "10/20/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Lanakila Elementary School Cafeteria",
+        "address": "717 North Kuakini Street",
+        "city": "Honolulu",
+        "zip": "96817",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.326487",
+            "long": "-157.860453"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61af",
+        "__v": 0,
+        "day": " Mon",
+        "date": "10/22/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Washington Middle School Cafeteria",
+        "address": "1633 South King Street",
+        "city": "Honolulu",
+        "zip": "96826",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.295680",
+            "long": "-157.834746"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b0",
+        "__v": 0,
+        "day": " Wed",
+        "date": "10/24/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Pearl City Highlands Elementary School Cafeteria",
+        "address": "1419 Waimano Home Road",
+        "city": "Pearl City",
+        "zip": "96782",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.403286",
+            "long": "-157.965311"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b1",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/16/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Koko Head Elementary School Cafeteria",
+        "address": "189 Lunalilo Home Road",
+        "city": "Honolulu",
+        "zip": "96825",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "East Honolulu",
+        "coordinates": {
+            "lat": "21.274238",
+            "long": "-157.704898"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b2",
+        "__v": 0,
+        "day": " Wed",
+        "date": "06/20/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Waikiki Elementary School Cafeteria",
+        "address": "3710 Leahi Avenue",
+        "city": "Honolulu",
+        "zip": "96815",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.268166",
+            "long": "-157.814493"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b3",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/23/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Kaneohe Elementary School Cafeteria",
+        "address": "45-495 Kamehameha Highway",
+        "city": "Kaneohe",
+        "zip": "96744",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Kaneohe",
+        "coordinates": {
+            "lat": "21.395919",
+            "long": "-157.795851"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b4",
+        "__v": 0,
+        "day": " Sat",
+        "date": "06/30/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Kapolei High School Cafeteria",
+        "address": "91-5007 Kapolei Parkway",
+        "city": "Kapolei",
+        "zip": "96707",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Ewa",
+        "coordinates": {
+            "lat": "21.327907",
+            "long": "-158.068294"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b5",
+        "__v": 0,
+        "day": " Mon",
+        "date": "07/02/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Lanakila Elementary School Cafeteria",
+        "address": "717 North Kuakini Street",
+        "city": "Honolulu",
+        "zip": "96817",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.326487",
+            "long": "-157.860453"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b6",
+        "__v": 0,
+        "day": " Mon",
+        "date": "07/09/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Aiea Elementary School Cafeteria",
+        "address": "99-370 Moanalua Road",
+        "city": "Aiea",
+        "zip": "96701",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Pearl City",
+        "coordinates": {
+            "lat": "21.376121",
+            "long": "-157.928209"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b7",
+        "__v": 0,
+        "day": " Sat",
+        "date": "07/14/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Mililani Middle School Cafeteria",
+        "address": "95-1140 Lehiwa Drive",
+        "city": "Mililani",
+        "zip": "96789",
+        "time": "9:00 - 10:30 a.m.",
+        "isoTime": {
+            "startTime": "T09:00:00-07:00",
+            "endTime": "T10:30:00-07:00"
+        },
+        "district": "Central Oahu",
+        "coordinates": {
+            "lat": "21.475665",
+            "long": "-157.989612"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b8",
+        "__v": 0,
+        "day": " Tue",
+        "date": "07/17/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Operations Official",
+        "site": "Ewa Elementary School Cafeteria",
+        "address": "91-1280 Renton Road",
+        "city": "Ewa Beach",
+        "zip": "96706",
+        "time": "6:30 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:30:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Ewa",
+        "coordinates": {
+            "lat": "21.344594",
+            "long": "-158.034659"
+        }
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f61b9",
+        "__v": 0,
+        "day": " Mon",
+        "date": "07/23/2018",
+        "area": "Precinct Operations",
+        "training": "Precinct Troubleshooter",
+        "site": "State Capitol Senate Conference Room 016",
+        "address": "415 South Beretania Street",
+        "city": "Honolulu",
+        "zip": "96813",
+        "time": "6:00 - 8:00 p.m.",
+        "isoTime": {
+            "startTime": "T18:00:00-07:00",
+            "endTime": "T20:00:00-07:00"
+        },
+        "district": "Metro",
+        "coordinates": {
+            "lat": "21.307195",
+            "long": "-157.857398"
+        }
+    }
+]

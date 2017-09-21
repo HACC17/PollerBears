@@ -1,0 +1,373 @@
+[
+    {
+        "_id": "59bf2df04a80177a3a6f6147",
+        "__v": 0,
+        "district": "District",
+        "site": "Site",
+        "address": "Address"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6148",
+        "__v": 0,
+        "district": "Central Oahu",
+        "site": "Mililani Mauka Elementary School",
+        "address": "95-1111 Makaikai St, Mililani, HI 96789"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6149",
+        "__v": 0,
+        "district": "Central Oahu",
+        "site": "Mililani Middle School",
+        "address": "95-1140 Lehiwa Dr, Mililani, HI 96789"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614a",
+        "__v": 0,
+        "district": "Central Oahu",
+        "site": "Mililani High School",
+        "address": "95-1200 Meheula Pkwy, Mililani, HI 96789"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614b",
+        "__v": 0,
+        "district": "Central Oahu",
+        "site": "Mililani Uka Elementary School",
+        "address": "94-380 Kuahelani Ave, Mililani, HI 96789"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614c",
+        "__v": 0,
+        "district": "Central Oahu",
+        "site": "Kipapa Elementary School",
+        "address": "95-076 Kipapa Dr, Mililani, HI 96789"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614d",
+        "__v": 0,
+        "district": "East Honolulu",
+        "site": "Kaiser High School",
+        "address": "511 Lunalilo Home Rd, Honolulu, HI 96825"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614e",
+        "__v": 0,
+        "district": "East Honolulu",
+        "site": "Koko Head Elementary School",
+        "address": "189 Lunalilo Home Rd, Honolulu, HI 96825"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f614f",
+        "__v": 0,
+        "district": "East Honolulu",
+        "site": "Niu Valley Middle School",
+        "address": "310 Halemaumau St, Honolulu, HI 96821"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6150",
+        "__v": 0,
+        "district": "East Honolulu",
+        "site": "Aina Haina Elementary School",
+        "address": "801 W Hind Dr, Honolulu, HI 96821"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6151",
+        "__v": 0,
+        "district": "East Honolulu",
+        "site": "Kalani High School",
+        "address": "4680 Kalanianaole Hwy, Honolulu, HI 96821"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6152",
+        "__v": 0,
+        "district": "Ewa",
+        "site": "Ewa Elementary School",
+        "address": "91-1280 Renton Rd, Ewa Beach, HI 96706"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6153",
+        "__v": 0,
+        "district": "Ewa",
+        "site": "Campbell High School",
+        "address": "91-980 North Rd, Ewa Beach, HI 96706"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6154",
+        "__v": 0,
+        "district": "Ewa",
+        "site": "Ewa Beach Elementary School",
+        "address": "91-740 Papipi Rd, Ewa Beach, HI 96706"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6155",
+        "__v": 0,
+        "district": "Ewa",
+        "site": "Kapolei Elementary School",
+        "address": "91-1119 Kamaaha Loop, Kapolei, HI 96707"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6156",
+        "__v": 0,
+        "district": "Ewa",
+        "site": "Kapolei High School",
+        "address": "91-5007 Kapolei Pkwy, Kapolei, HI 96707"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6157",
+        "__v": 0,
+        "district": "Kailua",
+        "site": "Kalaheo High School",
+        "address": "730 Iliaina St, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6158",
+        "__v": 0,
+        "district": "Kailua",
+        "site": "Kailua Elementary School",
+        "address": "315 Kuulei Rd, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6159",
+        "__v": 0,
+        "district": "Kailua",
+        "site": "Enchanted Lake Elementary School",
+        "address": "770 Keolu Dr, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615a",
+        "__v": 0,
+        "district": "Kailua",
+        "site": "Lanikai Elementary School",
+        "address": "140 Alala Rd, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615b",
+        "__v": 0,
+        "district": "Kailua",
+        "site": "Keolu Elementary School",
+        "address": "1416 Keolu Dr, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615c",
+        "__v": 0,
+        "district": "Kaneohe",
+        "site": "Ahuimanu Elementary School",
+        "address": "47-470 Hui Aeko Pl, Kaneohe, HI 96744"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615d",
+        "__v": 0,
+        "district": "Kaneohe",
+        "site": "Benjamin Parker Elementary School",
+        "address": "45-259 Waikalua Rd, Kaneohe, HI 96744"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615e",
+        "__v": 0,
+        "district": "Kaneohe",
+        "site": "Kaneohe Elementary School",
+        "address": "45-495 Kamehameha Hwy, Kaneohe, HI 96744"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f615f",
+        "__v": 0,
+        "district": "Kaneohe",
+        "site": "Castle High School",
+        "address": "45-386 Kaneohe Bay Dr, Kaneohe, HI 96744"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6160",
+        "__v": 0,
+        "district": "Kaneohe",
+        "site": "Maunawili Elementary School",
+        "address": "1465 Ulupii St, Kailua, HI 96734"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6161",
+        "__v": 0,
+        "district": "Leeward Coast",
+        "site": "Nanaikapono Elementary School",
+        "address": "89-153 Mano Ave, Waianae, HI 96792"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6162",
+        "__v": 0,
+        "district": "Leeward Coast",
+        "site": "Maili Elementary School",
+        "address": "87-360 Kulaaupuni St, Waianae, HI 96792"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6163",
+        "__v": 0,
+        "district": "Leeward Coast",
+        "site": "Waianae Intermediate School",
+        "address": "85-626 Farrington Hwy, Waianae, HI 96792"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6164",
+        "__v": 0,
+        "district": "Leeward Coast",
+        "site": "Makaha Elementary School",
+        "address": "84-200 Ala Naauao Pl, Waianae, HI 96792"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6165",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Kaimuki High School",
+        "address": "2705 Kaimuki Ave, Honolulu, HI 96816"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6166",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Washington Middle School",
+        "address": "1633 S King St, Honolulu, HI 96826"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6167",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Stevenson Middle School",
+        "address": "1202 Prospect St, Honolulu, HI 96822"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6168",
+        "__v": 0,
+        "district": "Metro",
+        "site": "McKinley High School",
+        "address": "1039 S King St, Honolulu, HI 96814"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6169",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Central Middle School",
+        "address": "1302 Queen Emma St, Honolulu, HI 96813"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616a",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Kapalama Elementary School",
+        "address": "1601 N School St, Honolulu, HI 96817"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616b",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Farrington High School",
+        "address": "1564 North King Street, Honolulu, HI 96817"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616c",
+        "__v": 0,
+        "district": "Metro",
+        "site": "Radford High School",
+        "address": "4361 Salt Lake Blvd, Honolulu, HI 96818"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616d",
+        "__v": 0,
+        "district": "North Shore",
+        "site": "Wahiawa Middle School",
+        "address": "275 Rose St, Wahiawa, HI 96786"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616e",
+        "__v": 0,
+        "district": "North Shore",
+        "site": "Leilehua High School",
+        "address": "1515 California Ave, Wahiawa, HI 96786"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f616f",
+        "__v": 0,
+        "district": "North Shore",
+        "site": "Haleiwa Elementary School",
+        "address": "66-505 Haleiwa Rd, Haleiwa, HI 96712"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6170",
+        "__v": 0,
+        "district": "North Shore",
+        "site": "Sunset Beach Elementary School",
+        "address": "59 Kamehameha Hwy, Haleiwa, HI 96712"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6171",
+        "__v": 0,
+        "district": "North Shore",
+        "site": "Kahuku High/Intermediate School",
+        "address": "56-490 Kamehameha Hwy, Kahuku, HI 96731"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6172",
+        "__v": 0,
+        "district": "Pearl City",
+        "site": "Pearl Ridge Elementary School",
+        "address": "98-940 Moanalua Rd, Aiea, HI 96701"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6173",
+        "__v": 0,
+        "district": "Pearl City",
+        "site": "Waimalu Elementary School",
+        "address": "98-825 Moanalua Rd, Aiea, HI 96701"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6174",
+        "__v": 0,
+        "district": "Pearl City",
+        "site": "Pearl City Highlands Elementary School",
+        "address": "1419 Waimano Home Rd, Pearl City, HI 96782"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6175",
+        "__v": 0,
+        "district": "Pearl City",
+        "site": "Lehua Elementary School",
+        "address": "791 Lehua Ave, Pearl City, HI 96782"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6176",
+        "__v": 0,
+        "district": "Pearl City",
+        "site": "Manana Elementary School",
+        "address": "1147 Kumano St, Pearl City, HI 96782"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6177",
+        "__v": 0,
+        "district": "Waipahu",
+        "site": "August Ahrens Elementary School",
+        "address": "94-1170 Waipahu St, Waipahu, HI 96797"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6178",
+        "__v": 0,
+        "district": "Waipahu",
+        "site": "Waipahu High School",
+        "address": "94-1211 Farrington Hwy, Waipahu, HI 96797"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6179",
+        "__v": 0,
+        "district": "Waipahu",
+        "site": "Waipahu Elementary School",
+        "address": "94-465 Waipahu St, Waipahu, HI 96797"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f617a",
+        "__v": 0,
+        "district": "Waipahu",
+        "site": "Kaleiopuu Elementary School",
+        "address": "94-665 Kaaholo St, Waipahu, HI 96797"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f617b",
+        "__v": 0,
+        "district": "Waipahu",
+        "site": "Mauka Lani Elementary School",
+        "address": "92-1300 Panana St, Kapolei, HI 96707"
+    }
+]
