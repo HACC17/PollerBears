@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const CONFIG = require('./config.json'); 
+const mailConfig = require('./env.json');
 const fs = require('fs');
 const connection = mongoose.connect(CONFIG.MONGO_URL);
 const app = require('./app');
@@ -13,7 +14,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 mongoose.connection.once('open', function() {
   console.log('connected');
 
-  var server = app.listen(3001, function(){
+  var server = app.listen(13001, function(){
     var host = server.address().address;
     var port = server.address().port;
     console.log('listening on',host, port);
@@ -25,8 +26,8 @@ var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     auth: {
-        user: process.env.SMTP_LOGIN,
-        pass: process.env.SMTP_PASSW
+        user: mailConfig.SMTP_LOGIN,
+        pass: mailConfig.SMTP_PASSW
     }
 });
 /*------------------SMTP Over-----------------------------*/
@@ -56,6 +57,6 @@ app.get('/send',function(req,res){
   });
 });
 
-app.listen(8000,function(){
-    console.log("Express Started on Port 8000");
+app.listen(18000,function(){
+    console.log("Express Started on Port 18000");
 });

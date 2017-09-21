@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "59bf2df04a80177a3a6f6188",
+        "__v": 0,
+        "position": "Delivery/Collection Official",
+        "volunteerSite": "none",
+        "volunteerCount": "2",
+        "trainingNeeded": "Delivery/Collection"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6189",
+        "__v": 0,
+        "position": "Facility Official",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Precinct Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618a",
+        "__v": 0,
+        "position": "Precinct Official",
+        "volunteerSite": "none",
+        "volunteerCount": "10",
+        "trainingNeeded": "Precinct Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618b",
+        "__v": 0,
+        "position": "Precinct Chairperson",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Chair and Voter Assistance Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618c",
+        "__v": 0,
+        "position": "Voter Assistance Official",
+        "volunteerSite": "none",
+        "volunteerCount": "2",
+        "trainingNeeded": "Chair and Voter Assistance Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618d",
+        "__v": 0,
+        "position": "Precinct Troubleshooter",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Troubleshooter"
+    }
+]

@@ -1,0 +1,146 @@
+[
+    {
+        "_id": "59bf2df04a80177a3a6f617c",
+        "__v": 0,
+        "position": "Position",
+        "volunteerSite": "Voluteer Site",
+        "volunteerCount": "Volunteers Needed",
+        "trainingNeeded": "Training Required"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f617d",
+        "__v": 0,
+        "position": "Control Center Operator",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 100",
+        "trainingNeeded": " Control Center Operator"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f617e",
+        "__v": 0,
+        "position": "Absentee Ballot Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 100",
+        "trainingNeeded": " Absentee Ballot Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f617f",
+        "__v": 0,
+        "position": "Ballot Storage Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 10",
+        "trainingNeeded": "  Ballot Storage Team + Computer Operations Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6180",
+        "__v": 0,
+        "position": "Computer Operations Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 10",
+        "trainingNeeded": "  Ballot Storage Team + Computer Operations Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6181",
+        "__v": 0,
+        "position": "Duplication Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 20",
+        "trainingNeeded": "  Duplication Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6182",
+        "__v": 0,
+        "position": "Manual Audit Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 40",
+        "trainingNeeded": "  Manual Audit Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6183",
+        "__v": 0,
+        "position": "Official Observer Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 45",
+        "trainingNeeded": "  Official Observer Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6184",
+        "__v": 0,
+        "position": "Poll Book Audit Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 50",
+        "trainingNeeded": "  Poll Book Audit Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6185",
+        "__v": 0,
+        "position": "Precinct Can Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 13",
+        "trainingNeeded": "  Precinct Can Team + Receiving Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6186",
+        "__v": 0,
+        "position": "Receiving Team (Counting Center Official)",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 12",
+        "trainingNeeded": "  Precinct Can Team + Receiving Team"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6187",
+        "__v": 0,
+        "position": "Election Information Services Official",
+        "volunteerSite": "State Capitol",
+        "volunteerCount": " 12",
+        "trainingNeeded": "  Control Center Operator"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6188",
+        "__v": 0,
+        "position": "Delivery/Collection Official",
+        "volunteerSite": "none",
+        "volunteerCount": "2",
+        "trainingNeeded": "Delivery/Collection"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f6189",
+        "__v": 0,
+        "position": "Facility Official",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Precinct Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618a",
+        "__v": 0,
+        "position": "Precinct Official",
+        "volunteerSite": "none",
+        "volunteerCount": "10",
+        "trainingNeeded": "Precinct Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618b",
+        "__v": 0,
+        "position": "Precinct Chairperson",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Chair and Voter Assistance Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618c",
+        "__v": 0,
+        "position": "Voter Assistance Official",
+        "volunteerSite": "none",
+        "volunteerCount": "2",
+        "trainingNeeded": "Chair and Voter Assistance Official"
+    },
+    {
+        "_id": "59bf2df04a80177a3a6f618d",
+        "__v": 0,
+        "position": "Precinct Troubleshooter",
+        "volunteerSite": "none",
+        "volunteerCount": "1",
+        "trainingNeeded": "Troubleshooter"
+    }
+]

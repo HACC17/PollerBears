@@ -3,8 +3,9 @@ import { changeDistrict, changeTraining, getData, } from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import axios from 'axios';
+const fullData = require('../JSON/training.json'); 
 
-let trainings;
+let trainings = fullData;
 let stateDistrict;
 let otherArray;
 
@@ -41,14 +42,26 @@ class Districts extends Component {
     }
 
   fetchTrain(data){
-    axios({
-      method: 'GET',
-      url: "http://localhost:3001/training",
-      responseType: 'json'
-    })
-      .then(function(response){
-        trainings = response.data;
-      });
+    // axios({
+    //   method: 'GET',
+    //   url: "https://localhost:13001/training",
+    //   responseType: 'json'
+    // })
+    //   .then(function(response){
+    //     trainings = response.data;
+    //   });
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'http://localhost:13001/training/');
+    // xhr.onload = function() {
+    //     if (xhr.status === 200) {
+    //       console.log(JSON.parse(xhr.response));
+    //         trainings = JSON.parse(xhr.response);
+    //     }
+    //     else {
+    //         alert('Request failed.  Returned status of ' + xhr.status);
+    //     }
+    // };
+    // xhr.send();
   }
 
     handleSubmit(e){

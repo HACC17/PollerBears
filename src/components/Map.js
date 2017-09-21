@@ -8,6 +8,7 @@ import AddToCalendar from 'react-add-to-calendar';
 import Leaflet from 'leaflet';
 import $ from 'jquery';
 import axios from 'axios';
+
 import { fetchPositions, fetchTrainings } from '../actions/index.js';
 // import { fetchTrainings } from '../actions/index.js';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
@@ -19,6 +20,7 @@ const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-backgro
 const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const mapCenter = [39.9528, -75.1638];
 const zoomLevel = 12;
+const fullData = require('../JSON/training.json'); 
 let contents;
 let map = null;
 let m;
@@ -27,7 +29,7 @@ let statePosition;
 let mapHasBeenCreated = false;
 let timeActivated = false;
 let icon = { 'calendar-plus-o': 'left' };
-let mapMarkers = [];
+let mapMarkers = fullData;
 
 let event = {
   title: 'Volunteer Training for ',
@@ -54,7 +56,6 @@ const mapStateToProps = (state) => {
   return {...state};
 }
 
-
 class Livemap extends Component{
   constructor (props){
     super(props);
@@ -69,15 +70,33 @@ class Livemap extends Component{
   }
 
   fetchPos(data){
-    axios({
-      method: 'GET',
-      url: "http://localhost:3001/training/",
-      responseType: 'json'
-    })
-      .then(function(response){
-        mapMarkers = response.data;
-        // dispatch(setPosition(response.position));
-      })
+    // fetch('http://localhost:13001/training/')
+    //   .then(function(response) {
+    //     return response.text()
+    //   }).then(function(body) {
+    //     mapMarkers = JSON.parse(body);
+    //   })
+    // axios({
+    //   method: 'GET',
+    //   url: "https://localhost:13001/training/",
+    //   responseType: 'json'
+    // })
+    //   .then(function(response){
+    //     mapMarkers = response.data;
+    //     // dispatch(setPosition(response.position));
+    //   })
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'http://localhost:13001/training/');
+    // xhr.onload = function() {
+    //     if (xhr.status === 200) {
+    //       console.log(JSON.parse(xhr.response));
+    //         mapMarkers = JSON.parse(xhr.response);
+    //     }
+    //     else {
+    //         alert('Request failed.  Returned status of ' + xhr.status);
+    //     }
+    // };
+    // xhr.send();
   }
 
   componentWillMount() {
@@ -194,7 +213,7 @@ class Livemap extends Component{
         subject="You are making a difference!";
         text="Thank you for volunteering with Office of Elections.\n\nHere are the details of your event:\n\n Position: " + event.title + " \nLocation: " + event.location + "\nDate: " + emailCreds.date + "\nTime: " + emailCreds.fullTime + "\n\nIf the information above is incorrect, please contact us and we will be happy to assist you.\n\nOtherwise, we are excited to have you on board with us!\n\nSincerely,\n\nOffice of Elections\n\nPhone: (808) 453-VOTE (8683)\nE-mail: elections@hawaii.gov\n";
         $("#message").text("Sending E-mail...Please wait");
-        $.get("http://localhost:8000/send",{to:to,subject:subject,text:text},function(data){
+        $.get("http://localhost:13001/send",{to:to,subject:subject,text:text},function(data){
           if(data=="sent")
           {
               $("#message").empty().html("Email is been sent at "+to+" . Check your inbox and sign up for more trainings!");
