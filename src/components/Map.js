@@ -75,15 +75,27 @@ class Livemap extends Component{
     //   }).then(function(body) {
     //     mapMarkers = JSON.parse(body);
     //   })
-    axios({
-      method: 'GET',
-      url: "https://localhost:13001/training/",
-      responseType: 'json'
-    })
-      .then(function(response){
-        mapMarkers = response.data;
-        // dispatch(setPosition(response.position));
-      })
+    // axios({
+    //   method: 'GET',
+    //   url: "https://localhost:13001/training/",
+    //   responseType: 'json'
+    // })
+    //   .then(function(response){
+    //     mapMarkers = response.data;
+    //     // dispatch(setPosition(response.position));
+    //   })
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:13001/training/');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            mapMarkers = xhr.responseText;
+            alert(mapMarkers);
+        }
+        else {
+            alert('Request failed.  Returned status of ' + xhr.status);
+        }
+    };
+    xhr.send();
   }
 
   componentWillMount() {

@@ -3,6 +3,7 @@ import { changeTraining, getData} from '../reducers/'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import axios from 'axios';
+import $ from 'jquery';
 
 let trainings;
 
@@ -83,14 +84,17 @@ class Capitol extends Component {
 		}
 
   fetchTrain(data){
-    axios({
-      method: 'GET',
-      url: "https://localhost:13001/training/",
-      responseType: 'json'
-    })
-      .then(function(response){
-      	trainings = response.data;
-      });
+    // axios({
+    //   method: 'GET',
+    //   url: "https://localhost:13001/training/",
+    //   responseType: 'json'
+    // })
+    //   .then(function(response){
+    //   	trainings = response.data;
+    //   });
+    $.get("https://localhost:13001/training/", function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
   }
 
 	componentDidMount() {
