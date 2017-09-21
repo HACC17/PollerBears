@@ -9,7 +9,7 @@ class JSSocial extends Component{
 	componentDidMount(){
 		$(document).ready(function(){
 			$("#shareIconsCountInside").jsSocials({
-			    url: "http://www.google.com",
+			    url: "https://pollerbears.herokuapp.com",
 			    text: "I'm volunteering with Office of Elections!",
 			    showLabel: false,
 			    showCount: "inside",
