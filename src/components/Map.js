@@ -77,7 +77,7 @@ class Livemap extends Component{
     //   })
     axios({
       method: 'GET',
-      url: "http://localhost:13001/training/",
+      url: "https://localhost:13001/training/",
       responseType: 'json'
     })
       .then(function(response){

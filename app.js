@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(function(req, res, next) {
- res.setHeader(`Access-Control-Allow-Origin`,'http://localhost:13001');
+ res.setHeader(`Access-Control-Allow-Origin`,'https://localhost:13001');
  res.setHeader('Access-Control-Allow-Credentials', true);
  res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
  res.setHeader('Access-Control-Allow-Headers',
