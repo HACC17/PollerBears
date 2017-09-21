@@ -92,9 +92,18 @@ class Capitol extends Component {
     //   .then(function(response){
     //   	trainings = response.data;
     //   });
-    $.get("https://localhost:13001/training/", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
-        });
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:13001/training/');
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+          console.log(JSON.parse(xhr.response));
+            trainings = JSON.parse(xhr.response);
+        }
+        else {
+            alert('Request failed.  Returned status of ' + xhr.status);
+        }
+    };
+    xhr.send();
   }
 
 	componentDidMount() {

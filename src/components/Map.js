@@ -88,8 +88,8 @@ class Livemap extends Component{
     xhr.open('GET', 'http://localhost:13001/training/');
     xhr.onload = function() {
         if (xhr.status === 200) {
-            mapMarkers = xhr.responseText;
-            alert(mapMarkers);
+          console.log(JSON.parse(xhr.response));
+            mapMarkers = JSON.parse(xhr.response);
         }
         else {
             alert('Request failed.  Returned status of ' + xhr.status);
