@@ -69,15 +69,21 @@ class Livemap extends Component{
   }
 
   fetchPos(data){
-    axios({
-      method: 'GET',
-      url: "http://localhost:13001/training/",
-      responseType: 'json'
-    })
-      .then(function(response){
-        mapMarkers = response.data;
-        // dispatch(setPosition(response.position));
+    fetch('http://localhost:13001/training/')
+      .then(function(response) {
+        return response.text()
+      }).then(function(body) {
+        mapMarkers = JSON.parse(body);
       })
+    // axios({
+    //   method: 'GET',
+    //   url: "http://localhost:13001/training/",
+    //   responseType: 'json'
+    // })
+    //   .then(function(response){
+    //     mapMarkers = response.data;
+    //     // dispatch(setPosition(response.position));
+    //   })
   }
 
   componentWillMount() {
