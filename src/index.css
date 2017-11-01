@@ -332,3 +332,12 @@ ul.right-menu li a:hover{
   background-color: #52F0FA;
   color: #FFFFFF;
 }
+
+@media only screen and (max-width: 500px) {
+  .footer-flex-item {
+    text-align: center;
+  }
+  .footer-flex-item ul li {
+    list-style: none;
+  }
+}
