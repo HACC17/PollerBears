@@ -334,10 +334,20 @@ ul.right-menu li a:hover{
 }
 
 @media only screen and (max-width: 500px) {
-  .footer-flex-item {
+  h1.text-left{
     text-align: center;
   }
-  .footer-flex-item ul li {
-    list-style: none;
+  .nav li {
+    margin-top: 0;
+  }
+  ul.right-menu {
+    text-align: center;
+    margin-right: 0;
+  }
+  ul.right-menu li {
+    display: inline-block;
+  }
+  .footer-flex{
+    justify-content: flex-start;
   }
 }
