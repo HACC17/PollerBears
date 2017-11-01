@@ -217,7 +217,7 @@ class Form extends Component {
                 onChange={this.handleUserInput}  />
             </div>
             <div className={`form-group ${this.errorClass(this.state.formErrors.password)} col-md-6`}>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Create A Password</label>
               <input type="password" className="form-control" name="password" id="password"
                 placeholder="example123!"
                 value={this.state.password}
