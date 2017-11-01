@@ -203,6 +203,7 @@ ul.right-menu li a:hover{
   margin: 25px 0;
   background-color: #FFFFFF;
   padding-bottom: 30px;
+  padding-top: 10px;
 }
 .location-container{
   margin: 0;
@@ -342,10 +343,13 @@ ul.right-menu li a:hover{
   }
   ul.right-menu {
     text-align: center;
-    margin-right: 0;
+    margin: 0;
   }
   ul.right-menu li {
     display: inline-block;
+  }
+  .footer-container{
+    background-size: 100%;
   }
   .footer-flex{
     justify-content: flex-start;
